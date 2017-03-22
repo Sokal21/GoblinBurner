@@ -1,0 +1,1118 @@
+
+==================== FINAL INTERFACE ====================
+2017-03-22 14:41:32.778749 UTC
+
+interface GoblinBurner-0.1.0.0-9BGpxHuB4WvZG8Ab7rdhV:Mannager 8002
+  interface hash: 5c3a30e3321a860ab1f8e13cec85b396
+  ABI hash: 09ab3963363cce40621b20c91a85a706
+  export-list hash: 8d5f8926a939a7462beb30aeef1bcbb3
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: ab396f11155bd696ab63895436e6f1df
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Mannager.aleatory_dice
+  Mannager.characterListModify
+  Mannager.characterModify
+  Mannager.character_creation
+  Mannager.commGenerator
+  Mannager.conModCheck
+  Mannager.depAttrCalculator
+  Mannager.diceToNum
+  Mannager.dices_thrower
+  Mannager.envModify
+  Mannager.evalBoolExp
+  Mannager.evalComm
+  Mannager.evalIntExp
+  Mannager.initState
+  Mannager.isIn
+  Mannager.length'
+  Mannager.lookAndReplace
+  Mannager.modifiers
+  Mannager.modifiersExecute
+  Mannager.nth
+  Mannager.replaceAllComm
+  Mannager.replaceAllInt
+  Mannager.replaceAllbool
+  Mannager.roll
+  Mannager.skilatr_thrower
+  Mannager.skillCalculator
+  Mannager.system_depurator
+  Mannager.takeOut
+  Mannager.throwLinker
+  Mannager.throwTaker
+  Mannager.throw_replace
+  Mannager.Env
+  Mannager.MonadError{Mannager.throw}
+  Mannager.MonadState{Mannager.lookfor Mannager.update}
+  Mannager.StateError{Mannager.StateError runStateError}
+module dependencies: AST
+package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.1.0
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1 random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog
+                      time-1.6.0.1@time-1.6.0.1
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Complex base-4.9.1.0:Data.Either
+                         base-4.9.1.0:Data.Functor.Const base-4.9.1.0:Data.Functor.Identity
+                         base-4.9.1.0:Data.List.NonEmpty base-4.9.1.0:Data.Monoid
+                         base-4.9.1.0:Data.Semigroup base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:Data.Version base-4.9.1.0:Data.Void
+                         base-4.9.1.0:GHC.Exts base-4.9.1.0:GHC.Generics
+                         base-4.9.1.0:GHC.IO.Exception base-4.9.1.0:GHC.TypeLits
+import  -/  AST 9c55e0321b218d3946d7f66413c3601c
+  exports: 790fa163781c6789615dccc145b86d73
+  Action 5c484ea8d976c99055ab31eb15645f87
+  All 156168d049291f3ddddeb85ca029b99f
+  And ab99323ae01cb07755d4abd5ab3f8509
+  BFalse b6e522890782d8f741324872f404878a
+  BTrue 8a63ed056a62978940fb3485dc05312c
+  BoolExp c14fce890aea625b4b05801b0a486a9d
+  Character 577b7d529bf2b50c23293b69a67d8c2f
+  Comm d27ac939e181399381b9d35148f4dafa
+  Coms 713862a478c2a64279d2e880e7318cba
+  ConMod 4722d9ee1b555d7a04bf7f86ea6bcd6b
+  Con_Modifiers de19faae4f856652c4683d3f6c166f49
+  Const 07ef0d6d599ba42ad7b15e8070a858fc
+  D10 3fffd0b3a96e2798755a29485a6bbb7f
+  D100 481c552c65cd91312483dae017f4aa8a
+  D12 7333c192ed411c5182755386dccafcb6
+  D20 87dd40233e7a2abb307b794ecec484e2
+  D3 5eae5f7a7eb622a17b4e5d44744658e3
+  D4 65b1b584cd9065d18d616dcf569f138d
+  D6 ecd11535a0a39e4c5bcb853c6acb1509
+  D8 bb186eacc4bb60b55f396baeed9fba22
+  DepAtr 163e434f0c61a4cb7780146bf9d9b6f8
+  DepAttribute 8eea6e7bab2837004654789c51b96e1b
+  DepSys 87413475971afbf7d8af6ad7ccd81c99
+  Dice f77b034240a84c2f92599779e8d83414
+  Div 68e88f64e24ab219383c142878766ab6
+  Eq 8a8ae5108503f1e48148a92b89fda456
+  Gt 45dbbcbef4ff2d965759c42dbf2fa1f2
+  IntExp c14fce890aea625b4b05801b0a486a9d
+  Let 66cdefdc69c2b7da57362326cd40f21d
+  Lt 05142902f8f1b2c7b7b87695508252cf
+  Minus 01452219eeb76633958c52c26d093570
+  Name d833e2277e74c61d9822e98cc2f4a2a9
+  Not d12ea2ed650d5ce9f5473595e0c93325
+  Num 914bd196bf551151131b879216ddd352
+  Or f5968828c315688658803a090d04335e
+  PC 919c3b3bc72b363c6539fb82db45aebe
+  Plus d3f77c477deafb93ac91c10caf6369a6
+  Pool 3bfe43e864f32a57ad9cffd34f535393
+  Qmark 23456f8e3211ffe276075953a6b2891f
+  Skill 29a0cd68995f28c0cf0a524fb930feb4
+  Skills 720f0cae70fc84fbe12d3ad9dd9a3c07
+  Sys 91fb9905d283ea1d5c1ca54bb0a01720
+  System ed8187dd3058901d19e252d8b4f3681d
+  Throws 7a082a7d38d9e98575181bf127cdb410
+  ThrowsGen d59d5e638a2bfb45a11e5394743c01d0
+  Times 4fcd748a952b574e07c77d72d71df9bd
+  TrwGen bcde311e0c63f2e0feeeed0e00950db7
+  UAct 75461efabe39211a11043e4d95fea0b1
+  UMinus 0dcbd0e51b25b2c8027f193f20667ae0
+  Var 86c3f39ada3eaa7636ec461c0557dac7
+  Variable 4081faa1589c520a14aa6644d14763b1
+import  -/  base-4.9.1.0:Control.Applicative 32430a90492e727f4bd80db71c28600c
+import  -/  base-4.9.1.0:Control.Monad a6784c5dab0d75c63dabec5a37843f98
+import  -/  base-4.9.1.0:Data.Tuple 7dc4bbb45d2e69c991ffac438beeca11
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.Err 3bba35a16538d33d424682ce66876cdd
+import  -/  base-4.9.1.0:GHC.IO.Unsafe 1c057c642b0e201f55a24585d3d94564
+import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
+import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:GHC.Real 82e4e59051a13dba1da63e1e970a69e6
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  base-4.9.1.0:System.IO.Unsafe 1e3c5b8dd8cf6850ae43cce967bb46cd
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+import  -/  integer-gmp-1.0.0.1:GHC.Integer.Type 318df275d77dcdb18e0006d8d7870c2a
+import  -/  random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog:System.Random b21db0c0ea43dc1ad218556cd0b064c7
+da092e0f44be7a380a1ac0b6ebf9e6e6
+  $fApplicativeStateError :: GHC.Base.Applicative Mannager.StateError
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Mannager.StateError
+                  Mannager.$fFunctorStateError
+                  Mannager.$fApplicativeStateError_$creturn
+                  Mannager.$fApplicativeStateError_$c<*>
+                  Mannager.$fApplicativeStateError_$c*>
+                  Mannager.$fApplicativeStateError_$c<* -}
+da092e0f44be7a380a1ac0b6ebf9e6e6
+  $fApplicativeStateError1 ::
+    Mannager.StateError a
+    -> Mannager.StateError b
+    -> Mannager.Env
+    -> GHC.Base.Maybe (a, Mannager.Env)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <C(S),1*C1(U)><L,1*C1(U)><L,U>,
+     Unfolding: (\ @ a
+                   @ b
+                   (eta :: Mannager.StateError a)
+                   (eta1 :: Mannager.StateError b)
+                   (eta2 :: Mannager.Env) ->
+                 case eta `cast` (Mannager.N:StateError[0] <a>_R) eta2 of wild {
+                   GHC.Base.Nothing -> GHC.Base.Nothing @ (a, Mannager.Env)
+                   GHC.Base.Just ds
+                   -> case ds of wild1 { (,) v s' ->
+                      case eta1 `cast` (Mannager.N:StateError[0] <b>_R) s' of wild2 {
+                        GHC.Base.Nothing -> GHC.Base.Nothing @ (a, Mannager.Env)
+                        GHC.Base.Just ds1
+                        -> case ds1 of wild3 { (,) v1 s'1 ->
+                           GHC.Base.Just @ (a, Mannager.Env) (v, s'1) } } } }) -}
+da092e0f44be7a380a1ac0b6ebf9e6e6
+  $fApplicativeStateError2 ::
+    Mannager.StateError a
+    -> Mannager.StateError b
+    -> Mannager.Env
+    -> GHC.Base.Maybe (b, Mannager.Env)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <C(S),1*C1(U)><L,1*C1(U)><L,U>,
+     Unfolding: (\ @ a
+                   @ b
+                   (eta :: Mannager.StateError a)
+                   (eta1 :: Mannager.StateError b)
+                   (eta2 :: Mannager.Env) ->
+                 case eta `cast` (Mannager.N:StateError[0] <a>_R) eta2 of wild {
+                   GHC.Base.Nothing -> GHC.Base.Nothing @ (b, Mannager.Env)
+                   GHC.Base.Just ds
+                   -> case ds of wild1 { (,) v s' ->
+                      case eta1 `cast` (Mannager.N:StateError[0] <b>_R) s' of wild2 {
+                        GHC.Base.Nothing -> GHC.Base.Nothing @ (b, Mannager.Env)
+                        GHC.Base.Just ds1
+                        -> case ds1 of wild3 { (,) v1 s'1 -> wild2 } } } }) -}
+da092e0f44be7a380a1ac0b6ebf9e6e6
+  $fApplicativeStateError3 ::
+    Mannager.StateError (a -> b)
+    -> Mannager.StateError a
+    -> Mannager.Env
+    -> GHC.Base.Maybe (b, Mannager.Env)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <C(S),1*C1(U)><L,1*C1(U)><L,U>,
+     Unfolding: (\ @ a
+                   @ b
+                   (m1 :: Mannager.StateError (a -> b))
+                   (m2 :: Mannager.StateError a)
+                   (eta :: Mannager.Env) ->
+                 case m1 `cast` (Mannager.N:StateError[0] <a -> b>_R) eta of wild {
+                   GHC.Base.Nothing -> GHC.Base.Nothing @ (b, Mannager.Env)
+                   GHC.Base.Just ds
+                   -> case ds of wild1 { (,) v s' ->
+                      case m2 `cast` (Mannager.N:StateError[0] <a>_R) s' of wild2 {
+                        GHC.Base.Nothing -> GHC.Base.Nothing @ (b, Mannager.Env)
+                        GHC.Base.Just ds1
+                        -> case ds1 of wild3 { (,) v1 s'1 ->
+                           GHC.Base.Just @ (b, Mannager.Env) (v v1, s'1) } } } }) -}
+209a1da26c401cecf687da0f626ce4b8
+  $fApplicativeStateError4 ::
+    a -> Mannager.Env -> GHC.Base.Maybe (a, Mannager.Env)
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,U>m2,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a (x :: a) (s :: Mannager.Env) ->
+                 GHC.Base.Just @ (a, Mannager.Env) (x, s)) -}
+da092e0f44be7a380a1ac0b6ebf9e6e6
+  $fApplicativeStateError_$c*> ::
+    Mannager.StateError a
+    -> Mannager.StateError b -> Mannager.StateError b
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <C(S),1*C1(U)><L,1*C1(U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mannager.$fApplicativeStateError2
+                  `cast`
+                (forall (a :: <*>_N) (b :: <*>_N).
+                 <Mannager.StateError a>_R
+                 ->_R <Mannager.StateError b>_R
+                 ->_R Sym (Mannager.N:StateError[0] <b>_R)) -}
+da092e0f44be7a380a1ac0b6ebf9e6e6
+  $fApplicativeStateError_$c<* ::
+    Mannager.StateError a
+    -> Mannager.StateError b -> Mannager.StateError a
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <C(S),1*C1(U)><L,1*C1(U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mannager.$fApplicativeStateError1
+                  `cast`
+                (forall (a :: <*>_N) (b :: <*>_N).
+                 <Mannager.StateError a>_R
+                 ->_R <Mannager.StateError b>_R
+                 ->_R Sym (Mannager.N:StateError[0] <a>_R)) -}
+da092e0f44be7a380a1ac0b6ebf9e6e6
+  $fApplicativeStateError_$c<*> ::
+    Mannager.StateError (a -> b)
+    -> Mannager.StateError a -> Mannager.StateError b
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <C(S),1*C1(U)><L,1*C1(U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mannager.$fApplicativeStateError3
+                  `cast`
+                (forall (a :: <*>_N) (b :: <*>_N).
+                 <Mannager.StateError (a -> b)>_R
+                 ->_R <Mannager.StateError a>_R
+                 ->_R Sym (Mannager.N:StateError[0] <b>_R)) -}
+da092e0f44be7a380a1ac0b6ebf9e6e6
+  $fApplicativeStateError_$creturn :: a -> Mannager.StateError a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,U>m2,
+     Unfolding: InlineRule (0, True, True)
+                Mannager.$fApplicativeStateError4
+                  `cast`
+                (forall (a :: <*>_N).
+                 <a>_R ->_R Sym (Mannager.N:StateError[0] <a>_R)) -}
+da092e0f44be7a380a1ac0b6ebf9e6e6
+  $fFunctorStateError :: GHC.Base.Functor Mannager.StateError
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Mannager.StateError
+                  Mannager.$fFunctorStateError_$cfmap
+                  Mannager.$fFunctorStateError_$c<$ -}
+da092e0f44be7a380a1ac0b6ebf9e6e6
+  $fFunctorStateError1 ::
+    a
+    -> Mannager.StateError b
+    -> Mannager.Env
+    -> GHC.Base.Maybe (a, Mannager.Env)
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U><C(S),1*C1(U)><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   @ b
+                   (eta :: a)
+                   (eta1 :: Mannager.StateError b)
+                   (eta2 :: Mannager.Env) ->
+                 case eta1 `cast` (Mannager.N:StateError[0] <b>_R) eta2 of wild {
+                   GHC.Base.Nothing -> GHC.Base.Nothing @ (a, Mannager.Env)
+                   GHC.Base.Just ds
+                   -> case ds of wild1 { (,) v s' ->
+                      GHC.Base.Just @ (a, Mannager.Env) (eta, s') } }) -}
+da092e0f44be7a380a1ac0b6ebf9e6e6
+  $fFunctorStateError2 ::
+    (a -> b)
+    -> Mannager.StateError a
+    -> Mannager.Env
+    -> GHC.Base.Maybe (b, Mannager.Env)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,1*C1(U)><C(S),1*C1(U)><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ b
+                   @ a
+                   (f :: a -> b)
+                   (m1 :: Mannager.StateError a)
+                   (s :: Mannager.Env) ->
+                 case m1 `cast` (Mannager.N:StateError[0] <a>_R) s of wild {
+                   GHC.Base.Nothing -> GHC.Base.Nothing @ (b, Mannager.Env)
+                   GHC.Base.Just ds
+                   -> case ds of wild1 { (,) v s' ->
+                      GHC.Base.Just @ (b, Mannager.Env) (f v, s') } }) -}
+da092e0f44be7a380a1ac0b6ebf9e6e6
+  $fFunctorStateError_$c<$ ::
+    a -> Mannager.StateError b -> Mannager.StateError a
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U><C(S),1*C1(U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mannager.$fFunctorStateError1
+                  `cast`
+                (forall (a :: <*>_N) (b :: <*>_N).
+                 <a>_R
+                 ->_R <Mannager.StateError b>_R
+                 ->_R Sym (Mannager.N:StateError[0] <a>_R)) -}
+da092e0f44be7a380a1ac0b6ebf9e6e6
+  $fFunctorStateError_$cfmap ::
+    (a -> b) -> Mannager.StateError a -> Mannager.StateError b
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,1*C1(U)><C(S),1*C1(U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                (\ @ a @ b -> Mannager.$fFunctorStateError2 @ b @ a)
+                  `cast`
+                (forall (a :: <*>_N) (b :: <*>_N).
+                 <a -> b>_R
+                 ->_R <Mannager.StateError a>_R
+                 ->_R Sym (Mannager.N:StateError[0] <b>_R)) -}
+e7c9820e0cd7d041302774b8aa016780
+  $fMonadErrorStateError :: Mannager.MonadError Mannager.StateError
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Mannager.StateError
+                  Mannager.$fMonadStateError
+                  Mannager.$fMonadErrorStateError_$cthrow -}
+75cfac35b2295eebfeb1d35044ca8dba
+  $fMonadErrorStateError1 ::
+    Mannager.Env -> GHC.Base.Maybe (a, Mannager.Env)
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ a (ds :: Mannager.Env) ->
+                 GHC.Base.Nothing @ (a, Mannager.Env)) -}
+730e9846e9ab68343d5fc099671fe6fc
+  $fMonadErrorStateError_$cthrow :: Mannager.StateError a
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>,
+     Unfolding: InlineRule (0, True, True)
+                Mannager.$fMonadErrorStateError1
+                  `cast`
+                (forall (a :: <*>_N). Sym (Mannager.N:StateError[0] <a>_R)) -}
+da092e0f44be7a380a1ac0b6ebf9e6e6
+  $fMonadStateError :: GHC.Base.Monad Mannager.StateError
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Mannager.StateError
+                  Mannager.$fMonadStateError_$cp1Monad
+                  Mannager.$fMonadStateError_$c>>=
+                  Mannager.$fMonadStateError_$c>>
+                  Mannager.$fApplicativeStateError_$creturn
+                  Mannager.$fMonadStateError_$s$dmfail -}
+da092e0f44be7a380a1ac0b6ebf9e6e6
+  $fMonadStateError1 ::
+    Mannager.StateError a
+    -> (a -> Mannager.StateError b)
+    -> Mannager.Env
+    -> GHC.Base.Maybe (b, Mannager.Env)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <C(S),1*C1(U)><L,1*C1(C1(U))><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   @ b
+                   (m :: Mannager.StateError a)
+                   (f :: a -> Mannager.StateError b)
+                   (s :: Mannager.Env) ->
+                 case m `cast` (Mannager.N:StateError[0] <a>_R) s of wild {
+                   GHC.Base.Nothing -> GHC.Base.Nothing @ (b, Mannager.Env)
+                   GHC.Base.Just ds
+                   -> case ds of wild1 { (,) v s' ->
+                      (f v) `cast` (Mannager.N:StateError[0] <b>_R) s' } }) -}
+da092e0f44be7a380a1ac0b6ebf9e6e6
+  $fMonadStateError_$c>> ::
+    Mannager.StateError a
+    -> Mannager.StateError b -> Mannager.StateError b
+  {- Arity: 2, Strictness: <L,U><L,U>, Inline: INLINE (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ @ a
+                   @ b
+                   (m1 :: Mannager.StateError a)
+                   (k :: Mannager.StateError b)
+                   (eta :: Mannager.Env) ->
+                 (Mannager.$fMonadStateError_$c>>= @ a @ b m1 (\ (ds :: a) -> k))
+                   `cast`
+                 (Mannager.N:StateError[0] <b>_R)
+                   eta)
+                  `cast`
+                (forall (a :: <*>_N) (b :: <*>_N).
+                 <Mannager.StateError a>_R
+                 ->_R <Mannager.StateError b>_R
+                 ->_R Sym (Mannager.N:StateError[0] <b>_R)) -}
+da092e0f44be7a380a1ac0b6ebf9e6e6
+  $fMonadStateError_$c>>= ::
+    Mannager.StateError a
+    -> (a -> Mannager.StateError b) -> Mannager.StateError b
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <C(S),1*C1(U)><L,1*C1(C1(U))><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Mannager.$fMonadStateError1
+                  `cast`
+                (forall (a :: <*>_N) (b :: <*>_N).
+                 <Mannager.StateError a>_R
+                 ->_R <a -> Mannager.StateError b>_R
+                 ->_R Sym (Mannager.N:StateError[0] <b>_R)) -}
+da092e0f44be7a380a1ac0b6ebf9e6e6
+  $fMonadStateError_$cp1Monad ::
+    GHC.Base.Applicative Mannager.StateError
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                Mannager.$fApplicativeStateError -}
+da092e0f44be7a380a1ac0b6ebf9e6e6
+  $fMonadStateError_$s$dmfail ::
+    GHC.Base.String -> Mannager.StateError a
+  {- Arity: 1, Strictness: <B,U>x,
+     Unfolding: InlineRule (-1, True, True)
+                (\ @ a (s :: GHC.Base.String) ->
+                 GHC.Err.errorWithoutStackTrace
+                   @ 'GHC.Types.PtrRepLifted
+                   @ (Mannager.StateError a)
+                   s) -}
+fea67642819ec72d61d2beaac66bc5ae
+  $fMonadStateStateError :: Mannager.MonadState Mannager.StateError
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Mannager.StateError
+                  Mannager.$fMonadStateError
+                  Mannager.$fMonadStateStateError_$clookfor
+                  Mannager.$fMonadStateStateError_$cupdate -}
+94e22be5565abfe3f38ab4c58a1db407
+  $fMonadStateStateError1 ::
+    AST.Variable
+    -> GHC.Integer.Type.Integer
+    -> Mannager.Env
+    -> GHC.Base.Maybe ((), [(AST.Variable, GHC.Integer.Type.Integer)])
+  {- Arity: 3, Strictness: <L,U><L,U><L,1*U>m2,
+     Unfolding: InlineRule (3, True, False)
+                (\ (v :: AST.Variable)
+                   (i :: GHC.Integer.Type.Integer)
+                   (s :: Mannager.Env) ->
+                 GHC.Base.Just
+                   @ ((), [(AST.Variable, GHC.Integer.Type.Integer)])
+                   (GHC.Tuple.(), Mannager.$fMonadStateStateError_update' v i s)) -}
+7671d6a62510ce2650f4195d8ab5c4e5
+  $fMonadStateStateError2 ::
+    AST.Variable
+    -> Mannager.Env
+    -> GHC.Base.Maybe (GHC.Integer.Type.Integer, Mannager.Env)
+  {- Arity: 2, Strictness: <L,U><L,U>m2,
+     Unfolding: InlineRule (2, True, False)
+                (\ (v :: AST.Variable) (s :: Mannager.Env) ->
+                 GHC.Base.Just
+                   @ (GHC.Integer.Type.Integer, Mannager.Env)
+                   (Mannager.$fMonadStateStateError_lookfor' v s, s)) -}
+9eb889e330c2e9c71c5e489e7cf43608
+  $fMonadStateStateError_$clookfor ::
+    AST.Variable -> Mannager.StateError GHC.Integer.Type.Integer
+  {- Arity: 2, Strictness: <L,U><L,U>m2,
+     Unfolding: InlineRule (0, True, True)
+                Mannager.$fMonadStateStateError2
+                  `cast`
+                (<AST.Variable>_R
+                 ->_R Sym (Mannager.N:StateError[0]
+                               <GHC.Integer.Type.Integer>_R)) -}
+1e27eb2c2a8b9d6ea142f3ac493d829a
+  $fMonadStateStateError_$cupdate ::
+    AST.Variable -> GHC.Integer.Type.Integer -> Mannager.StateError ()
+  {- Arity: 3, Strictness: <L,U><L,U><L,1*U>m2,
+     Unfolding: InlineRule (0, True, True)
+                Mannager.$fMonadStateStateError1
+                  `cast`
+                (<AST.Variable>_R
+                 ->_R <GHC.Integer.Type.Integer>_R
+                 ->_R Sym (Mannager.N:StateError[0] <()>_R)) -}
+04a5eed993a9f9102cfc92541a04ce5c
+  $fMonadStateStateError_lookfor' ::
+    AST.Variable
+    -> [(AST.Variable, GHC.Integer.Type.Integer)]
+    -> GHC.Integer.Type.Integer
+  {- Arity: 2, Strictness: <S,U><S,1*U> -}
+71cd0ff0efdde3ccfddbe4e68ab22301
+  $fMonadStateStateError_update' ::
+    AST.Variable
+    -> GHC.Integer.Type.Integer
+    -> [(AST.Variable, GHC.Integer.Type.Integer)]
+    -> [(AST.Variable, GHC.Integer.Type.Integer)]
+  {- Arity: 3, Strictness: <L,U><L,U><S,1*U>m2, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: AST.Variable)
+                   (w1 :: GHC.Integer.Type.Integer)
+                   (w2 :: [(AST.Variable, GHC.Integer.Type.Integer)]) ->
+                 case Mannager.$wupdate' w w1 w2 of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.:
+                   @ (AST.Variable, GHC.Integer.Type.Integer)
+                   ww1
+                   ww2 }) -}
+a483c05523452298605b6ed7adc53138
+  $tc'C:MonadError :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   14303253753108010460##
+                   9572395699099115546##
+                   Mannager.$trModule
+                   Mannager.$tc'C:MonadError1) -}
+e37aea3d5e659f3d38d97471cc317dee
+  $tc'C:MonadError1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'C:MonadError"#) -}
+22f7043c3ac4a04e6804fc88847e965a
+  $tc'C:MonadState :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11328573912160268043##
+                   8886387670365763043##
+                   Mannager.$trModule
+                   Mannager.$tc'C:MonadState1) -}
+5686dcaaea275b1cdeade6e06bc5b561
+  $tc'C:MonadState1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'C:MonadState"#) -}
+4cbea2cbbc5fb247e311c2aaf87f2115
+  $tc'StateError :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   349896597985933971##
+                   5606714352681042633##
+                   Mannager.$trModule
+                   Mannager.$tc'StateError1) -}
+f604fbec55a3c1bc6fbb6d8b1d9d03fe
+  $tc'StateError1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'StateError"#) -}
+d4eef8532cab5bd893e2bca783a368b0
+  $tcMonadError :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   7861697715492510322##
+                   12290374510599988477##
+                   Mannager.$trModule
+                   Mannager.$tcMonadError1) -}
+5ba54eae446efa11f76a0164aca23bf5
+  $tcMonadError1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "MonadError"#) -}
+d6819225731d94a6a0ebf61760c48bac
+  $tcMonadState :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   6142916238015736389##
+                   18357464438574349413##
+                   Mannager.$trModule
+                   Mannager.$tcMonadState1) -}
+4c141f5991624a0e3dea3f3b96580507
+  $tcMonadState1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "MonadState"#) -}
+7957d180dd2d9f7e52cfcf3b072000d5
+  $tcStateError :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   14580870646793714878##
+                   5568310216396487333##
+                   Mannager.$trModule
+                   Mannager.$tcStateError1) -}
+c390d92ecd81aa819d598d1fb109205f
+  $tcStateError1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "StateError"#) -}
+51087039693ff21795cfda0a6887ed96
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Mannager.$trModule2
+                   Mannager.$trModule1) -}
+90f06cf70d7053b395038bb874c3a54c
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Mannager"#) -}
+382a4cc63d119409a9f040b50ababeb8
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "GoblinBurner-0.1.0.0-9BGpxHuB4WvZG8Ab7rdhV"#) -}
+509a6b386c8088bf6e5cdd59c72524f1
+  $wcharacterListModify ::
+    AST.System
+    -> [AST.Character]
+    -> GHC.Integer.Type.Integer
+    -> GHC.Integer.Type.Integer
+    -> GHC.Integer.Type.Integer
+    -> (# AST.Character, [AST.Character] #)
+  {- Arity: 5, Strictness: <L,1*U><S,1*U><S,U><L,U><L,U>,
+     Inline: [0] -}
+943bd0d5438baf8f7e8ff77b0d19ad85
+  $wconModCheck ::
+    AST.Name
+    -> [(AST.Name, GHC.Integer.Type.Integer)]
+    -> [GHC.Base.String]
+    -> [AST.Con_Modifiers]
+    -> (# AST.Name, [(AST.Name, GHC.Integer.Type.Integer)],
+          [GHC.Base.String] #)
+  {- Arity: 4, Strictness: <L,U><L,U><L,U><S,1*U>, Inline: [0] -}
+a3fb6b808f517170387f83a4e744f57b
+  $wdices_thrower ::
+    AST.IntExp
+    -> AST.Dice
+    -> GHC.Base.Maybe AST.Throws
+    -> Mannager.Env
+    -> (# [GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
+          GHC.Integer.Type.Integer #)
+  {- Arity: 4, Strictness: <S,1*U><L,1*U><S,1*U><L,U>, Inline: [0],
+     Unfolding: (\ (ww :: AST.IntExp)
+                   (ww1 :: AST.Dice)
+                   (ww2 :: GHC.Base.Maybe AST.Throws)
+                   (w :: Mannager.Env) ->
+                 case ww2 of wild {
+                   GHC.Base.Nothing
+                   -> case Mannager.dices_thrower3
+                      ret_ty (# [GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
+                                GHC.Integer.Type.Integer #)
+                      of {}
+                   GHC.Base.Just thr
+                   -> case Mannager.dices_thrower2 ww w of wild1 {
+                        GHC.Base.Nothing
+                        -> case Mannager.dices_thrower1
+                           ret_ty (# [GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
+                                     GHC.Integer.Type.Integer #)
+                           of {}
+                        GHC.Base.Just a
+                        -> Mannager.$wroll
+                             (Mannager.diceToNum ww1)
+                             thr
+                             (Data.Tuple.fst
+                                @ GHC.Integer.Type.Integer
+                                @ Mannager.Env
+                                a) } }) -}
+fb1a72c45490f46b53fcec57f45ff004
+  $wenvModify ::
+    Mannager.Env
+    -> GHC.Integer.Type.Integer
+    -> GHC.Integer.Type.Integer
+    -> (# (AST.Variable, GHC.Integer.Type.Integer),
+          [(AST.Variable, GHC.Integer.Type.Integer)] #)
+  {- Arity: 3, Strictness: <S,1*U><L,U><S,U>, Inline: [0] -}
+c45db6237882a405407cb9763047a490
+  $wlookAndReplace ::
+    AST.Action
+    -> AST.Throws
+    -> [(AST.Name, AST.Throws)]
+    -> (# AST.Action, [(AST.Name, AST.Throws)] #)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,1*U(U,U,U,A)><L,U><S,1*U>, Inline: [0] -}
+eb133f1d4d012ea06f71957e4e90bbc5
+  $wroll ::
+    GHC.Integer.Type.Integer
+    -> AST.Throws
+    -> GHC.Integer.Type.Integer
+    -> (# [GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
+          GHC.Integer.Type.Integer #)
+  {- Arity: 3, Strictness: <L,U><S,1*U><L,U>, Inline: [0] -}
+723f683a89114d7635f1bbcf8a267966
+  $wupdate' ::
+    AST.Variable
+    -> GHC.Integer.Type.Integer
+    -> [(AST.Variable, GHC.Integer.Type.Integer)]
+    -> (# (AST.Variable, GHC.Integer.Type.Integer),
+          [(AST.Variable, GHC.Integer.Type.Integer)] #)
+  {- Arity: 3, Strictness: <L,U><L,U><S,1*U>, Inline: [0] -}
+586b991ca61735c8c4f09b0d9994db78
+  type Env = [(AST.Variable, GHC.Integer.Type.Integer)]
+e7c9820e0cd7d041302774b8aa016780
+  class GHC.Base.Monad m => MonadError (m :: * -> *) where
+    throw :: m a
+    {-# MINIMAL throw #-}
+fea67642819ec72d61d2beaac66bc5ae
+  class GHC.Base.Monad m => MonadState (m :: * -> *) where
+    lookfor :: AST.Variable -> m GHC.Integer.Type.Integer
+    update :: AST.Variable -> GHC.Integer.Type.Integer -> m ()
+    {-# MINIMAL lookfor, update #-}
+da092e0f44be7a380a1ac0b6ebf9e6e6
+  newtype StateError a
+    = StateError {runStateError :: Mannager.Env
+                                   -> GHC.Base.Maybe (a, Mannager.Env)}
+45e51a572bbea2d83f6b4ce92ab6da8d
+  aleatory_dice ::
+    GHC.Integer.Type.Integer -> GHC.Integer.Type.Integer
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ (dice :: GHC.Integer.Type.Integer) ->
+                 case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ GHC.Integer.Type.Integer
+                        (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                         case GHC.Prim.noDuplicate# s of s' { DEFAULT ->
+                         case System.Random.theStdGen
+                                `cast`
+                              (GHC.IORef.N:IORef[0] <System.Random.StdGen>_N) of wild { GHC.STRef.STRef r# ->
+                         case GHC.Prim.atomicModifyMutVar#
+                                @ GHC.Prim.RealWorld
+                                @ System.Random.StdGen
+                                @ (System.Random.StdGen, GHC.Integer.Type.Integer)
+                                @ GHC.Integer.Type.Integer
+                                r#
+                                (\ (a1 :: System.Random.StdGen) ->
+                                 case System.Random.$w$srandomIvalInteger
+                                        @ GHC.Integer.Type.Integer
+                                        GHC.Num.$fNumInteger
+                                        Mannager.aleatory_dice1
+                                        dice
+                                        a1 of ww3 { (#,#) ww4 ww5 ->
+                                 case ww5 of a'1 { System.Random.StdGen ipv ipv1 -> (a'1, ww4) } })
+                                s' of ds1 { (#,#) ipv ipv1 ->
+                         case ipv1 of b1 { DEFAULT -> ds1 } } } }) of ds { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+aa14a238570201d5b4cc9ff4c929ac5a
+  aleatory_dice1 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (1) -}
+dc5d6444594b0bb963ca47166c0a1637
+  characterListModify ::
+    AST.System
+    -> [AST.Character]
+    -> GHC.Integer.Type.Integer
+    -> GHC.Integer.Type.Integer
+    -> GHC.Integer.Type.Integer
+    -> [AST.Character]
+  {- Arity: 5, Strictness: <L,1*U><S,1*U><S,U><L,U><L,U>m2,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (5, True, False)
+                (\ (w :: AST.System)
+                   (w1 :: [AST.Character])
+                   (w2 :: GHC.Integer.Type.Integer)
+                   (w3 :: GHC.Integer.Type.Integer)
+                   (w4 :: GHC.Integer.Type.Integer) ->
+                 case Mannager.$wcharacterListModify
+                        w
+                        w1
+                        w2
+                        w3
+                        w4 of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.: @ AST.Character ww1 ww2 }) -}
+a041d8b8d511f8ba820be70fda258939
+  characterModify ::
+    AST.Character
+    -> GHC.Integer.Type.Integer
+    -> GHC.Integer.Type.Integer
+    -> AST.Character
+  {- Arity: 3, Strictness: <S,1*U(U,1*U,U)><L,U><L,U>m,
+     Unfolding: InlineRule (3, True, False)
+                (\ (ds :: AST.Character)
+                   (newNum :: GHC.Integer.Type.Integer)
+                   (n :: GHC.Integer.Type.Integer) ->
+                 case ds of wild { AST.PC name xs st ->
+                 AST.PC name (Mannager.envModify xs newNum n) st }) -}
+3c386baf2f128150d155b53886c7f043
+  character_creation ::
+    AST.Name
+    -> Mannager.Env
+    -> [AST.DepAttribute]
+    -> [AST.Skills]
+    -> AST.Character
+  {- Arity: 4, Strictness: <L,U><L,U><L,1*U><L,1*U>m,
+     Unfolding: InlineRule (4, True, False)
+                (\ (name :: AST.Name)
+                   (xs :: Mannager.Env)
+                   (depAttr :: [AST.DepAttribute])
+                   (skl :: [AST.Skills]) ->
+                 AST.PC
+                   name
+                   (Mannager.depAttrCalculator
+                      (Mannager.skillCalculator xs skl)
+                      depAttr)
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+aa24b8edce805823c081ef62ac523e70
+  commGenerator ::
+    Mannager.Env -> [GHC.Base.String] -> AST.Comm -> [AST.Comm]
+  {- Arity: 3, Strictness: <S,1*U><L,U><L,U> -}
+a9c814716ae7c4284dd941c75e726da8
+  conModCheck ::
+    AST.Character -> [AST.Con_Modifiers] -> AST.Character
+  {- Arity: 2, Strictness: <S,1*U(U,U,U)><S,1*U>m, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: AST.Character) (w1 :: [AST.Con_Modifiers]) ->
+                 case w of ww { AST.PC ww1 ww2 ww3 ->
+                 case Mannager.$wconModCheck
+                        ww1
+                        ww2
+                        ww3
+                        w1 of ww4 { (#,,#) ww5 ww6 ww7 ->
+                 AST.PC ww5 ww6 ww7 } }) -}
+b080672bb96a461c49b767cd4434e56d
+  depAttrCalculator ::
+    Mannager.Env -> [AST.DepAttribute] -> Mannager.Env
+  {- Arity: 2, Strictness: <L,U><S,1*U> -}
+cf51d1fd17526435be779d0ef883b047
+  diceToNum :: AST.Dice -> GHC.Integer.Type.Integer
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: AST.Dice) ->
+                 case ds of wild {
+                   AST.D100 -> Mannager.diceToNum8
+                   AST.D20 -> Mannager.diceToNum7
+                   AST.D12 -> Mannager.diceToNum6
+                   AST.D10 -> Mannager.diceToNum5
+                   AST.D8 -> Mannager.diceToNum4
+                   AST.D6 -> Mannager.diceToNum3
+                   AST.D4 -> Mannager.diceToNum2
+                   AST.D3 -> Mannager.diceToNum1 }) -}
+41ea61e8def2991a21900b7da684bc2d
+  diceToNum1 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (3) -}
+b58e703029c15fed6a1f1554ceaeb366
+  diceToNum2 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (4) -}
+aeb52f8f4e462dd36cb5ad3857235586
+  diceToNum3 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (6) -}
+87434a47a2179461d71e296f271343bb
+  diceToNum4 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (8) -}
+d07cc7e4f3f962aeea56fa01cafb5c78
+  diceToNum5 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (10) -}
+eabff0b9f6ea9399bb0a4d3dac544676
+  diceToNum6 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (12) -}
+6f0f948e4d43f1d88e6393278e0e46e8
+  diceToNum7 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (20) -}
+4b33405d4b058f6307c298b0c77806c9
+  diceToNum8 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (100) -}
+a9a60df4d528848013e1d77e280c9f80
+  dices_thrower ::
+    AST.Action
+    -> Mannager.Env
+    -> ([GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
+        GHC.Integer.Type.Integer)
+  {- Arity: 2, Strictness: <S(LSLS),1*U(A,1*U,1*U,1*U)><L,U>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: AST.Action) (w1 :: Mannager.Env) ->
+                 case w of ww { AST.UAct ww1 ww2 ww3 ww4 ->
+                 case Mannager.$wdices_thrower
+                        ww2
+                        ww3
+                        ww4
+                        w1 of ww5 { (#,,#) ww6 ww7 ww8 ->
+                 (ww6, ww7, ww8) } }) -}
+b6e5d3dc235ddc02aa6bd595c5387c02
+  dices_thrower1 ::
+    ([GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
+     GHC.Integer.Type.Integer)
+  {- Strictness: x -}
+5749bad51873c4e3d9df5100bf538626
+  dices_thrower2 ::
+    AST.IntExp
+    -> Mannager.Env
+    -> GHC.Base.Maybe (GHC.Integer.Type.Integer, Mannager.Env)
+  {- Arity: 2, Strictness: <S,1*U><L,U> -}
+2d2ec51615b62aceecf22571b6b8d276
+  dices_thrower3 ::
+    ([GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
+     GHC.Integer.Type.Integer)
+  {- Strictness: x -}
+57fee2ae6fb06c4025d8f088846f0125
+  envModify ::
+    Mannager.Env
+    -> GHC.Integer.Type.Integer
+    -> GHC.Integer.Type.Integer
+    -> Mannager.Env
+  {- Arity: 3, Strictness: <S,1*U><L,U><S,U>m2, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: Mannager.Env)
+                   (w1 :: GHC.Integer.Type.Integer)
+                   (w2 :: GHC.Integer.Type.Integer) ->
+                 case Mannager.$wenvModify w w1 w2 of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.:
+                   @ (AST.Variable, GHC.Integer.Type.Integer)
+                   ww1
+                   ww2 }) -}
+e2566b7470bdc2cd2e7b92d1fd8865c6
+  evalBoolExp ::
+    (Mannager.MonadState m, Mannager.MonadError m) =>
+    AST.BoolExp -> m GHC.Types.Bool
+  {- Arity: 3,
+     Strictness: <S(SLL),U(U(U,U,U,U,U),C(U),A)><L,U(A,U)><S,1*U> -}
+7e9d6f7db7174c93aa879614559792fa
+  evalBoolExp1 ::
+    AST.BoolExp
+    -> Mannager.Env -> GHC.Base.Maybe (GHC.Types.Bool, Mannager.Env)
+  {- Arity: 2, Strictness: <S,1*U><L,U> -}
+6ef72bb94551dcb50f59d886beea1f6d
+  evalComm ::
+    (Mannager.MonadState m, Mannager.MonadError m) => AST.Comm -> m ()
+  {- Arity: 3,
+     Strictness: <S(S(LC(C(S))LLL)LL),U(U(U,U,U,U,U),C(U),C(C1(U)))><L,U(A,U)><S,1*U>,
+     Unfolding: (\ @ (m :: * -> *)
+                   ($dMonadState :: Mannager.MonadState m)
+                   ($dMonadError :: Mannager.MonadError m)
+                   (eta :: AST.Comm) ->
+                 case eta of wild {
+                   AST.Skip -> Mannager.evalComm3 @ m
+                   AST.Let v n
+                   -> GHC.Base.>>=
+                        @ m
+                        (Mannager.$p1MonadState @ m $dMonadState)
+                        @ GHC.Integer.Type.Integer
+                        @ ()
+                        (Mannager.evalIntExp @ m $dMonadState $dMonadError n)
+                        (\ (m1 :: GHC.Integer.Type.Integer) ->
+                         Mannager.update @ m $dMonadState v m1) }) -}
+bb85d6961b0fffcf7a8de036da24e46c
+  evalComm3 :: m ()
+  {- Strictness: x -}
+d6dcdf3dfbbe6da2ea4f1f0502c2efd6
+  evalIntExp ::
+    (Mannager.MonadState m, Mannager.MonadError m) =>
+    AST.IntExp -> m GHC.Integer.Type.Integer
+  {- Arity: 3,
+     Strictness: <S,U(U(U,U,U,U,U),C(U),A)><L,U(A,U)><S,1*U> -}
+a109993bdb9fbae5852d02745418f808
+  initState :: Mannager.Env
+  {- HasNoCafRefs,
+     Unfolding: InlineRule (0, True, True)
+                (GHC.Types.[] @ (AST.Variable, GHC.Integer.Type.Integer)) -}
+f43909513db9fd4841a60d55209dcacd
+  isIn :: GHC.Base.String -> [GHC.Base.String] -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U> -}
+fff55042ac2dc5aa8f42318f756a497e
+  length' :: [a] -> GHC.Integer.Type.Integer
+  {- Arity: 1, Strictness: <S,1*U> -}
+339c8a16df299a7d58036b5731fae677
+  lookAndReplace ::
+    AST.Action
+    -> AST.Throws
+    -> [(AST.Name, AST.Throws)]
+    -> (AST.Action, [(AST.Name, AST.Throws)])
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,1*U(U,U,U,A)><L,U><S,1*U>m, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: AST.Action)
+                   (w1 :: AST.Throws)
+                   (w2 :: [(AST.Name, AST.Throws)]) ->
+                 case Mannager.$wlookAndReplace w w1 w2 of ww { (#,#) ww1 ww2 ->
+                 (ww1, ww2) }) -}
+096f889e5643ad04b2b4b0e3dc69c726
+  modifiers :: AST.System -> [AST.Con_Modifiers]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: AST.System) ->
+                 case ds of wild {
+                   AST.Sys ipv ipv1 ipv2 ipv3 ipv4 ipv5 ipv6 -> Mannager.modifiers1
+                   AST.DepSys ds1 ds2 ds3 ds4 xs ds5 -> xs }) -}
+ed4ebb5f7c34270ace29fb6e242a3c2d
+  modifiers1 :: [AST.Con_Modifiers]
+  {- Strictness: x -}
+6862a8e2f83c9542a1a03a790d86cdc9
+  modifiersExecute :: Mannager.Env -> [AST.Comm] -> Mannager.Env
+  {- Arity: 2, Strictness: <L,U><S,1*U> -}
+9ee0006dacd36b067c6413a3ffdea4a2
+  nth :: GHC.Integer.Type.Integer -> [a] -> a
+  {- Arity: 2, Strictness: <L,U><S,U> -}
+292d72119c4962e608a5af727765b282
+  replaceAllComm :: AST.Variable -> AST.Comm -> AST.Comm
+  {- Arity: 2, Strictness: <L,U><S,1*U>m2, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: AST.Variable) (w1 :: AST.Comm) ->
+                 case w1 of wild {
+                   AST.Skip -> Mannager.replaceAllComm2
+                   AST.Let x e
+                   -> case GHC.Base.eqString x Mannager.replaceAllComm1 of wild1 {
+                        GHC.Types.False -> AST.Let x e
+                        GHC.Types.True -> AST.Let w (Mannager.replaceAllInt w e) } }) -}
+388130e47f446c123ffed5624975af45
+  replaceAllComm1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "All"#) -}
+f9911331270110e32410937efd8a3b85
+  replaceAllComm2 :: AST.Comm
+  {- Strictness: x -}
+bfb17bff8913ffb503a0ef83ad50d82b
+  replaceAllInt :: AST.Variable -> AST.IntExp -> AST.IntExp
+  {- Arity: 2, Strictness: <L,U><S,1*U> -}
+5a30749832ba5699945afaba5a1d21a8
+  replaceAllbool :: AST.Variable -> AST.BoolExp -> AST.BoolExp
+  {- Arity: 2, Strictness: <L,U><S,1*U> -}
+4005d7327385adcb1d94f17aaa3c93e2
+  roll ::
+    GHC.Integer.Type.Integer
+    -> AST.Throws
+    -> GHC.Integer.Type.Integer
+    -> ([GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
+        GHC.Integer.Type.Integer)
+  {- Arity: 3, Strictness: <L,U><S,1*U><L,U>m, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: GHC.Integer.Type.Integer)
+                   (w1 :: AST.Throws)
+                   (w2 :: GHC.Integer.Type.Integer) ->
+                 case Mannager.$wroll w w1 w2 of ww { (#,,#) ww1 ww2 ww3 ->
+                 (ww1, ww2, ww3) }) -}
+c0930afaff24579e520304d4e7894f70
+  runStateError ::
+    Mannager.StateError a
+    -> Mannager.Env -> GHC.Base.Maybe (a, Mannager.Env)
+  RecSel Left Mannager.StateError
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Mannager.runStateError1
+                  `cast`
+                (forall (a :: <*>_N).
+                 <Mannager.StateError a>_R ->_R Mannager.N:StateError[0] <a>_R) -}
+1057d8305969a50c56c43190ad263bdf
+  runStateError1 :: Mannager.StateError a -> Mannager.StateError a
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ a (ds :: Mannager.StateError a) -> ds) -}
+8886ed87d81101c5b0ceed8a1da0385a
+  skilatr_thrower ::
+    AST.Character
+    -> GHC.Integer.Type.Integer
+    -> AST.ThrowsGen
+    -> ([GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
+        GHC.Integer.Type.Integer)
+  {- Arity: 3, Strictness: <S,1*U(A,U,A)><L,U><S(SL),1*U(1*U,1*U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: AST.Character)
+                   (w1 :: GHC.Integer.Type.Integer)
+                   (w2 :: AST.ThrowsGen) ->
+                 case w of ww { AST.PC ww1 ww2 ww3 ->
+                 case w2 of ww4 { AST.TrwGen ww5 ww6 ->
+                 case Mannager.$wroll
+                        (Mannager.diceToNum ww6)
+                        ww5
+                        (case Mannager.nth
+                                @ (AST.Name, GHC.Integer.Type.Integer)
+                                w1
+                                ww2 of wild { (,) ds1 y ->
+                         y }) of ww7 { (#,,#) ww8 ww9 ww10 ->
+                 (ww8, ww9, ww10) } } }) -}
+b42bcc19a8e62bb6c4ef5269b0ce0e1e
+  skillCalculator :: Mannager.Env -> [AST.Skills] -> Mannager.Env
+  {- Arity: 2, Strictness: <L,U><S,1*U> -}
+20244db579ce4d49232c5d1b708a487b
+  system_depurator :: AST.System -> AST.System
+  {- Arity: 1, Strictness: <S,1*U>m2, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: AST.System) ->
+                 case w of wild {
+                   AST.Sys act attr depAttr skl genThrows action_thw conModif
+                   -> AST.DepSys
+                        (Mannager.throwLinker
+                           act
+                           (case genThrows of wild1 { AST.TrwGen t ds -> t })
+                           action_thw)
+                        attr
+                        (GHC.List.reverse @ AST.DepAttribute depAttr)
+                        skl
+                        conModif
+                        genThrows
+                   AST.DepSys ipv ipv1 ipv2 ipv3 ipv4 ipv5
+                   -> Mannager.system_depurator1 }) -}
+467d6459cace0606ad1bfb4da7cb81ba
+  system_depurator1 :: AST.System
+  {- Strictness: x -}
+1c75a3b11e4f747be6373e1ec8d07848
+  takeOut :: GHC.Integer.Type.Integer -> [a] -> [a]
+  {- Arity: 2, Strictness: <L,U><S,1*U> -}
+55e5dbda9c2efd0051faf12ff75641f9
+  throwLinker ::
+    [AST.Action]
+    -> AST.Throws -> [(AST.Name, AST.Throws)] -> [AST.Action]
+  {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><L,U><L,1*U> -}
+ebf1d31c4548f6524193e1ed67c0ec8a
+  throwTaker :: AST.ThrowsGen -> AST.Throws
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: AST.ThrowsGen) ->
+                 case ds of wild { AST.TrwGen t ds1 -> t }) -}
+8c81cdeced0c85e7f2f79287c749fec7
+  throw_replace :: AST.Action -> AST.Throws -> AST.Action
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U,U,U,A)><L,U>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: AST.Action) (thr :: AST.Throws) ->
+                 case ds of wild { AST.UAct name expr dice ds1 ->
+                 AST.UAct name expr dice (GHC.Base.Just @ AST.Throws thr) }) -}
+instance GHC.Base.Applicative [Mannager.StateError]
+  = Mannager.$fApplicativeStateError
+instance GHC.Base.Functor [Mannager.StateError]
+  = Mannager.$fFunctorStateError
+instance Mannager.MonadError [Mannager.StateError]
+  = Mannager.$fMonadErrorStateError
+instance GHC.Base.Monad [Mannager.StateError]
+  = Mannager.$fMonadStateError
+instance Mannager.MonadState [Mannager.StateError]
+  = Mannager.$fMonadStateStateError
+"SPEC/Mannager $dmfail @ StateError" [ALWAYS] forall ($dMonad :: GHC.Base.Monad
+                                                                   Mannager.StateError)
+  GHC.Base.$dmfail @ Mannager.StateError $dMonad
+  = Mannager.$fMonadStateError_$s$dmfail
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

@@ -1,0 +1,20 @@
+ATTRIBUTE hola {FOR; REF; VOL}
+
+SKILLS {COMBATE NON}
+
+DEP_ATTRIBUTE Aguante { FOR + (VOL / 2) }
+
+DEP_ATTRIBUTE PuntosDano { Aguante * 3 }
+
+DEP_ATTRIBUTE BonDCC { (COMBATE + FOR) / 4 }
+
+UNIT_ACTION D10 Golpe { REF + COMBATE }
+
+UNIT_ACTION D6 Esconderse { REF + SUBTERFUGIO }
+
+CONDITION_MODIFIER Cegado { REF < 1 ; {Aguante := Aguante - 1 }}
+
+CONDITION_MODIFIER_ALL Moribundo { PuntosDano < Aguante ; All := All - 1 ; {PuntosDano}}
+
+THROW_GENERAL 3 D10
+THROW_ACTION Esconderse POOL
