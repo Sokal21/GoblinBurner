@@ -1,20 +1,38 @@
-ATTRIBUTE hola {FOR; REF; VOL}
+ATTRIBUTE atributos { FOR;REF;VOL;INT }
 
-SKILLS {COMBATE NON}
+SKILLS {COMBATE NON ; FORMA_FISICA NON ; PERSUACION NON ; PROFESION NON ; CULTURA NON ; SUBTERFUFGIO NON ; PERCEPCION NON}
 
 DEP_ATTRIBUTE Aguante { FOR + (VOL / 2) }
 
 DEP_ATTRIBUTE PuntosDano { Aguante * 3 }
 
-DEP_ATTRIBUTE BonDCC { (COMBATE + FOR) / 4 }
+DEP_ATTRIBUTE Iniciativa { REF + (INT/2) }
+
+DEP_ATTRIBUTE Defensa { ((COMBATE > FORMA_FISICA) ? (COMBATE + REF + 5) : (FORMA_FISICA + REF + 5)) }
+
+DEP_ATTRIBUTE BonDCom { (COMBATE + FOR) / 4 }
+
+DEP_ATTRIBUTE BonDDist { COMBATE / 4 }
 
 UNIT_ACTION D10 Golpe { REF + COMBATE }
 
-UNIT_ACTION D6 Esconderse { REF + SUBTERFUGIO }
+UNIT_ACTION D10 Esconderse { REF + SUBTERFUGIO }
 
-CONDITION_MODIFIER Cegado { REF < 1 ; {Aguante := Aguante - 1 }}
+UNIT_ACTION D10 Observar { INT + PERCEPCION }
 
-CONDITION_MODIFIER_ALL Moribundo { PuntosDano < Aguante ; All := All - 1 ; {PuntosDano}}
+UNIT_ACTION D10 Persuadir { VOL + PERSUACION }
+
+UNIT_ACTION D10 Accion_Fisica { REF + FOMRA_FISICA }
+
+UNIT_ACTION D10 Usar_Fuerza { FOR + COMBATE }
+
+UNIT_ACTION D10 Conocimiento { INT + CULTURA }
+
+CONDITION_MODIFIER_ALL Herido { PuntosDano < (Aguante * 2) ; All := All - 2 ; {PuntosDano}}
+
+CONDITION_MODIFIER_ALL Incapacitado { PuntosDano < Aguante ; All := All - 2 ; {PuntosDano}}
+
+CONDITION_MODIFIER_ALL Muerto { PuntosDano < 0 | PuntosDano = 0 ; All := All - All ; {PuntosDano}}
 
 THROW_GENERAL 3 D10
-THROW_ACTION Esconderse POOL
+

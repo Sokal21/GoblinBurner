@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-03-22 14:55:17.519425 UTC
+2017-03-23 21:13:30.54697 UTC
 
 interface GoblinBurner-0.1.0.0-9BGpxHuB4WvZG8Ab7rdhV:Interface 8002
-  interface hash: 401e7f3b4e8ce43b117e0d6b13ceea39
-  ABI hash: 982b54e27e9edba8d3b5aa7dfb4163e7
-  export-list hash: ab54e4d97d6400e23c9ba0ec120c8b51
+  interface hash: 468698b31fb19acee02106be30ca76fd
+  ABI hash: 2cfcd2b716daaec8dd34e67baaab6caf
+  export-list hash: a56d19b6ff439ec6deb3b7365e9701bb
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: ab396f11155bd696ab63895436e6f1df
   sig of: Nothing
@@ -51,8 +51,6 @@ exports:
   Interface.skilatr_list
   Interface.skillTitle
   Interface.skill_picker
-  Interface.skill_update
-  Interface.skills_modifier
   Interface.start
   Interface.welcome
 module dependencies: AST Mannager Parser
@@ -98,31 +96,32 @@ import  -/  AST 9c55e0321b218d3946d7f66413c3601c
   Action 5c484ea8d976c99055ab31eb15645f87
   Atr 8be751fc99052a89e9a9bd6b9163dc6f
   Character 577b7d529bf2b50c23293b69a67d8c2f
+  Const 07ef0d6d599ba42ad7b15e8070a858fc
   DepSys 87413475971afbf7d8af6ad7ccd81c99
   Game 2c1f147569371d0ad5f1aa762d465f52
   Gm 62ffd867c97786469a9424b1be3c9ab5
   Name d833e2277e74c61d9822e98cc2f4a2a9
   PC 919c3b3bc72b363c6539fb82db45aebe
+  Plus d3f77c477deafb93ac91c10caf6369a6
   Skill 29a0cd68995f28c0cf0a524fb930feb4
   Skills 720f0cae70fc84fbe12d3ad9dd9a3c07
   System ed8187dd3058901d19e252d8b4f3681d
   ThrowsGen d59d5e638a2bfb45a11e5394743c01d0
   UAct 75461efabe39211a11043e4d95fea0b1
-import  -/  Mannager 09ab3963363cce40621b20c91a85a706
+import  -/  Mannager fa3861e902e7839af18bc9082cb5a2bc
   exports: 8d5f8926a939a7462beb30aeef1bcbb3
   Env 586b991ca61735c8c4f09b0d9994db78
   characterListModify dc5d6444594b0bb963ca47166c0a1637
   character_creation 3c386baf2f128150d155b53886c7f043
-  dices_thrower a9a60df4d528848013e1d77e280c9f80
-  length' fff55042ac2dc5aa8f42318f756a497e
+  dices_thrower 0e7f71fa8ae7e038655faa5ec851a803
   nth 9ee0006dacd36b067c6413a3ffdea4a2
   skilatr_thrower 8886ed87d81101c5b0ceed8a1da0385a
   system_depurator 20244db579ce4d49232c5d1b708a487b
   takeOut 1c75a3b11e4f747be6373e1ec8d07848
-import  -/  Parser bb83197aec087d2e74c5bcc382d768b8
+import  -/  Parser 7cb7fef757f4c5e09f18347e7b48aa02
   exports: 0fdd2aef74e118e1a69e0cbcff0e5c0c
-  loadCharacter 031620e2e7435324b08e322a55d5456c
-  num_parse e61f3c6b8c1b13a906269cd892ddf450
+  loadCharacter 910df099992be458463722ba862b4051
+  num_parse 2a9ba199ce76b967718f778c6e0130b0
   parseSystem 4324163ea8da0f67a78777cf44119855
   totParser 4b5ff01700d73efe6284edf71bce3f29
 import  -/  base-4.9.1.0:Data.Either 20b09ef8d0a5b74fdec011c40c1587f5
@@ -221,7 +220,7 @@ dd1b708e532bb8d033b6f2fb76676722
                         ipv2 of ds3 { (#,#) ipv4 ipv5 ->
                  (# ipv4,
                     (AST.Gm ww ww1, GHC.Types.[] @ GHC.Types.Char) #) } } }) -}
-1143734163e6d31e46a43a0907c69864
+9b72fd62ef5a8a04fae95ad36e2bdbb5
   $wcmdLoadChar ::
     AST.System
     -> [AST.Character]
@@ -232,7 +231,7 @@ dd1b708e532bb8d033b6f2fb76676722
      Unfolding: (\ (ww :: AST.System)
                    (ww1 :: [AST.Character])
                    (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 case Interface.cmdLoadChar4 w of ds1 { (#,#) ipv ipv1 ->
+                 case Interface.cmdLoadChar3 w of ds1 { (#,#) ipv ipv1 ->
                  let {
                    fname :: GHC.Base.String
                    = GHC.CString.unpackAppendCString# "files/"# ipv1
@@ -354,23 +353,6 @@ dd1b708e532bb8d033b6f2fb76676722
                          ->_R Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R))
                         ipv2 of ds3 { (#,#) ipv4 ipv5 ->
                  (# ipv4, GHC.Tuple.() #) } } }) -}
-633c25ec0dfcadb37fa64c95eca727bf
-  $wskill_picker ::
-    [AST.Skills]
-    -> [AST.Skills]
-    -> [AST.Name]
-    -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
-          ([AST.Skills], [AST.Name]) #)
-  {- Arity: 4, Strictness: <L,U><L,U><L,U><S,U>, Inline: [0] -}
-56f1dea2bac9693b474b03eaee296f98
-  $wskill_update ::
-    Mannager.Env
-    -> AST.Name
-    -> GHC.Integer.Type.Integer
-    -> (# (AST.Variable, GHC.Integer.Type.Integer),
-          [(AST.Variable, GHC.Integer.Type.Integer)] #)
-  {- Arity: 3, Strictness: <S,1*U><S,U><L,U>, Inline: [0] -}
 f04bbc6555ee3a00948aec3f0ec009f4
   action_list ::
     [AST.Action] -> GHC.Integer.Type.Integer -> GHC.Base.String
@@ -391,7 +373,7 @@ d7ddaf54a8a800040ea8973e834238b7
   character_list ::
     [AST.Character] -> GHC.Integer.Type.Integer -> GHC.Base.String
   {- Arity: 2, Strictness: <S,1*U><L,U> -}
-62ac4c909c915b1d4fe2d1614f2fdfd0
+186b86a37a7a5d6842b5f972cbdda53a
   cmdDelChar :: AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String)
   {- Arity: 2, Strictness: <S,1*U(U,U)><S,U>,
      Unfolding: InlineRule (0, True, True)
@@ -399,7 +381,7 @@ d7ddaf54a8a800040ea8973e834238b7
                   `cast`
                 (<AST.Game>_R
                  ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)) -}
-38b9efe3475b0f67e201f63eeb594bb3
+4b2f1ecaa2dcaf01762407e5bab23e6d
   cmdDelChar1 ::
     AST.Game
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -413,7 +395,7 @@ d7ddaf54a8a800040ea8973e834238b7
                  case Interface.cmdDelChar2 char eta of ds1 { (#,#) ipv ipv1 ->
                  (# ipv,
                     (AST.Gm system ipv1, GHC.Types.[] @ GHC.Types.Char) #) } }) -}
-98cafd912727ff4aa59ed169dd85b6f7
+941cf08e2d4741159e4c2c3f0e2fde32
   cmdDelChar2 ::
     [AST.Character]
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -528,7 +510,7 @@ acc7f4a94b1db8775372ab3610368193
                    (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                  case w of ww { AST.Gm ww1 ww2 ->
                  Interface.$wcmdListChar ww1 ww2 w1 }) -}
-8596570bcb45f97563dc8e340e98309e
+0f438b2999f522f1568274fb253cc857
   cmdLoadChar :: AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String)
   {- Arity: 2, Strictness: <S,1*U(U,U)><S,U>,
      Unfolding: InlineRule (0, True, True)
@@ -536,7 +518,7 @@ acc7f4a94b1db8775372ab3610368193
                   `cast`
                 (<AST.Game>_R
                  ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)) -}
-f129c9d7163ab53889c1dd6435473ada
+42f714a52e20c3c1bd4fd6da9695648c
   cmdLoadChar1 ::
     AST.Game
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -548,7 +530,7 @@ f129c9d7163ab53889c1dd6435473ada
                    (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                  case w of ww { AST.Gm ww1 ww2 ->
                  Interface.$wcmdLoadChar ww1 ww2 w1 }) -}
-69da8c1ebb6dffd6db2a1e7beb4b81f3
+6d4fec430d8d16e346897a31f307b54e
   cmdLoadChar2 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> ([AST.Character]
@@ -567,54 +549,15 @@ f129c9d7163ab53889c1dd6435473ada
   {- Arity: 5,
      Unfolding: (Parser.num_parse4
                    @ [AST.Character]
-                   Interface.cmdLoadChar3
+                   Parser.loadCharacter1
                      `cast`
                    (Sym (Text.Parsec.Prim.N:ParsecT[0]
-                             <[GHC.Types.Char]>_R
+                             <GHC.Base.String>_R
                              <()>_R
                              <Data.Functor.Identity.Identity>_R
                              <[AST.Character]>_R))) -}
-9333764154ab286c1cad34001560d94e
+4b7d6aa9494ba3fc31ba67e19eaf39d2
   cmdLoadChar3 ::
-    Text.Parsec.Prim.State [GHC.Types.Char] ()
-    -> ([AST.Character]
-        -> Text.Parsec.Prim.State [GHC.Types.Char] ()
-        -> Text.Parsec.Error.ParseError
-        -> Data.Functor.Identity.Identity b)
-    -> (Text.Parsec.Error.ParseError
-        -> Data.Functor.Identity.Identity b)
-    -> ([AST.Character]
-        -> Text.Parsec.Prim.State [GHC.Types.Char] ()
-        -> Text.Parsec.Error.ParseError
-        -> Data.Functor.Identity.Identity b)
-    -> (Text.Parsec.Error.ParseError
-        -> Data.Functor.Identity.Identity b)
-    -> Data.Functor.Identity.Identity b
-  {- Arity: 5,
-     Strictness: <L,U(U,U(U,U,U),U)><L,C(C1(C1(U)))><L,A><L,C(C1(C1(U)))><L,A>,
-     Unfolding: InlineRule (5, True, True)
-                (\ @ b
-                   (w1 :: Text.Parsec.Prim.State [GHC.Types.Char] ())
-                   (w2 :: [AST.Character]
-                          -> Text.Parsec.Prim.State [GHC.Types.Char] ()
-                          -> Text.Parsec.Error.ParseError
-                          -> Data.Functor.Identity.Identity b)
-                   (w3 :: Text.Parsec.Error.ParseError
-                          -> Data.Functor.Identity.Identity b)
-                   (w4 :: [AST.Character]
-                          -> Text.Parsec.Prim.State [GHC.Types.Char] ()
-                          -> Text.Parsec.Error.ParseError
-                          -> Data.Functor.Identity.Identity b)
-                   (w5 :: Text.Parsec.Error.ParseError
-                          -> Data.Functor.Identity.Identity b) ->
-                 Parser.$wloadCharacter
-                   (GHC.Types.[] @ AST.Character)
-                   @ b
-                   w1
-                   w2
-                   w4) -}
-71eea15b76ec06fb2f28a5c3f077ce4a
-  cmdLoadChar4 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.String #)
   {- Arity: 1, Strictness: <S,U>,
@@ -624,12 +567,12 @@ f129c9d7163ab53889c1dd6435473ada
                         s of ds1 { (#,#) ipv ipv1 ->
                  case GHC.IO.Handle.Text.hPutStr2
                         GHC.IO.Handle.FD.stdout
-                        Interface.cmdLoadChar5
+                        Interface.cmdLoadChar4
                         GHC.Types.False
                         ipv of ds2 { (#,#) ipv2 ipv3 ->
                  System.IO.getLine1 ipv2 } }) -}
-3d06ae237eb315700d5f7752fbe0313a
-  cmdLoadChar5 :: [GHC.Types.Char]
+43419eca4f73ad89e5ff2e8bdfd0753d
+  cmdLoadChar4 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "Please enter your character file \n"#) -}
 16d75357a293f28acb80085c4a3942d5
@@ -695,7 +638,7 @@ dd06fe18e739cb85053b237e819c8211
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, [AST.Character] #)
   {- Arity: 3, Strictness: <L,1*U><L,U><S,U> -}
-8f3396871574a96950f9f0a50a67b7a9
+6945711412b462cd4550554c305cecbb
   cmdNewChar :: AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String)
   {- Arity: 2, Strictness: <S(SL),1*U(U,U)><S,U>,
      Unfolding: InlineRule (0, True, True)
@@ -703,7 +646,7 @@ dd06fe18e739cb85053b237e819c8211
                   `cast`
                 (<AST.Game>_R
                  ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)) -}
-e9626748eb2c025e3b0befb56243a379
+2439c81c5f0e36fffba100703cf74f6f
   cmdNewChar1 ::
     AST.Game
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -718,7 +661,7 @@ e9626748eb2c025e3b0befb56243a379
                  (# ipv,
                     (AST.Gm system (GHC.Types.: @ AST.Character ipv1 char),
                      GHC.Types.[] @ GHC.Types.Char) #) } }) -}
-b5308b0954e428a5ec218caeb17754b1
+4afacf9d4283d269d5f821c6ae8c2968
   cmdNewChar2 ::
     AST.System
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -754,23 +697,23 @@ b5308b0954e428a5ec218caeb17754b1
                              list
                              (GHC.Types.[] @ (AST.Variable, GHC.Integer.Type.Integer))
                              ipv4 of ds8 { (#,#) ipv6 ipv7 ->
-                      case Interface.$wskill_picker
+                      case Interface.cmdNewChar3
                              skl
                              (GHC.Types.[] @ AST.Skills)
-                             (GHC.Types.[] @ AST.Name)
                              ipv6 of ds9 { (#,#) ipv8 ipv9 ->
-                      case ipv9 of wild2 { (,) s l ->
-                      Interface.cmdNewChar3
-                        (Mannager.character_creation ipv5 ipv7 depAttr s)
-                        l
-                        ipv8 } } } } } } } }) -}
-534b594b28ef3d70e15f863c5fd8e2ed
+                      (# ipv8,
+                         Mannager.character_creation
+                           ipv5
+                           ipv7
+                           depAttr
+                           ipv9 #) } } } } } } }) -}
+45a002a3c74df52c32443a087ec6c030
   cmdNewChar3 ::
-    AST.Character
-    -> [AST.Name]
+    [AST.Skills]
+    -> [AST.Skills]
     -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, AST.Character #)
-  {- Arity: 3, Strictness: <L,U(U,U,U)><S,1*U><S,U> -}
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, [AST.Skills] #)
+  {- Arity: 3, Strictness: <L,U><L,U><S,U> -}
 74f602a4c12737207c2236d915d25f26
   cmdNewChar4 ::
     [AST.Name]
@@ -843,7 +786,7 @@ c530e9fc5a18859c890217be663b1302
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 2, Strictness: <L,U><S,U> -}
-5aae8d66c6bf0f60d33c4679f6b26eed
+7f14fcc700dadb7110b887f9dc17790f
   cmdShowChar :: AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String)
   {- Arity: 2, Strictness: <S,1*U(U,U)><S,U>,
      Unfolding: InlineRule (0, True, True)
@@ -851,7 +794,7 @@ c530e9fc5a18859c890217be663b1302
                   `cast`
                 (<AST.Game>_R
                  ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)) -}
-7c303d6d62cbba3bbba98f5922cc2c8a
+ef373db1dd33fae29020d64aaee3ff34
   cmdShowChar1 ::
     AST.Game
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -864,7 +807,7 @@ c530e9fc5a18859c890217be663b1302
                  case g of wild { AST.Gm system char ->
                  case Interface.cmdShowChar2 char eta of ds1 { (#,#) ipv ipv1 ->
                  (# ipv, (wild, GHC.Types.[] @ GHC.Types.Char) #) } }) -}
-7af967c018dd3902e90000b4509bca6c
+a8ea4cb97356eabec9a85a09365aae42
   cmdShowChar2 ::
     [AST.Character]
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -933,14 +876,14 @@ c530e9fc5a18859c890217be663b1302
   cmdShowChar5 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "Which character you want to see?\n"#) -}
-bb1fc0cb8588ceed3f5205f53eb7288c
+ce8c87c6385c66a5f139ee2931c30dd6
   create_char :: AST.System -> GHC.Types.IO AST.Character
   {- Arity: 2, Strictness: <S,1*U><S,U>,
      Unfolding: InlineRule (0, True, True)
                 Interface.cmdNewChar2
                   `cast`
                 (<AST.System>_R ->_R Sym (GHC.Types.N:IO[0] <AST.Character>_R)) -}
-204252cf17a1090829def93d0477d1b0
+e5c893f61afa1117c9089b1767f727ef
   delete_character :: [AST.Character] -> GHC.Types.IO [AST.Character]
   {- Arity: 2, Strictness: <L,U><S,U>,
      Unfolding: InlineRule (0, True, True)
@@ -995,20 +938,20 @@ cdb66b499082144af97a6d62492692e6
 98275cce65bf9604e2180fe7b07290be
   listEnv :: Mannager.Env -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U> -}
-feaf9ed5d88a339ef4093e5604a75ed5
+fa6901a5e3b00233f81cf86b2c271ff9
   loadCharaterInterface :: GHC.Types.IO [AST.Character]
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Interface.loadCharaterInterface1
                   `cast`
                 (Sym (GHC.Types.N:IO[0] <[AST.Character]>_R)) -}
-c23b59efe6499942307252944f83000e
+c5a1f6bfa24a21d760d5aba8b779a874
   loadCharaterInterface1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, [AST.Character] #)
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 case Interface.cmdLoadChar4 s of ds1 { (#,#) ipv ipv1 ->
+                 case Interface.cmdLoadChar3 s of ds1 { (#,#) ipv ipv1 ->
                  let {
                    fname :: GHC.Base.String
                    = GHC.CString.unpackAppendCString# "files/"# ipv1
@@ -1079,7 +1022,7 @@ e671c0c3498c5ce78f2dcf590195ba49
     [(GHC.Base.String, a)]
     -> GHC.Integer.Type.Integer -> GHC.Base.String
   {- Arity: 2, Strictness: <S,1*U><L,U> -}
-990628c266ed107473ab3f8c37a2d09e
+9b10ece44958d62902335010580ce247
   menu_title ::
     [(GHC.Base.String,
       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))]
@@ -1089,7 +1032,7 @@ e671c0c3498c5ce78f2dcf590195ba49
                       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
                    Interface.menu_title30
                    Interface.menu_title1) -}
-23a43af59e3272a0fa47993e3abb1d4e
+e845c59aa170a2dd4132a26abbd96122
   menu_title1 ::
     [(GHC.Base.String,
       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))]
@@ -1121,7 +1064,7 @@ ed86f692153d6da772a2e65ebac58491
                     `cast`
                   (<AST.Game>_R
                    ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)))) -}
-ff380f14a708272f7c28a5e948414716
+db2aaa57a9a66e2be988a7f0ef9f9bee
   menu_title12 ::
     ([GHC.Types.Char],
      AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
@@ -1134,7 +1077,7 @@ ff380f14a708272f7c28a5e948414716
 bf298bd2b29b469f6cefd1ca9facd8bf
   menu_title13 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "View Character"#) -}
-9e73ee75d9171c1de04a6d3f882184e0
+d36449f41185db9b9c3c9a376087d548
   menu_title14 ::
     ([GHC.Types.Char],
      AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
@@ -1147,7 +1090,7 @@ bf298bd2b29b469f6cefd1ca9facd8bf
 68f644be0dc1a343219b3c4f349bb09d
   menu_title15 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Load Character"#) -}
-7fa573d311bae3a3aa2503b5d8103e70
+9d88649ba628c2b4ac6989e95e36bf5f
   menu_title16 ::
     ([GHC.Types.Char],
      AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
@@ -1173,7 +1116,7 @@ bf298bd2b29b469f6cefd1ca9facd8bf
 b550635214c9c8d1bf9953a262410095
   menu_title19 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Modify character"#) -}
-2abd32238b5b244aa16bfb041833e966
+db40883c583967c3e302951c04ea3706
   menu_title2 ::
     [(GHC.Base.String,
       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))]
@@ -1249,7 +1192,7 @@ a4a471a0160b52b805a8d0d1f516ff07
   menu_title29 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "Roll attributes/skills"#) -}
-2796dfe3b5af3288e5c3a27bce8ddff8
+bf4cb3264cefa8dbd21da5d1bac3f814
   menu_title3 ::
     [(GHC.Base.String,
       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))]
@@ -1259,7 +1202,7 @@ a4a471a0160b52b805a8d0d1f516ff07
                       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
                    Interface.menu_title24
                    Interface.menu_title4) -}
-86e9bc8b59f7e9f6b8ff41b3d6860575
+9a55fa6c537138fa0a2355736adde0d6
   menu_title30 ::
     ([GHC.Types.Char],
      AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
@@ -1273,7 +1216,7 @@ a4a471a0160b52b805a8d0d1f516ff07
   menu_title31 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "Create new Character"#) -}
-ebe2f088a155d902175733e108c57116
+45dd64a0f17cfc371bbdde58ef3e59b2
   menu_title4 ::
     [(GHC.Base.String,
       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))]
@@ -1283,7 +1226,7 @@ ebe2f088a155d902175733e108c57116
                       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
                    Interface.menu_title22
                    Interface.menu_title5) -}
-7ac4159808191ad376400f83bfd4e2ae
+222732b3b9ee9b935f5eef69bb66feea
   menu_title5 ::
     [(GHC.Base.String,
       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))]
@@ -1293,7 +1236,7 @@ ebe2f088a155d902175733e108c57116
                       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
                    Interface.menu_title20
                    Interface.menu_title6) -}
-228952f70cbff2874b9b3c287ca62628
+f80c644af54964eae84ebad63693b551
   menu_title6 ::
     [(GHC.Base.String,
       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))]
@@ -1303,7 +1246,7 @@ ebe2f088a155d902175733e108c57116
                       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
                    Interface.menu_title18
                    Interface.menu_title7) -}
-dadc1b702fa7d07fc5f5df5791922cc9
+5f15ea5490a357612cce1fa6643a0541
   menu_title7 ::
     [(GHC.Base.String,
       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))]
@@ -1313,7 +1256,7 @@ dadc1b702fa7d07fc5f5df5791922cc9
                       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
                    Interface.menu_title16
                    Interface.menu_title8) -}
-f2047bdfbe648edab9c35d2b70e46c02
+26f263df828a7a37993eadaeec110fb2
   menu_title8 ::
     [(GHC.Base.String,
       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))]
@@ -1323,7 +1266,7 @@ f2047bdfbe648edab9c35d2b70e46c02
                       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
                    Interface.menu_title14
                    Interface.menu_title9) -}
-f348b73aeb7815b51dfe3adc3f47068b
+ce0ce824596d9c3840595aedc06d0cca
   menu_title9 ::
     [(GHC.Base.String,
       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))]
@@ -1428,7 +1371,7 @@ af717b4801f233b69d3b733aac41be1d
                    (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                  case w of ww { AST.PC ww1 ww2 ww3 ->
                  Interface.$wshowAtributes ww1 ww2 ww3 w1 }) -}
-8560d2ebe9d4d5dbbd59177771cf28f6
+bf788b1d1ac738f6b59d7d40435937c1
   showCharacter :: [AST.Character] -> GHC.Types.IO ()
   {- Arity: 2, Strictness: <L,U><S,U>,
      Unfolding: InlineRule (0, True, True)
@@ -1445,61 +1388,16 @@ af717b4801f233b69d3b733aac41be1d
                    "------------------------------------------------\n\
                    \Choose the skill class - enter 0 when you finish\n\
                    \------------------------------------------------\n"#) -}
-ee1d423183fde8f787043aa20b4e0c6b
+fcd5a8667fefa276f2f35aac7c41ede2
   skill_picker ::
-    [AST.Skills]
-    -> ([AST.Skills], [AST.Name])
-    -> GHC.Base.String
-    -> GHC.Types.IO ([AST.Skills], [AST.Name])
-  {- Arity: 4, Strictness: <L,U><S,1*U(U,U)><L,A><S,U>,
-     Unfolding: InlineRule (0, True, True)
-                Interface.skill_picker1
-                  `cast`
-                (<[AST.Skills]>_R
-                 ->_R <([AST.Skills], [AST.Name])>_R
-                 ->_R <GHC.Base.String>_R
-                 ->_R Sym (GHC.Types.N:IO[0] <([AST.Skills], [AST.Name])>_R)) -}
-06ecee3185389ff8ef424ccd3ef71c9e
-  skill_picker1 ::
-    [AST.Skills]
-    -> ([AST.Skills], [AST.Name])
-    -> GHC.Base.String
-    -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
-          ([AST.Skills], [AST.Name]) #)
-  {- Arity: 4, Strictness: <L,U><S,1*U(U,U)><L,A><S,U>,
-     Inline: INLINE[0],
-     Unfolding: InlineRule (4, True, False)
-                (\ (w :: [AST.Skills])
-                   (w1 :: ([AST.Skills], [AST.Name]))
-                   (w2 :: GHC.Base.String)
-                   (w3 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 case w1 of ww { (,) ww1 ww2 ->
-                 Interface.$wskill_picker w ww1 ww2 w3 }) -}
-1e14145d8004ed8eb1880094120ddcf6
-  skill_update ::
-    Mannager.Env
-    -> AST.Name -> GHC.Integer.Type.Integer -> Mannager.Env
-  {- Arity: 3, Strictness: <S,1*U><S,U><L,U>m2, Inline: INLINE[0],
-     Unfolding: InlineRule (3, True, False)
-                (\ (w :: Mannager.Env)
-                   (w1 :: AST.Name)
-                   (w2 :: GHC.Integer.Type.Integer) ->
-                 case Interface.$wskill_update w w1 w2 of ww { (#,#) ww1 ww2 ->
-                 GHC.Types.:
-                   @ (AST.Variable, GHC.Integer.Type.Integer)
-                   ww1
-                   ww2 }) -}
-f123b30a93ad80f0524b53d0bd06b316
-  skills_modifier ::
-    AST.Character -> [AST.Name] -> GHC.Types.IO AST.Character
-  {- Arity: 3, Strictness: <L,U(U,U,U)><S,1*U><S,U>,
+    [AST.Skills] -> [AST.Skills] -> GHC.Types.IO [AST.Skills]
+  {- Arity: 3, Strictness: <L,U><L,U><S,U>,
      Unfolding: InlineRule (0, True, True)
                 Interface.cmdNewChar3
                   `cast`
-                (<AST.Character>_R
-                 ->_R <[AST.Name]>_R
-                 ->_R Sym (GHC.Types.N:IO[0] <AST.Character>_R)) -}
+                (<[AST.Skills]>_R
+                 ->_R <[AST.Skills]>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <[AST.Skills]>_R)) -}
 d4d52d3527eac4f0808460e92add5237
   start :: GHC.Types.IO ()
   {- Arity: 1,

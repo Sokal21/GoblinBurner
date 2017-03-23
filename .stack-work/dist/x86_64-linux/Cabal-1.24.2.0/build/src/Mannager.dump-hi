@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2017-03-22 14:41:32.778749 UTC
+2017-03-23 16:22:59.128632 UTC
 
 interface GoblinBurner-0.1.0.0-9BGpxHuB4WvZG8Ab7rdhV:Mannager 8002
-  interface hash: 5c3a30e3321a860ab1f8e13cec85b396
-  ABI hash: 09ab3963363cce40621b20c91a85a706
+  interface hash: 3d14fb458540cfede448c698a4bdfd41
+  ABI hash: fa3861e902e7839af18bc9082cb5a2bc
   export-list hash: 8d5f8926a939a7462beb30aeef1bcbb3
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: ab396f11155bd696ab63895436e6f1df
@@ -612,7 +612,7 @@ c390d92ecd81aa819d598d1fb109205f
     -> (# AST.Name, [(AST.Name, GHC.Integer.Type.Integer)],
           [GHC.Base.String] #)
   {- Arity: 4, Strictness: <L,U><L,U><L,U><S,1*U>, Inline: [0] -}
-a3fb6b808f517170387f83a4e744f57b
+fb6c31d8135285913de83494f87e8e72
   $wdices_thrower ::
     AST.IntExp
     -> AST.Dice
@@ -627,12 +627,15 @@ a3fb6b808f517170387f83a4e744f57b
                    (w :: Mannager.Env) ->
                  case ww2 of wild {
                    GHC.Base.Nothing
-                   -> case Mannager.dices_thrower3
+                   -> case Mannager.dices_thrower2
                       ret_ty (# [GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
                                 GHC.Integer.Type.Integer #)
                       of {}
                    GHC.Base.Just thr
-                   -> case Mannager.dices_thrower2 ww w of wild1 {
+                   -> case (Mannager.dices_thrower_$sevalIntExp ww)
+                             `cast`
+                           (Mannager.N:StateError[0] <GHC.Integer.Type.Integer>_R)
+                             w of wild1 {
                         GHC.Base.Nothing
                         -> case Mannager.dices_thrower1
                            ret_ty (# [GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
@@ -840,7 +843,7 @@ eabff0b9f6ea9399bb0a4d3dac544676
 4b33405d4b058f6307c298b0c77806c9
   diceToNum8 :: GHC.Integer.Type.Integer
   {- HasNoCafRefs, Unfolding: (100) -}
-a9a60df4d528848013e1d77e280c9f80
+0e7f71fa8ae7e038655faa5ec851a803
   dices_thrower ::
     AST.Action
     -> Mannager.Env
@@ -862,17 +865,15 @@ b6e5d3dc235ddc02aa6bd595c5387c02
     ([GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
      GHC.Integer.Type.Integer)
   {- Strictness: x -}
-5749bad51873c4e3d9df5100bf538626
+ce6b2c1f36f5920badd9d60fdcdac652
   dices_thrower2 ::
-    AST.IntExp
-    -> Mannager.Env
-    -> GHC.Base.Maybe (GHC.Integer.Type.Integer, Mannager.Env)
-  {- Arity: 2, Strictness: <S,1*U><L,U> -}
-2d2ec51615b62aceecf22571b6b8d276
-  dices_thrower3 ::
     ([GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
      GHC.Integer.Type.Integer)
   {- Strictness: x -}
+3a00d894da3fbc688d8a5fbc061bc7e8
+  dices_thrower_$sevalIntExp ::
+    AST.IntExp -> Mannager.StateError GHC.Integer.Type.Integer
+  {- Arity: 1, Strictness: <S,1*U> -}
 57fee2ae6fb06c4025d8f088846f0125
   envModify ::
     Mannager.Env
@@ -895,12 +896,11 @@ e2566b7470bdc2cd2e7b92d1fd8865c6
     AST.BoolExp -> m GHC.Types.Bool
   {- Arity: 3,
      Strictness: <S(SLL),U(U(U,U,U,U,U),C(U),A)><L,U(A,U)><S,1*U> -}
-7e9d6f7db7174c93aa879614559792fa
-  evalBoolExp1 ::
-    AST.BoolExp
-    -> Mannager.Env -> GHC.Base.Maybe (GHC.Types.Bool, Mannager.Env)
-  {- Arity: 2, Strictness: <S,1*U><L,U> -}
-6ef72bb94551dcb50f59d886beea1f6d
+a55f2286600800d3c7dd48cf3bb5f49d
+  evalBoolExp_$sevalBoolExp ::
+    AST.BoolExp -> Mannager.StateError GHC.Types.Bool
+  {- Arity: 1, Strictness: <S,1*U> -}
+7007b1ba6f5e2876944264d46ef08e45
   evalComm ::
     (Mannager.MonadState m, Mannager.MonadError m) => AST.Comm -> m ()
   {- Arity: 3,
@@ -910,7 +910,7 @@ e2566b7470bdc2cd2e7b92d1fd8865c6
                    ($dMonadError :: Mannager.MonadError m)
                    (eta :: AST.Comm) ->
                  case eta of wild {
-                   AST.Skip -> Mannager.evalComm3 @ m
+                   AST.Skip -> Mannager.evalComm2 @ m
                    AST.Let v n
                    -> GHC.Base.>>=
                         @ m
@@ -920,8 +920,8 @@ e2566b7470bdc2cd2e7b92d1fd8865c6
                         (Mannager.evalIntExp @ m $dMonadState $dMonadError n)
                         (\ (m1 :: GHC.Integer.Type.Integer) ->
                          Mannager.update @ m $dMonadState v m1) }) -}
-bb85d6961b0fffcf7a8de036da24e46c
-  evalComm3 :: m ()
+2d9c269c5d9dbdf986a725ec8e295574
+  evalComm2 :: m ()
   {- Strictness: x -}
 d6dcdf3dfbbe6da2ea4f1f0502c2efd6
   evalIntExp ::
@@ -1104,6 +1104,20 @@ instance GHC.Base.Monad [Mannager.StateError]
   = Mannager.$fMonadStateError
 instance Mannager.MonadState [Mannager.StateError]
   = Mannager.$fMonadStateStateError
+"SPEC evalBoolExp @ StateError" [ALWAYS] forall ($dMonadError :: Mannager.MonadError
+                                                                   Mannager.StateError)
+                                                ($dMonadState :: Mannager.MonadState
+                                                                   Mannager.StateError)
+  Mannager.evalBoolExp @ Mannager.StateError
+                       $dMonadState
+                       $dMonadError
+  = Mannager.evalBoolExp_$sevalBoolExp
+"SPEC evalIntExp @ StateError" [ALWAYS] forall ($dMonadError :: Mannager.MonadError
+                                                                  Mannager.StateError)
+                                               ($dMonadState :: Mannager.MonadState
+                                                                  Mannager.StateError)
+  Mannager.evalIntExp @ Mannager.StateError $dMonadState $dMonadError
+  = Mannager.dices_thrower_$sevalIntExp
 "SPEC/Mannager $dmfail @ StateError" [ALWAYS] forall ($dMonad :: GHC.Base.Monad
                                                                    Mannager.StateError)
   GHC.Base.$dmfail @ Mannager.StateError $dMonad

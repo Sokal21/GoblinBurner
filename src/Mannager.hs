@@ -223,6 +223,7 @@ evalIntExp (UMinus n)  = evalIntExp n >>= (\m->return (-m))
 evalIntExp (Plus n m)  = evalIntExp n >>= (\a-> evalIntExp m >>= (\b -> return (a+b)) )
 evalIntExp (Minus n m) = evalIntExp n >>= (\a-> evalIntExp m >>= (\b -> return (a-b)) )
 evalIntExp (Times n m) = evalIntExp n >>= (\a-> evalIntExp m >>= (\b -> return (a*b)) )
+evalIntExp (Qmark b i j) = evalBoolExp b >>= (\a -> evalIntExp i >>= (\b -> evalIntExp j >>= (\c -> if a then return b else return c)))
 evalIntExp (Div n m)   = evalIntExp n >>= (\a-> evalIntExp m >>= (\b -> if b == 0 then throw else return (div a b)) )
 
 -- Evalua una expresion entera, sin efectos laterales

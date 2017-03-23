@@ -44,7 +44,7 @@ modifyCharacter sys chars = do c <- putAndWait ((character_list chars 1)++"Which
 
 loadCharaterInterface :: IO ([Character])
 loadCharaterInterface = do file <- putAndWait "Please enter your character file \n"
-                           char <- parseFromFile (totParser (loadCharacter [])) ("files/"++file)
+                           char <- parseFromFile (totParser (loadCharacter)) ("files/"++file)
                            case char of
                               Right a -> return a
                               Left er -> return ([])
@@ -56,7 +56,7 @@ delete_character char = do m <- putAndWait ("Which character you want to delete?
 saveCharacther :: [Character] -> IO ()
 saveCharacther chars = do c <- putAndWait ("Which character do you want to save?\n"++(character_list chars 1))
                           case nth ((num_parse c)-1) chars of
-                            (PC name xs ys) -> writeFile ("files/"++name) (name++"\n"++(listEnv xs)++"CONDITION_MODIFIER\n"++(listCon ys))
+                            (PC name xs ys) -> writeFile ("files/"++name) (name++"\n"++(listEnv xs)++"\n"++"CONDITION_MODIFIER\n"++(listCon ys))
 
 roll_skilatr :: System -> [Character] -> IO()
 roll_skilatr sys chars = do c <- putAndWait ("Which character do you want to use?\n"++(character_list chars 1))
@@ -109,18 +109,18 @@ create_char :: System -> IO Character
 create_char (DepSys _ attr depAttr skl _ _) = do name <- putAndWait "Enter your character name!\n"
                                                  case attr of
                                                    Atr _ list -> do env <- get_attributes list []
-                                                                    (s,l) <- (skill_picker skl ([],[])) ""
-                                                                    skills_modifier (character_creation name env depAttr s) l
+                                                                    s <- (skill_picker skl [])
+                                                                    return (character_creation name env depAttr s)
 
-skill_picker :: [Skills] -> ([Skills],[Name]) -> String -> IO ([Skills],[Name])
-skill_picker skill (s,l) er  = do cmd <- putAndWait ((skillTitle)++(printSkillClass skill 1))
-                                  if (num_parse cmd) == 0 then
-                                   return (s,l)
-                                  else if ((num_parse cmd) > (length' skill)) || ((num_parse cmd) < 0) then skill_picker skill (s,l) "Wrong index \n"
-                                                                                                       else do putStr "Enter the name of the skill\n"
-                                                                                                               name <- getLine
-                                                                                                               case nth ((num_parse cmd)-1) skill of
-                                                                                                                 (Skill _ intexp) -> skill_picker skill ((Skill name intexp):s,name:l) ""
+skill_picker :: [Skills] -> [Skills] -> IO [Skills]
+skill_picker skill s  = do cmd <- putAndWait ((skillTitle)++(printSkillClass skill 1))
+                           if (num_parse cmd) == 0 then
+                             return s
+                           else do putStr "Enter the name of the skill\n"
+                                   name <- getLine
+                                   modifier <- putAndWait ("Enter the skill modifier for "++name++"\n")
+                                   case nth ((num_parse cmd)-1) skill of
+                                      (Skill _ intexp) -> skill_picker skill (((Skill name (Plus intexp (Const (num_parse modifier))))):s)
 
 printSkillClass :: [Skills] -> Integer -> String
 printSkillClass [] _ = "\n"
@@ -131,15 +131,6 @@ get_attributes [] env     = do System.Process.system "clear"
                                return env
 get_attributes (x:xs) env = do num <- putAndWait ("Enter the atribute modifier for "++x++"\n")
                                get_attributes xs ((x,num_parse num):env)
-
-skills_modifier :: Character -> [Name] -> IO Character
-skills_modifier char []     = do System.Process.system "clear"
-                                 return char
-skills_modifier (PC name env ys) (x:xs) = do num <- putAndWait ("Enter the skill modifier for "++x++"\n")
-                                             skills_modifier (PC name (skill_update env x (num_parse num)) ys) xs
-
-skill_update :: Env -> Name -> Integer -> Env
-skill_update ((name,n):xs) skill num = if name == skill then (name,n+num):xs else (name,n):(skill_update xs skill num)
 
 putAndWait :: String -> IO (String)
 putAndWait s = do System.Process.system "clear"

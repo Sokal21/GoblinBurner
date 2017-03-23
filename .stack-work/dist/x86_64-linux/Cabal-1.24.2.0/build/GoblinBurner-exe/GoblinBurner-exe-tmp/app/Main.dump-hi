@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2017-03-22 14:55:18.335548 UTC
+2017-03-23 21:13:31.27869 UTC
 
 interface main@main:Main 8002
-  interface hash: 8cf8e60fcbabcb528f3d67ba71200f21
+  interface hash: 42152bc5b1267419427e591eca322a3e
   ABI hash: f671852213163e1675c541b93442f40c
   export-list hash: 557721b45454eefc86158aeb3aad4ccd
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -52,7 +52,7 @@ family instance modules: base-4.9.1.0:Control.Applicative
                          containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
                          text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text
                          text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text.Lazy
-import  -/  GoblinBurner-0.1.0.0@GoblinBurner-0.1.0.0-9BGpxHuB4WvZG8Ab7rdhV:Interface 982b54e27e9edba8d3b5aa7dfb4163e7
+import  -/  GoblinBurner-0.1.0.0@GoblinBurner-0.1.0.0-9BGpxHuB4WvZG8Ab7rdhV:Interface 2cfcd2b716daaec8dd34e67baaab6caf
 import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
 import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
 d6831ef04cb9301b090dfae6f7bb7ec7

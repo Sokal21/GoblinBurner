@@ -26,7 +26,7 @@ lis = makeTokenParser (emptyDef   { commentStart  = "/*"
                                                      "ATTRIBUTE","ALL","DEP_ATTRIBUTE","NON","CONDITION_MODIFIER","CONDITION_MODIFIER_ALL",
                                                      "UNIT_ACTION","DOUBLE_ACTION","D3",
                                                      "D4","D5","D6","D8","D10","D12",
-                                                     "D20","D100","SKILLS","THROW_GENERAL","THROW_ACTION","INT","FLOAT","STRING"]
+                                                     "D20","D100","SKILLS","THROW_GENERAL","THROW_ACTION"]
                                   })
 
 ----------------------------------
@@ -55,10 +55,8 @@ system t@(Sys act atr depatr skl mainTrhow action_thw conMod) = do try (do x <- 
                                                                         system (Sys act atr depatr skl mainTrhow (p:action_thw) conMod))
                                                                 <|> return t
 
-loadCharacter :: [Character] -> Parser [Character]
-loadCharacter xs = do try (do c <- characterParser
-                              loadCharacter (c:xs))
-                     <|> (return xs)
+loadCharacter :: Parser [Character]
+loadCharacter = sepBy1 characterParser (symbol lis "+")
 
 characterParser :: Parser Character
 characterParser = do n <- identifier lis
@@ -212,6 +210,7 @@ factor  = try (do n <- natural lis
                       reservedOp lis ":"
                       j <- intexp
                       return (Qmark c i j))
+
 -----------------------------------
 --- Parser de expressiones booleanas
 ------------------------------------
