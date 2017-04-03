@@ -8,6 +8,7 @@ type Name = String
 -- Representacion del sistema
 data System = Sys [Action] Attribute [DepAttribute] [Skills] ThrowsGen [(Name,Throws)] [Con_Modifiers]
             | DepSys [Action] Attribute [DepAttribute] [Skills] [Con_Modifiers] ThrowsGen
+            | Error String
  deriving Show
 
 -- Representación de los atributos bajo determinada clase

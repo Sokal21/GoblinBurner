@@ -30,7 +30,7 @@ version = Version [0,1,0,0] []
 bindir, libdir, dynlibdir, datadir, libexecdir, sysconfdir :: FilePath
 
 bindir     = "/home/marlon/Escritorio/GoblinBurner/.stack-work/install/x86_64-linux/lts-8.5/8.0.2/bin"
-libdir     = "/home/marlon/Escritorio/GoblinBurner/.stack-work/install/x86_64-linux/lts-8.5/8.0.2/lib/x86_64-linux-ghc-8.0.2/GoblinBurner-0.1.0.0-9BGpxHuB4WvZG8Ab7rdhV"
+libdir     = "/home/marlon/Escritorio/GoblinBurner/.stack-work/install/x86_64-linux/lts-8.5/8.0.2/lib/x86_64-linux-ghc-8.0.2/GoblinBurner-0.1.0.0-I1JAjz4cEJL8vh9rdrHCnV"
 dynlibdir  = "/home/marlon/Escritorio/GoblinBurner/.stack-work/install/x86_64-linux/lts-8.5/8.0.2/lib/x86_64-linux-ghc-8.0.2"
 datadir    = "/home/marlon/Escritorio/GoblinBurner/.stack-work/install/x86_64-linux/lts-8.5/8.0.2/share/x86_64-linux-ghc-8.0.2/GoblinBurner-0.1.0.0"
 libexecdir = "/home/marlon/Escritorio/GoblinBurner/.stack-work/install/x86_64-linux/lts-8.5/8.0.2/libexec"

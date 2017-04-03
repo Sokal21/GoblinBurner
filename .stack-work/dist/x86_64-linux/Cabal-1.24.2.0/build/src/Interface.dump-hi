@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-03-23 21:13:30.54697 UTC
+2017-04-03 14:13:55.407855 UTC
 
-interface GoblinBurner-0.1.0.0-9BGpxHuB4WvZG8Ab7rdhV:Interface 8002
-  interface hash: 468698b31fb19acee02106be30ca76fd
-  ABI hash: 2cfcd2b716daaec8dd34e67baaab6caf
-  export-list hash: a56d19b6ff439ec6deb3b7365e9701bb
+interface GoblinBurner-0.1.0.0-I1JAjz4cEJL8vh9rdrHCnV:Interface 8002
+  interface hash: c871e21e2933f46df4fb83b959de4e26
+  ABI hash: 6def310e4940c7326a128060e7d4b127
+  export-list hash: fd698170041eaf669550a152946388aa
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: ab396f11155bd696ab63895436e6f1df
   sig of: Nothing
@@ -29,6 +29,8 @@ exports:
   Interface.create_char
   Interface.delete_character
   Interface.envFromCharacter
+  Interface.errorCharFile
+  Interface.errorConFile
   Interface.fileStarter
   Interface.generalTrhowFromSystem
   Interface.get_attributes
@@ -63,6 +65,7 @@ package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.1.0
                       parsec-3.1.11@parsec-3.1.11-113irVHGgd88sRnywByDNw
                       process-1.4.3.0@process-1.4.3.0
                       random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog
+                      readline-1.0.3.0@readline-1.0.3.0-7WqJPjOS9HEE95ifi9FvTC
                       text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR
                       time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
                       unix-2.7.2.1@unix-2.7.2.1
@@ -91,41 +94,46 @@ family instance modules: base-4.9.1.0:Control.Applicative
                          containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
                          text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text
                          text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text.Lazy
-import  -/  AST 9c55e0321b218d3946d7f66413c3601c
-  exports: 790fa163781c6789615dccc145b86d73
-  Action 5c484ea8d976c99055ab31eb15645f87
-  Atr 8be751fc99052a89e9a9bd6b9163dc6f
-  Character 577b7d529bf2b50c23293b69a67d8c2f
-  Const 07ef0d6d599ba42ad7b15e8070a858fc
-  DepSys 87413475971afbf7d8af6ad7ccd81c99
-  Game 2c1f147569371d0ad5f1aa762d465f52
-  Gm 62ffd867c97786469a9424b1be3c9ab5
-  Name d833e2277e74c61d9822e98cc2f4a2a9
-  PC 919c3b3bc72b363c6539fb82db45aebe
-  Plus d3f77c477deafb93ac91c10caf6369a6
-  Skill 29a0cd68995f28c0cf0a524fb930feb4
-  Skills 720f0cae70fc84fbe12d3ad9dd9a3c07
-  System ed8187dd3058901d19e252d8b4f3681d
-  ThrowsGen d59d5e638a2bfb45a11e5394743c01d0
-  UAct 75461efabe39211a11043e4d95fea0b1
-import  -/  Mannager fa3861e902e7839af18bc9082cb5a2bc
-  exports: 8d5f8926a939a7462beb30aeef1bcbb3
-  Env 586b991ca61735c8c4f09b0d9994db78
-  characterListModify dc5d6444594b0bb963ca47166c0a1637
-  character_creation 3c386baf2f128150d155b53886c7f043
-  dices_thrower 0e7f71fa8ae7e038655faa5ec851a803
-  nth 9ee0006dacd36b067c6413a3ffdea4a2
-  skilatr_thrower 8886ed87d81101c5b0ceed8a1da0385a
-  system_depurator 20244db579ce4d49232c5d1b708a487b
-  takeOut 1c75a3b11e4f747be6373e1ec8d07848
-import  -/  Parser 7cb7fef757f4c5e09f18347e7b48aa02
-  exports: 0fdd2aef74e118e1a69e0cbcff0e5c0c
-  loadCharacter 910df099992be458463722ba862b4051
-  num_parse 2a9ba199ce76b967718f778c6e0130b0
-  parseSystem 4324163ea8da0f67a78777cf44119855
-  totParser 4b5ff01700d73efe6284edf71bce3f29
+import  -/  AST d605159f34e87c9680775e51b7a2b049
+  exports: e579a6374870f831902124cda1fe098c
+  Action d3804f4a2fcfae2aa4978ea98a445fd1
+  Atr dbffd3fb3ea30821f9be1fbedae83281
+  Character 45f5edc128eb6aece66bf1e2a65dbb22
+  Const b44452847abf94f62ce34c31abfd71a9
+  DepSys fc4cb4f2883d912dfc7395622fbe26f5
+  Error 59ecbc751d9a358898de559ef80e923c
+  Game 94ae60b71af3dc34fc80afdbf5d3e824
+  Gm 981d714425521345dc665e71a1e9e1ba
+  Name 412a0cbdf0d605951c9a4b7594e7e936
+  PC 7c823e5d53c614cb20a1f5b8cfe6769d
+  Plus 70462ddbf00ea172927a98a184010bcf
+  Skill c820151ac35457ec3fa5c7ef0d288584
+  Skills 75d29fd57116e502fbd25cafdc59c879
+  System 7dadbf952eaaa51839dcd5b72dc1cd40
+  ThrowsGen e93310021b2615a8d6cd509ac59e4852
+  UAct 501bee6c487b4adbf175b39d37fd6a73
+import  -/  Mannager d95e2dd9e5a76e4680148d0f9ca6539b
+  exports: f15d8a7727703f68e058c478376c3646
+  Env 889e7ed3d0dbb9b247ddec7c706e9718
+  characterListModify 6df5a5cf52e3509d0d79e4b4042c0d90
+  character_creation 37f442b8e8f3fbc891ce20b285dee511
+  dices_thrower 1d12f81ae326d90b7b064e54d9ed4503
+  nth d44d2d3b1c7f91e4aaad2aa1f7c469f9
+  skilatr_thrower 9876b82965e8329223b4f06755f0fa7b
+  system_depurator 15df3aa675a9971a2b9cec796bad1f00
+  takeOut c118a59855d8eb6a8e7ca8156d8ba7ab
+import  -/  Parser 4706971241401d9ad00f58b97bac0200
+  exports: 0fc83fb0d80058520111fed80e996b22
+  loadCharacter 4bf26677f40115c4fadc41e1187a92b4
+  num_parse a58e99846592eb6b088a0eb60e53b134
+  parseSystem 2634dba3880d10042eda7ac0fe120283
+  totParser 3d6edc32739c5d08b0bffbba62eefc22
+import  -/  base-4.9.1.0:Control.Exception a76dd9666251322fe34dbcca3a0817bf
+import  -/  base-4.9.1.0:Control.Exception.Base 1e106916283856f4d9caeddab92cd861
 import  -/  base-4.9.1.0:Data.Either 20b09ef8d0a5b74fdec011c40c1587f5
+import  -/  base-4.9.1.0:Data.Foldable 3e0b6967a1da89945d0e2d47266337a2
 import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.IO.Exception 5064be4c355632a1d1c4f2322f56ac52
 import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
 import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
 import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
@@ -133,24 +141,48 @@ import  -/  base-4.9.1.0:System.IO e4a64a8e3dce8616da54f0ee7104f7db
 import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
 import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
 import  -/  integer-gmp-1.0.0.1:GHC.Integer.Type 318df275d77dcdb18e0006d8d7870c2a
+import  -/  parsec-3.1.11@parsec-3.1.11-113irVHGgd88sRnywByDNw:Text.Parsec.Error ce2217365701a41a4565dbdaf79d63d9
 import  -/  parsec-3.1.11@parsec-3.1.11-113irVHGgd88sRnywByDNw:Text.Parsec.String 82047932fe8b05f9590326d15e87580c
 import  -/  process-1.4.3.0@process-1.4.3.0:System.Process 1ee59b956b7cad68338d3f6ab3e772ed
-251a3da097ba7e4733caccf08eecfdfe
+import  -/  readline-1.0.3.0@readline-1.0.3.0-7WqJPjOS9HEE95ifi9FvTC:System.Console.Readline e4317f0e6b4cad7d40213323b8ee5b18
+9fa07ff99911ce7494fbfd46a2d2acd1
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
      Unfolding: (GHC.Types.Module
                    Interface.$trModule2
                    Interface.$trModule1) -}
-fa135b6f96ad40b3e2c3ad72e7c4f433
+33d015863d8fe9ae1886f1f9de16c812
   $trModule1 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "Interface"#) -}
-6d759f7e1fa02976eb25dd998fa6dd08
+9bab433527505c0a6b34958e38a50ec6
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS
-                   "GoblinBurner-0.1.0.0-9BGpxHuB4WvZG8Ab7rdhV"#) -}
-dd1b708e532bb8d033b6f2fb76676722
+                   "GoblinBurner-0.1.0.0-I1JAjz4cEJL8vh9rdrHCnV"#) -}
+a77be99de5e9c225013413127494ec98
+  $wcmdDelChar ::
+    AST.System
+    -> [AST.Character]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (AST.Game, GHC.Base.String) #)
+  {- Arity: 3, Strictness: <L,U><L,U><S,U>, Inline: [0],
+     Unfolding: (\ (ww :: AST.System)
+                   (ww1 :: [AST.Character])
+                   (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case Interface.cmdDelChar4
+                        (Interface.cmdDelChar3
+                           @ [GHC.Types.Char]
+                           (GHC.Types.: @ GHC.Types.Char)
+                           (Interface.character_list ww1 Interface.cmdDelChar2))
+                        w of ds1 { (#,#) ipv ipv1 ->
+                 (# ipv,
+                    (AST.Gm
+                       ww
+                       (Mannager.takeOut @ AST.Character (Parser.num_parse ipv1) ww1),
+                     GHC.Types.[] @ GHC.Types.Char) #) }) -}
+2b64aa03b1dc5f1d8bd567f2d05313e2
   $wcmdListAct ::
     AST.System
     -> [AST.Character]
@@ -161,33 +193,18 @@ dd1b708e532bb8d033b6f2fb76676722
      Unfolding: (\ (ww :: AST.System)
                    (ww1 :: [AST.Character])
                    (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 case System.Process.system1
-                        Interface.cmdDelChar4
-                        w of ds1 { (#,#) ipv ipv1 ->
-                 case GHC.IO.Handle.Text.hPutStr2
-                        GHC.IO.Handle.FD.stdout
+                 case Interface.cmdDelChar4
                         (case ww of wild {
-                           AST.Sys ipv2 ipv3 ipv4 ipv5 ipv6 ipv7 ipv8
+                           DEFAULT
                            -> case Interface.actionsFromSystem1 ret_ty GHC.Base.String of {}
-                           AST.DepSys act ds ds2 ds3 ds4 ds5
+                           AST.DepSys act ds ds1 ds2 ds3 ds4
                            -> GHC.Base.++
                                 @ GHC.Types.Char
-                                (Interface.action_list act Interface.cmdDelChar3)
+                                (Interface.action_list act Interface.cmdDelChar2)
                                 Interface.cmdListAct2 })
-                        GHC.Types.False
-                        ipv of ds2 { (#,#) ipv2 ipv3 ->
-                 case GHC.IO.Handle.Internals.wantReadableHandle_1
-                        @ GHC.Base.String
-                        GHC.IO.Handle.Text.hGetLine4
-                        GHC.IO.Handle.FD.stdin
-                        GHC.IO.Handle.Text.hGetLine2
-                          `cast`
-                        (<GHC.IO.Handle.Types.Handle__>_R
-                         ->_R Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R))
-                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
-                 (# ipv4,
-                    (AST.Gm ww ww1, GHC.Types.[] @ GHC.Types.Char) #) } } }) -}
-1ff55e8697213b07befe657abe36b997
+                        w of ds1 { (#,#) ipv ipv1 ->
+                 (# ipv, (AST.Gm ww ww1, GHC.Types.[] @ GHC.Types.Char) #) }) -}
+d3eb1d858cc113bdfe2b50a22940f9b4
   $wcmdListChar ::
     AST.System
     -> [AST.Character]
@@ -198,79 +215,34 @@ dd1b708e532bb8d033b6f2fb76676722
      Unfolding: (\ (ww :: AST.System)
                    (ww1 :: [AST.Character])
                    (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 case System.Process.system1
-                        Interface.cmdDelChar4
-                        w of ds1 { (#,#) ipv ipv1 ->
-                 case GHC.IO.Handle.Text.hPutStr2
-                        GHC.IO.Handle.FD.stdout
+                 case Interface.cmdDelChar4
                         (GHC.Base.++
                            @ GHC.Types.Char
-                           (Interface.character_list ww1 Interface.cmdDelChar3)
+                           (Interface.character_list ww1 Interface.cmdDelChar2)
                            Interface.cmdListAct2)
-                        GHC.Types.False
-                        ipv of ds2 { (#,#) ipv2 ipv3 ->
-                 case GHC.IO.Handle.Internals.wantReadableHandle_1
-                        @ GHC.Base.String
-                        GHC.IO.Handle.Text.hGetLine4
-                        GHC.IO.Handle.FD.stdin
-                        GHC.IO.Handle.Text.hGetLine2
-                          `cast`
-                        (<GHC.IO.Handle.Types.Handle__>_R
-                         ->_R Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R))
-                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
-                 (# ipv4,
-                    (AST.Gm ww ww1, GHC.Types.[] @ GHC.Types.Char) #) } } }) -}
-9b72fd62ef5a8a04fae95ad36e2bdbb5
-  $wcmdLoadChar ::
+                        w of ds1 { (#,#) ipv ipv1 ->
+                 (# ipv, (AST.Gm ww ww1, GHC.Types.[] @ GHC.Types.Char) #) }) -}
+77a59aa04574ac228d7607ac01df6c0b
+  $wcmdShowChar ::
     AST.System
     -> [AST.Character]
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld,
           (AST.Game, GHC.Base.String) #)
-  {- Arity: 3, Strictness: <L,U><L,U><S,U>, Inline: [0],
+  {- Arity: 3, Strictness: <L,U><S,U><S,U>, Inline: [0],
      Unfolding: (\ (ww :: AST.System)
                    (ww1 :: [AST.Character])
                    (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 case Interface.cmdLoadChar3 w of ds1 { (#,#) ipv ipv1 ->
-                 let {
-                   fname :: GHC.Base.String
-                   = GHC.CString.unpackAppendCString# "files/"# ipv1
-                 } in
-                 case GHC.IO.Handle.FD.openFile1
-                        fname
-                        GHC.IO.IOMode.ReadMode
-                        ipv of ds2 { (#,#) ipv2 ipv3 ->
-                 case GHC.IO.Handle.Text.hGetContents1
-                        ipv3
-                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
-                 case (Text.Parsec.Prim.runPT
-                         @ GHC.Base.String
-                         @ Data.Functor.Identity.Identity
-                         @ GHC.Types.Char
-                         @ ()
-                         @ [AST.Character]
-                         (Text.Parsec.String.$s$fStream[]mtok @ GHC.Types.Char)
-                         Interface.cmdLoadChar2
-                           `cast`
-                         (Sym (Text.Parsec.Prim.N:ParsecT[0]
-                                   <[GHC.Types.Char]>_R
-                                   <()>_R
-                                   <Data.Functor.Identity.Identity>_R
-                                   <[AST.Character]>_R))
-                         GHC.Tuple.()
-                         fname
-                         ipv5)
-                        `cast`
-                      (Data.Functor.Identity.N:Identity[0]
-                           <Data.Either.Either
-                              Text.Parsec.Error.ParseError [AST.Character]>_R) of wild {
-                   Data.Either.Left er
-                   -> (# ipv4, (AST.Gm ww ww1, GHC.Types.[] @ GHC.Types.Char) #)
-                   Data.Either.Right a
-                   -> (# ipv4,
-                         (AST.Gm ww (GHC.Base.++ @ AST.Character a ww1),
-                          GHC.Types.[] @ GHC.Types.Char) #) } } } }) -}
-61f69b5da9a556f44c3f192ed1386ff0
+                 case GHC.List.$wlenAcc @ AST.Character ww1 0# of ww2 {
+                   DEFAULT
+                   -> case Interface.cmdShowChar3 ww1 w of ds1 { (#,#) ipv ipv1 ->
+                      (# ipv, (AST.Gm ww ww1, GHC.Types.[] @ GHC.Types.Char) #) }
+                   0#
+                   -> case Interface.cmdDelChar4
+                             Interface.cmdShowChar2
+                             w of ds1 { (#,#) ipv ipv1 ->
+                      (# ipv, (AST.Gm ww ww1, GHC.Types.[] @ GHC.Types.Char) #) } }) -}
+b8be7bf75b712492a4df3972145b02ea
   $wprintRoll ::
     [GHC.Integer.Type.Integer]
     -> [GHC.Integer.Type.Integer]
@@ -306,7 +278,7 @@ dd1b708e532bb8d033b6f2fb76676722
                                      ww1
                                      (GHC.Types.[] @ GHC.Types.Char))
                                   Interface.printRoll1)))) })) -}
-169573bd2cf42891184b7dfd4c269ca8
+7b7101a5d17387517cbfe3d5ee7aaaf8
   $wshowAtributes ::
     AST.Name
     -> [(AST.Name, GHC.Integer.Type.Integer)]
@@ -318,11 +290,7 @@ dd1b708e532bb8d033b6f2fb76676722
                    (ww1 :: [(AST.Name, GHC.Integer.Type.Integer)])
                    (ww2 :: [GHC.Base.String])
                    (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 case System.Process.system1
-                        Interface.cmdDelChar4
-                        w of ds1 { (#,#) ipv ipv1 ->
-                 case GHC.IO.Handle.Text.hPutStr2
-                        GHC.IO.Handle.FD.stdout
+                 case Interface.cmdDelChar4
                         (GHC.CString.unpackAppendCString#
                            "Name: "#
                            (GHC.Base.++
@@ -340,40 +308,29 @@ dd1b708e532bb8d033b6f2fb76676722
                                        (GHC.Base.++
                                           @ GHC.Types.Char
                                           (Interface.listCon ww2)
-                                          Interface.cmdShowChar3))))))
-                        GHC.Types.False
-                        ipv of ds2 { (#,#) ipv2 ipv3 ->
-                 case GHC.IO.Handle.Internals.wantReadableHandle_1
-                        @ GHC.Base.String
-                        GHC.IO.Handle.Text.hGetLine4
-                        GHC.IO.Handle.FD.stdin
-                        GHC.IO.Handle.Text.hGetLine2
-                          `cast`
-                        (<GHC.IO.Handle.Types.Handle__>_R
-                         ->_R Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R))
-                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
-                 (# ipv4, GHC.Tuple.() #) } } }) -}
-f04bbc6555ee3a00948aec3f0ec009f4
+                                          Interface.cmdShowChar4))))))
+                        w of ds1 { (#,#) ipv ipv1 ->
+                 (# ipv, GHC.Tuple.() #) }) -}
+c013cc9e3bed4d88f0585f556b8b3273
   action_list ::
     [AST.Action] -> GHC.Integer.Type.Integer -> GHC.Base.String
   {- Arity: 2, Strictness: <S,1*U><L,U> -}
-77b88771324513340db811b426d7bbb3
+7a3ab14ba010f37f788161332134d8e1
   actionsFromSystem :: AST.System -> [AST.Action]
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
                 (\ (ds :: AST.System) ->
                  case ds of wild {
-                   AST.Sys ipv ipv1 ipv2 ipv3 ipv4 ipv5 ipv6
-                   -> Interface.actionsFromSystem1
+                   DEFAULT -> Interface.actionsFromSystem1
                    AST.DepSys act ds1 ds2 ds3 ds4 ds5 -> act }) -}
-804b832c0c577075a38b902c68aebd08
+62381483e2ea16e63018499fd0716fa2
   actionsFromSystem1 :: [AST.Action]
   {- Strictness: x -}
-d7ddaf54a8a800040ea8973e834238b7
+13c2a43ecfe874ae77a59a14ba897ed6
   character_list ::
     [AST.Character] -> GHC.Integer.Type.Integer -> GHC.Base.String
   {- Arity: 2, Strictness: <S,1*U><L,U> -}
-186b86a37a7a5d6842b5f972cbdda53a
+9bc85092b8bff3e2645029f7933ca8f6
   cmdDelChar :: AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String)
   {- Arity: 2, Strictness: <S,1*U(U,U)><S,U>,
      Unfolding: InlineRule (0, True, True)
@@ -381,59 +338,39 @@ d7ddaf54a8a800040ea8973e834238b7
                   `cast`
                 (<AST.Game>_R
                  ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)) -}
-4b2f1ecaa2dcaf01762407e5bab23e6d
+9c03d68142b21aa93c99b415fba681cf
   cmdDelChar1 ::
     AST.Game
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld,
           (AST.Game, GHC.Base.String) #)
-  {- Arity: 2, Strictness: <S,1*U(U,U)><S,U>,
+  {- Arity: 2, Strictness: <S,1*U(U,U)><S,U>, Inline: INLINE[0],
      Unfolding: InlineRule (2, True, False)
-                (\ (g :: AST.Game)
-                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 case g of wild { AST.Gm system char ->
-                 case Interface.cmdDelChar2 char eta of ds1 { (#,#) ipv ipv1 ->
-                 (# ipv,
-                    (AST.Gm system ipv1, GHC.Types.[] @ GHC.Types.Char) #) } }) -}
-941cf08e2d4741159e4c2c3f0e2fde32
-  cmdDelChar2 ::
-    [AST.Character]
-    -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, [AST.Character] #)
-  {- Arity: 2, Strictness: <L,U><S,U>,
-     Unfolding: (\ (char :: [AST.Character])
-                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 case System.Process.system1
-                        Interface.cmdDelChar4
-                        s of ds1 { (#,#) ipv ipv1 ->
-                 case GHC.IO.Handle.Text.hPutStr2
-                        GHC.IO.Handle.FD.stdout
-                        (GHC.CString.unpackAppendCString#
-                           "Which character you want to delete?\n"#
-                           (Interface.character_list char Interface.cmdDelChar3))
-                        GHC.Types.False
-                        ipv of ds2 { (#,#) ipv2 ipv3 ->
-                 case GHC.IO.Handle.Internals.wantReadableHandle_1
-                        @ GHC.Base.String
-                        GHC.IO.Handle.Text.hGetLine4
-                        GHC.IO.Handle.FD.stdin
-                        GHC.IO.Handle.Text.hGetLine2
-                          `cast`
-                        (<GHC.IO.Handle.Types.Handle__>_R
-                         ->_R Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R))
-                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
-                 (# ipv4,
-                    Mannager.takeOut
-                      @ AST.Character
-                      (Parser.num_parse ipv5)
-                      char #) } } }) -}
-f0b49e226a5ad096bad74d3cd26b58af
-  cmdDelChar3 :: GHC.Integer.Type.Integer
+                (\ (w :: AST.Game)
+                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case w of ww { AST.Gm ww1 ww2 ->
+                 Interface.$wcmdDelChar ww1 ww2 w1 }) -}
+cd05cefa716326cc114aa3574eb986e9
+  cmdDelChar2 :: GHC.Integer.Type.Integer
   {- HasNoCafRefs, Unfolding: (1) -}
-4fc20873bf0ce5dd80c7a2aad56a209b
-  cmdDelChar4 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "clear"#) -}
-0921cd5ec2b41382180041e423864646
+88fa6bd08c543f61803403c65cc98298
+  cmdDelChar3 :: (GHC.Types.Char -> b -> b) -> b -> b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,C(C1(U))><L,U>,
+     Unfolding: (\ @ b
+                   (c :: GHC.Types.Char -> b -> b)[OneShot]
+                   (n :: b)[OneShot] ->
+                 GHC.CString.unpackFoldrCString#
+                   @ b
+                   "Which character you want to delete?\n"#
+                   c
+                   n) -}
+16824f593c02cc91eba58a405749b838
+  cmdDelChar4 ::
+    GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.String #)
+  {- Arity: 2, Strictness: <L,U><S,U> -}
+47dc716ed8ba8f8f453899824a7a6dea
   cmdExit :: AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String)
   {- Arity: 2, Strictness: <L,U><S,U>,
      Unfolding: InlineRule (0, True, True)
@@ -441,7 +378,7 @@ f0b49e226a5ad096bad74d3cd26b58af
                   `cast`
                 (<AST.Game>_R
                  ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)) -}
-a9d8b91df1e23a74b010a0da88f529a5
+9941a966579a51d24c9a2495401351bc
   cmdExit1 ::
     AST.Game
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -452,7 +389,7 @@ a9d8b91df1e23a74b010a0da88f529a5
                 (\ (g :: AST.Game)
                    (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                  case System.Process.system1
-                        Interface.cmdDelChar4
+                        Interface.cmdExit4
                         s of ds1 { (#,#) ipv ipv1 ->
                  case GHC.IO.Handle.Text.hPutStr2
                         GHC.IO.Handle.FD.stdout
@@ -460,13 +397,16 @@ a9d8b91df1e23a74b010a0da88f529a5
                         GHC.Types.False
                         ipv of ds2 { (#,#) ipv2 ipv3 ->
                  (# ipv2, (g, Interface.cmdExit2) #) } }) -}
-39f280134191eda8d82dc9437442b47c
+4dd17db7342b4229285191d8ffb335d4
   cmdExit2 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Exit"#) -}
-87e9ec450c84c1b4e70e89ad1398d591
+a51beea703dbd4b49bb91a52dafdf95d
   cmdExit3 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Goodbye!...\n"#) -}
-63c4236a39392c74438a71d075afcaff
+cb40831c9c85b33b97462705652ea139
+  cmdExit4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "clear"#) -}
+59cf5b6e005546a5dc11ae7dce0c7362
   cmdListAct :: AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String)
   {- Arity: 2, Strictness: <S,1*U(U,U)><S,U>,
      Unfolding: InlineRule (0, True, True)
@@ -474,7 +414,7 @@ a9d8b91df1e23a74b010a0da88f529a5
                   `cast`
                 (<AST.Game>_R
                  ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)) -}
-c21e395417db290917c360937802443f
+c0770b5e25bfa9e89e4c36441e23349e
   cmdListAct1 ::
     AST.Game
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -486,11 +426,11 @@ c21e395417db290917c360937802443f
                    (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                  case w of ww { AST.Gm ww1 ww2 ->
                  Interface.$wcmdListAct ww1 ww2 w1 }) -}
-7ce12fd496b233bce74adff02332667b
+1ee1ca7da3000ea328e72b03f6a7218f
   cmdListAct2 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "Press any key to continue \n"#) -}
-be5c1e84eb19bfb9eedec4b0d083d72f
+5ba757f68986dc7b2876172f3f0e18ca
   cmdListChar :: AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String)
   {- Arity: 2, Strictness: <S,1*U(U,U)><S,U>,
      Unfolding: InlineRule (0, True, True)
@@ -498,7 +438,7 @@ be5c1e84eb19bfb9eedec4b0d083d72f
                   `cast`
                 (<AST.Game>_R
                  ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)) -}
-acc7f4a94b1db8775372ab3610368193
+1015c666389f87d831a99d5a3ffe20da
   cmdListChar1 ::
     AST.Game
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -510,72 +450,44 @@ acc7f4a94b1db8775372ab3610368193
                    (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                  case w of ww { AST.Gm ww1 ww2 ->
                  Interface.$wcmdListChar ww1 ww2 w1 }) -}
-0f438b2999f522f1568274fb253cc857
+9a0ca2fa222cc794ac074a718847a372
   cmdLoadChar :: AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String)
-  {- Arity: 2, Strictness: <S,1*U(U,U)><S,U>,
+  {- Arity: 2, Strictness: <S,1*U(U,1*U)><S,U>,
      Unfolding: InlineRule (0, True, True)
                 Interface.cmdLoadChar1
                   `cast`
                 (<AST.Game>_R
                  ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)) -}
-42f714a52e20c3c1bd4fd6da9695648c
+92b40a5db8d8bd513a753ad8868d71d2
   cmdLoadChar1 ::
     AST.Game
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld,
           (AST.Game, GHC.Base.String) #)
-  {- Arity: 2, Strictness: <S,1*U(U,U)><S,U>, Inline: INLINE[0],
+  {- Arity: 2, Strictness: <S,1*U(U,1*U)><S,U>,
      Unfolding: InlineRule (2, True, False)
-                (\ (w :: AST.Game)
-                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 case w of ww { AST.Gm ww1 ww2 ->
-                 Interface.$wcmdLoadChar ww1 ww2 w1 }) -}
-6d4fec430d8d16e346897a31f307b54e
+                (\ (g :: AST.Game)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case g of wild { AST.Gm system char ->
+                 case Interface.cmdLoadChar2
+                        (GHC.Types.[] @ GHC.Types.Char)
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 (# ipv,
+                    (AST.Gm
+                       system
+                       (GHC.Base.augment
+                          @ AST.Character
+                          (\ @ b (c :: AST.Character -> b -> b)[OneShot] (n :: b)[OneShot] ->
+                           GHC.Base.foldr @ AST.Character @ b c n ipv1)
+                          char),
+                     GHC.Types.[] @ GHC.Types.Char) #) } }) -}
+49187f95be7b709aa44fea557b116f7a
   cmdLoadChar2 ::
-    Text.Parsec.Prim.State [GHC.Types.Char] ()
-    -> ([AST.Character]
-        -> Text.Parsec.Prim.State [GHC.Types.Char] ()
-        -> Text.Parsec.Error.ParseError
-        -> Data.Functor.Identity.Identity b)
-    -> (Text.Parsec.Error.ParseError
-        -> Data.Functor.Identity.Identity b)
-    -> ([AST.Character]
-        -> Text.Parsec.Prim.State [GHC.Types.Char] ()
-        -> Text.Parsec.Error.ParseError
-        -> Data.Functor.Identity.Identity b)
-    -> (Text.Parsec.Error.ParseError
-        -> Data.Functor.Identity.Identity b)
-    -> Data.Functor.Identity.Identity b
-  {- Arity: 5,
-     Unfolding: (Parser.num_parse4
-                   @ [AST.Character]
-                   Parser.loadCharacter1
-                     `cast`
-                   (Sym (Text.Parsec.Prim.N:ParsecT[0]
-                             <GHC.Base.String>_R
-                             <()>_R
-                             <Data.Functor.Identity.Identity>_R
-                             <[AST.Character]>_R))) -}
-4b7d6aa9494ba3fc31ba67e19eaf39d2
-  cmdLoadChar3 ::
-    GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.String #)
-  {- Arity: 1, Strictness: <S,U>,
-     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 case System.Process.system1
-                        Interface.cmdDelChar4
-                        s of ds1 { (#,#) ipv ipv1 ->
-                 case GHC.IO.Handle.Text.hPutStr2
-                        GHC.IO.Handle.FD.stdout
-                        Interface.cmdLoadChar4
-                        GHC.Types.False
-                        ipv of ds2 { (#,#) ipv2 ipv3 ->
-                 System.IO.getLine1 ipv2 } }) -}
-43419eca4f73ad89e5ff2e8bdfd0753d
-  cmdLoadChar4 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "Please enter your character file \n"#) -}
-16d75357a293f28acb80085c4a3942d5
+    GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, [AST.Character] #)
+  {- Arity: 2, Strictness: <L,1*U><S,U> -}
+7dd3bf69505dca94309df22d7e8f5d34
   cmdMakeAct :: AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String)
   {- Arity: 2, Strictness: <S,1*U(U,U)><S,U>,
      Unfolding: InlineRule (0, True, True)
@@ -583,7 +495,7 @@ acc7f4a94b1db8775372ab3610368193
                   `cast`
                 (<AST.Game>_R
                  ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)) -}
-dd06fe18e739cb85053b237e819c8211
+d61b446d7e7c615287362659016f4451
   cmdMakeAct1 ::
     AST.Game
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -599,14 +511,14 @@ dd06fe18e739cb85053b237e819c8211
                         char
                         eta of ds1 { (#,#) ipv ipv1 ->
                  (# ipv, (wild, GHC.Types.[] @ GHC.Types.Char) #) } }) -}
-4f0d89a589d0b7d48023f33221a83f11
+7f2f6e0cc12d5fdeef89a2157f529ed2
   cmdMakeAct2 ::
     AST.System
     -> [AST.Character]
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 3, Strictness: <L,U><L,U><S,U> -}
-84b0160a0dfbcab59f7badec2a79a55e
+87f53c2270f9da674a5e7ea0475e65f3
   cmdModChar :: AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String)
   {- Arity: 2, Strictness: <S,1*U(U,U)><S,U>,
      Unfolding: InlineRule (0, True, True)
@@ -614,7 +526,7 @@ dd06fe18e739cb85053b237e819c8211
                   `cast`
                 (<AST.Game>_R
                  ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)) -}
-2aa998fdfcb94edef2a2d3ed12866043
+16836eea31a42f06b90ad83cfb73bece
   cmdModChar1 ::
     AST.Game
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -631,14 +543,14 @@ dd06fe18e739cb85053b237e819c8211
                         eta of ds1 { (#,#) ipv ipv1 ->
                  (# ipv,
                     (AST.Gm system ipv1, GHC.Types.[] @ GHC.Types.Char) #) } }) -}
-8106502ed83d72fc2edfa33cb3b56b0d
+abdcdcf826463b3647af28ba4b1b7369
   cmdModChar2 ::
     AST.System
     -> [AST.Character]
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, [AST.Character] #)
   {- Arity: 3, Strictness: <L,1*U><L,U><S,U> -}
-6945711412b462cd4550554c305cecbb
+4ef88bdab37439887b8d7c3c8961a7a3
   cmdNewChar :: AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String)
   {- Arity: 2, Strictness: <S(SL),1*U(U,U)><S,U>,
      Unfolding: InlineRule (0, True, True)
@@ -646,7 +558,7 @@ dd06fe18e739cb85053b237e819c8211
                   `cast`
                 (<AST.Game>_R
                  ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)) -}
-2439c81c5f0e36fffba100703cf74f6f
+ada6e399a0653fccab59c93ae621c211
   cmdNewChar1 ::
     AST.Game
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -661,7 +573,7 @@ dd06fe18e739cb85053b237e819c8211
                  (# ipv,
                     (AST.Gm system (GHC.Types.: @ AST.Character ipv1 char),
                      GHC.Types.[] @ GHC.Types.Char) #) } }) -}
-4afacf9d4283d269d5f821c6ae8c2968
+a32af3753bd326da2ba86d7c81d8cf43
   cmdNewChar2 ::
     AST.System
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -670,65 +582,47 @@ dd06fe18e739cb85053b237e819c8211
      Unfolding: (\ (ds :: AST.System)
                    (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                  case ds of wild {
-                   AST.Sys ipv ipv1 ipv2 ipv3 ipv4 ipv5 ipv6
+                   DEFAULT
                    -> case Interface.cmdNewChar6
                       ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld, AST.Character #)
                       of {}
                    AST.DepSys ds1 attr depAttr skl ds2 ds3
-                   -> case System.Process.system1
-                             Interface.cmdDelChar4
-                             eta of ds4 { (#,#) ipv ipv1 ->
-                      case GHC.IO.Handle.Text.hPutStr2
-                             GHC.IO.Handle.FD.stdout
+                   -> case Interface.cmdDelChar4
                              Interface.cmdNewChar5
-                             GHC.Types.False
-                             ipv of ds5 { (#,#) ipv2 ipv3 ->
-                      case GHC.IO.Handle.Internals.wantReadableHandle_1
-                             @ GHC.Base.String
-                             GHC.IO.Handle.Text.hGetLine4
-                             GHC.IO.Handle.FD.stdin
-                             GHC.IO.Handle.Text.hGetLine2
-                               `cast`
-                             (<GHC.IO.Handle.Types.Handle__>_R
-                              ->_R Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R))
-                             ipv2 of ds6 { (#,#) ipv4 ipv5 ->
-                      case attr of wild1 { AST.Atr ds7 list ->
+                             eta of ds4 { (#,#) ipv ipv1 ->
+                      case attr of wild1 { AST.Atr ds5 list ->
                       case Interface.cmdNewChar4
                              list
                              (GHC.Types.[] @ (AST.Variable, GHC.Integer.Type.Integer))
-                             ipv4 of ds8 { (#,#) ipv6 ipv7 ->
+                             ipv of ds6 { (#,#) ipv2 ipv3 ->
                       case Interface.cmdNewChar3
                              skl
                              (GHC.Types.[] @ AST.Skills)
-                             ipv6 of ds9 { (#,#) ipv8 ipv9 ->
-                      (# ipv8,
-                         Mannager.character_creation
-                           ipv5
-                           ipv7
-                           depAttr
-                           ipv9 #) } } } } } } }) -}
-45a002a3c74df52c32443a087ec6c030
+                             ipv2 of ds7 { (#,#) ipv4 ipv5 ->
+                      (# ipv4,
+                         Mannager.character_creation ipv1 ipv3 depAttr ipv5 #) } } } } }) -}
+cbceb9cf9a7a4c37a58252e919f441f8
   cmdNewChar3 ::
     [AST.Skills]
     -> [AST.Skills]
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, [AST.Skills] #)
   {- Arity: 3, Strictness: <L,U><L,U><S,U> -}
-74f602a4c12737207c2236d915d25f26
+71538c60b654458e749d4c0f99b40057
   cmdNewChar4 ::
     [AST.Name]
     -> Mannager.Env
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, Mannager.Env #)
   {- Arity: 3, Strictness: <S,1*U><L,U><S,U> -}
-8b4d2fd1f7f9a621965254244706a588
+d4ca08468ee9888c446601e6b9bc7b49
   cmdNewChar5 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "Enter your character name!\n"#) -}
-74bdd7693518b0e86d7f030460ff625c
+78d23357caad837f06c2757e35e739cc
   cmdNewChar6 :: GHC.Types.IO AST.Character
   {- Strictness: x -}
-e7b89e70df10bfde1ee59d087a888fe6
+189eaef526893f70459ca2719bfc98b7
   cmdRollAtr :: AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String)
   {- Arity: 2, Strictness: <S,1*U(U,U)><S,U>,
      Unfolding: InlineRule (0, True, True)
@@ -736,7 +630,7 @@ e7b89e70df10bfde1ee59d087a888fe6
                   `cast`
                 (<AST.Game>_R
                  ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)) -}
-e3c9d87fff8711ec45b84e49f7f23821
+b86228fef0a48c1e9ea8851c42f08fc8
   cmdRollAtr1 ::
     AST.Game
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -752,14 +646,14 @@ e3c9d87fff8711ec45b84e49f7f23821
                         char
                         eta of ds1 { (#,#) ipv ipv1 ->
                  (# ipv, (wild, GHC.Types.[] @ GHC.Types.Char) #) } }) -}
-32a6f7fb698d40989c8afd68e69d9084
+211fc3ced8c460ddef7a953bc7106fd8
   cmdRollAtr2 ::
     AST.System
     -> [AST.Character]
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 3, Strictness: <L,1*U><L,U><S,U> -}
-63d212536ab60deaae274448e634ca81
+05eaf5c2f13d6cc2cffc0720392bfb64
   cmdSaveChar :: AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String)
   {- Arity: 2, Strictness: <S,1*U(U,U)><S,U>,
      Unfolding: InlineRule (0, True, True)
@@ -767,7 +661,7 @@ e3c9d87fff8711ec45b84e49f7f23821
                   `cast`
                 (<AST.Game>_R
                  ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)) -}
-730767b1ec2fcffbea92e76cbe7c9bbe
+f4b6102cf2730670987282211c53333a
   cmdSaveChar1 ::
     AST.Game
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -780,61 +674,19 @@ e3c9d87fff8711ec45b84e49f7f23821
                  case g of wild { AST.Gm system char ->
                  case Interface.cmdSaveChar2 char eta of ds1 { (#,#) ipv ipv1 ->
                  (# ipv, (wild, GHC.Types.[] @ GHC.Types.Char) #) } }) -}
-c530e9fc5a18859c890217be663b1302
+cd47041d712dd25b0a2a34810e0636c9
   cmdSaveChar2 ::
-    [AST.Character]
-    -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 2, Strictness: <L,U><S,U> -}
-7f14fcc700dadb7110b887f9dc17790f
-  cmdShowChar :: AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String)
-  {- Arity: 2, Strictness: <S,1*U(U,U)><S,U>,
-     Unfolding: InlineRule (0, True, True)
-                Interface.cmdShowChar1
-                  `cast`
-                (<AST.Game>_R
-                 ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)) -}
-ef373db1dd33fae29020d64aaee3ff34
-  cmdShowChar1 ::
-    AST.Game
-    -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
-          (AST.Game, GHC.Base.String) #)
-  {- Arity: 2, Strictness: <S,1*U(U,U)><S,U>,
-     Unfolding: InlineRule (2, True, False)
-                (\ (g :: AST.Game)
-                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 case g of wild { AST.Gm system char ->
-                 case Interface.cmdShowChar2 char eta of ds1 { (#,#) ipv ipv1 ->
-                 (# ipv, (wild, GHC.Types.[] @ GHC.Types.Char) #) } }) -}
-a8ea4cb97356eabec9a85a09365aae42
-  cmdShowChar2 ::
     [AST.Character]
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 2, Strictness: <L,U><S,U>,
      Unfolding: (\ (chars :: [AST.Character])
                    (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 case System.Process.system1
-                        Interface.cmdDelChar4
+                 case Interface.cmdDelChar4
+                        (GHC.CString.unpackAppendCString#
+                           "Which character do you want to save?\n"#
+                           (Interface.character_list chars Interface.cmdDelChar2))
                         s of ds1 { (#,#) ipv ipv1 ->
-                 case GHC.IO.Handle.Text.hPutStr2
-                        GHC.IO.Handle.FD.stdout
-                        (GHC.Base.++
-                           @ GHC.Types.Char
-                           (Interface.character_list chars Interface.cmdDelChar3)
-                           Interface.cmdShowChar5)
-                        GHC.Types.False
-                        ipv of ds2 { (#,#) ipv2 ipv3 ->
-                 case GHC.IO.Handle.Internals.wantReadableHandle_1
-                        @ GHC.Base.String
-                        GHC.IO.Handle.Text.hGetLine4
-                        GHC.IO.Handle.FD.stdin
-                        GHC.IO.Handle.Text.hGetLine2
-                          `cast`
-                        (<GHC.IO.Handle.Types.Handle__>_R
-                         ->_R Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R))
-                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
                  case Mannager.nth
                         @ AST.Character
                         (case (Text.Parsec.Prim.runPT
@@ -853,76 +705,247 @@ a8ea4cb97356eabec9a85a09365aae42
                                            <GHC.Integer.Type.Integer>_R))
                                  GHC.Tuple.()
                                  (GHC.Types.[] @ GHC.Types.Char)
-                                 ipv5)
+                                 ipv1)
                                 `cast`
                               (Data.Functor.Identity.N:Identity[0]
                                    <Data.Either.Either
                                       Text.Parsec.Error.ParseError
                                       GHC.Integer.Type.Integer>_R) of wild {
-                           Data.Either.Left err -> Interface.cmdShowChar4
+                           Data.Either.Left err -> Interface.cmdSaveChar3
                            Data.Either.Right a
-                           -> GHC.Integer.Type.minusInteger a Interface.cmdDelChar3 })
+                           -> GHC.Integer.Type.minusInteger a Interface.cmdDelChar2 })
+                        chars of wild { AST.PC name xs ys ->
+                 System.IO.writeFile1
+                   (GHC.CString.unpackAppendCString# "files/"# name)
+                   (GHC.Base.++
+                      @ GHC.Types.Char
+                      name
+                      (GHC.CString.unpackAppendCString#
+                         "\n"#
+                         (GHC.Base.++
+                            @ GHC.Types.Char
+                            (Interface.listEnv xs)
+                            (GHC.CString.unpackAppendCString#
+                               "\n"#
+                               (GHC.CString.unpackAppendCString#
+                                  "CONDITION_MODIFIER\n"#
+                                  (Interface.listCon ys))))))
+                   ipv } }) -}
+05d1cfee1d69c1ff4e9d4c6350de2146
+  cmdSaveChar3 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (-1) -}
+11eeaa340f44af571ed889151e8c066d
+  cmdShowChar :: AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String)
+  {- Arity: 2, Strictness: <S(LS),1*U(U,U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Interface.cmdShowChar1
+                  `cast`
+                (<AST.Game>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)) -}
+d73f52bdfb42ed21ca31b012b6e057a8
+  cmdShowChar1 ::
+    AST.Game
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (AST.Game, GHC.Base.String) #)
+  {- Arity: 2, Strictness: <S(LS),1*U(U,U)><S,U>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: AST.Game)
+                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case w of ww { AST.Gm ww1 ww2 ->
+                 Interface.$wcmdShowChar ww1 ww2 w1 }) -}
+9789c4eadaa2a0d2998d5b7344fb0638
+  cmdShowChar2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "There is no characters\n"#) -}
+da0dcfe2bddecd91b3a51f4d3b3650aa
+  cmdShowChar3 ::
+    [AST.Character]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: (\ (chars :: [AST.Character])
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case Interface.cmdDelChar4
+                        (GHC.Base.++
+                           @ GHC.Types.Char
+                           (Interface.character_list chars Interface.cmdDelChar2)
+                           Interface.cmdShowChar5)
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case Mannager.nth
+                        @ AST.Character
+                        (case (Text.Parsec.Prim.runPT
+                                 @ GHC.Base.String
+                                 @ Data.Functor.Identity.Identity
+                                 @ GHC.Types.Char
+                                 @ ()
+                                 @ GHC.Integer.Type.Integer
+                                 (Parser.$s$fStream[]mtok @ GHC.Types.Char)
+                                 Parser.num_parse2
+                                   `cast`
+                                 (Sym (Text.Parsec.Prim.N:ParsecT[0]
+                                           <[GHC.Types.Char]>_R
+                                           <()>_R
+                                           <Data.Functor.Identity.Identity>_R
+                                           <GHC.Integer.Type.Integer>_R))
+                                 GHC.Tuple.()
+                                 (GHC.Types.[] @ GHC.Types.Char)
+                                 ipv1)
+                                `cast`
+                              (Data.Functor.Identity.N:Identity[0]
+                                   <Data.Either.Either
+                                      Text.Parsec.Error.ParseError
+                                      GHC.Integer.Type.Integer>_R) of wild {
+                           Data.Either.Left err -> Interface.cmdSaveChar3
+                           Data.Either.Right a
+                           -> GHC.Integer.Type.minusInteger a Interface.cmdDelChar2 })
                         chars of ww { AST.PC ww1 ww2 ww3 ->
-                 Interface.$wshowAtributes ww1 ww2 ww3 ipv4 } } } }) -}
-85ea6c47c29ea607a632b59504bcb8ae
-  cmdShowChar3 :: [GHC.Types.Char]
+                 Interface.$wshowAtributes ww1 ww2 ww3 ipv } }) -}
+d9906788c011487235d8550e380b25b7
+  cmdShowChar4 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "\n\
                    \Press any key to continue \n"#) -}
-7dbcd846f892c0cbcc0d26382631686f
-  cmdShowChar4 :: GHC.Integer.Type.Integer
-  {- HasNoCafRefs, Unfolding: (-1) -}
-050eefeab584f18baefabc10f445d6cb
+bffe7984bf3af1ec9973b0a42df321b1
   cmdShowChar5 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "Which character you want to see?\n"#) -}
-ce8c87c6385c66a5f139ee2931c30dd6
+22d8c50e69c1720ffe3e75ac6e7ab938
   create_char :: AST.System -> GHC.Types.IO AST.Character
   {- Arity: 2, Strictness: <S,1*U><S,U>,
      Unfolding: InlineRule (0, True, True)
                 Interface.cmdNewChar2
                   `cast`
                 (<AST.System>_R ->_R Sym (GHC.Types.N:IO[0] <AST.Character>_R)) -}
-e5c893f61afa1117c9089b1767f727ef
+0cd451b91dc7f27a23c5d44767099093
   delete_character :: [AST.Character] -> GHC.Types.IO [AST.Character]
   {- Arity: 2, Strictness: <L,U><S,U>,
      Unfolding: InlineRule (0, True, True)
-                Interface.cmdDelChar2
+                Interface.delete_character1
                   `cast`
                 (<[AST.Character]>_R
                  ->_R Sym (GHC.Types.N:IO[0] <[AST.Character]>_R)) -}
-e8f8bbf359ad5279dc52a5ee18edd816
+a203b78d4f4b83f58c9933f4c91b1f46
+  delete_character1 ::
+    [AST.Character]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, [AST.Character] #)
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: (\ (char :: [AST.Character])
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case Interface.cmdDelChar4
+                        (Interface.cmdDelChar3
+                           @ [GHC.Types.Char]
+                           (GHC.Types.: @ GHC.Types.Char)
+                           (Interface.character_list char Interface.cmdDelChar2))
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 (# ipv,
+                    Mannager.takeOut
+                      @ AST.Character
+                      (Parser.num_parse ipv1)
+                      char #) }) -}
+218135fc538a43ce921c109e87e13531
   envFromCharacter :: AST.Character -> Mannager.Env
   {- Arity: 1, HasNoCafRefs, Strictness: <S(LSL),1*U(A,1*U,A)>,
      Unfolding: InlineRule (1, True, False)
                 (\ (ds :: AST.Character) ->
                  case ds of wild { AST.PC ds1 env ds2 -> env }) -}
-92f63777b171cf45230de90a2e44f108
+6c12359d7c7725097e3f9ca0056444f6
+  errorCharFile ::
+    GHC.IO.Exception.IOException
+    -> GHC.Types.IO
+         (Data.Either.Either Text.Parsec.Error.ParseError [AST.Character])
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Interface.errorCharFile1
+                  `cast`
+                (<GHC.IO.Exception.IOException>_R
+                 ->_R Sym (GHC.Types.N:IO[0]
+                               <Data.Either.Either
+                                  Text.Parsec.Error.ParseError [AST.Character]>_R)) -}
+67d6753879b32f6e856a4baf9a2b0111
+  errorCharFile1 ::
+    GHC.IO.Exception.IOException
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Either.Either Text.Parsec.Error.ParseError [AST.Character] #)
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><S,U>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (e :: GHC.IO.Exception.IOException)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# eta, Interface.errorCharFile2 #)) -}
+1eb68851d82bb5970d95337c6a2fc9cc
+  errorCharFile2 ::
+    Data.Either.Either Text.Parsec.Error.ParseError [AST.Character]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (Data.Either.Right
+                   @ Text.Parsec.Error.ParseError
+                   @ [AST.Character]
+                   (GHC.Types.[] @ AST.Character)) -}
+260434c74a1664c3f7ae2232ad16814d
+  errorConFile ::
+    GHC.IO.Exception.IOException
+    -> GHC.Types.IO
+         (Data.Either.Either Text.Parsec.Error.ParseError AST.System)
+  {- Arity: 2, Strictness: <L,A><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Interface.errorConFile1
+                  `cast`
+                (<GHC.IO.Exception.IOException>_R
+                 ->_R Sym (GHC.Types.N:IO[0]
+                               <Data.Either.Either Text.Parsec.Error.ParseError AST.System>_R)) -}
+803c43883c02a95dd94c6761b389fe96
+  errorConFile1 ::
+    GHC.IO.Exception.IOException
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Either.Either Text.Parsec.Error.ParseError AST.System #)
+  {- Arity: 2, Strictness: <L,A><S,U>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (e :: GHC.IO.Exception.IOException)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# eta, Interface.errorConFile2 #)) -}
+e42d20d34aa4ed271dbbe8fa330401e2
+  errorConFile2 ::
+    Data.Either.Either Text.Parsec.Error.ParseError AST.System
+  {- Strictness: m2,
+     Unfolding: (Data.Either.Right
+                   @ Text.Parsec.Error.ParseError
+                   @ AST.System
+                   Interface.errorConFile3) -}
+5b49e982d8d07fd65b6d970338414896
+  errorConFile3 :: AST.System
+  {- Strictness: m3,
+     Unfolding: (AST.Error Interface.errorConFile4) -}
+912bbacd24a6f797da740ada1e61b284
+  errorConFile4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Couldn't find this config file"#) -}
+56f37b0a4e6291099b012c1c57b47989
   fileStarter :: GHC.Base.String -> GHC.Types.IO ()
   {- Arity: 2, Strictness: <L,1*U><S,U>,
      Unfolding: InlineRule (0, True, True)
                 Interface.fileStarter1
                   `cast`
                 (<GHC.Base.String>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
-cac91499831ae395fffe4a3226050d1e
+b71636bbc48e30cdd8b2995e89ffa281
   fileStarter1 ::
     GHC.Base.String
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 2, Strictness: <L,1*U><S,U> -}
-22c871142134c2eb4897649988d2fd4f
+3c93fd47174a95ad87301f9b3308fe51
   generalTrhowFromSystem :: AST.System -> AST.ThrowsGen
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
                 (\ (ds :: AST.System) ->
                  case ds of wild {
-                   AST.Sys ipv ipv1 ipv2 ipv3 ipv4 ipv5 ipv6
-                   -> Interface.generalTrhowFromSystem1
+                   DEFAULT -> Interface.generalTrhowFromSystem1
                    AST.DepSys ds1 ds2 ds3 ds4 ds5 throwsGen -> throwsGen }) -}
-196869d464b992330316dd8bec538909
+a78ca8eaea4205d45f6d43a0d9fc8445
   generalTrhowFromSystem1 :: AST.ThrowsGen
   {- Strictness: x -}
-ba0591b54195db555a1058347957288e
+90476d74da0c5b6c7b4bcf2d7731a635
   get_attributes ::
     [AST.Name] -> Mannager.Env -> GHC.Types.IO Mannager.Env
   {- Arity: 3, Strictness: <S,1*U><L,U><S,U>,
@@ -932,61 +955,22 @@ ba0591b54195db555a1058347957288e
                 (<[AST.Name]>_R
                  ->_R <Mannager.Env>_R
                  ->_R Sym (GHC.Types.N:IO[0] <Mannager.Env>_R)) -}
-cdb66b499082144af97a6d62492692e6
+df1f46a83e0e7a99e392eeb175080288
   listCon :: [GHC.Base.String] -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U> -}
-98275cce65bf9604e2180fe7b07290be
+cdc867f9feed362ec47e5dd2c70f6bbd
   listEnv :: Mannager.Env -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U> -}
-fa6901a5e3b00233f81cf86b2c271ff9
-  loadCharaterInterface :: GHC.Types.IO [AST.Character]
-  {- Arity: 1, Strictness: <S,U>,
+b819c1fe086f884282f6f44d69ff0a9b
+  loadCharaterInterface ::
+    GHC.Base.String -> GHC.Types.IO [AST.Character]
+  {- Arity: 2, Strictness: <L,1*U><S,U>,
      Unfolding: InlineRule (0, True, True)
-                Interface.loadCharaterInterface1
+                Interface.cmdLoadChar2
                   `cast`
-                (Sym (GHC.Types.N:IO[0] <[AST.Character]>_R)) -}
-c5a1f6bfa24a21d760d5aba8b779a874
-  loadCharaterInterface1 ::
-    GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, [AST.Character] #)
-  {- Arity: 1, Strictness: <S,U>,
-     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 case Interface.cmdLoadChar3 s of ds1 { (#,#) ipv ipv1 ->
-                 let {
-                   fname :: GHC.Base.String
-                   = GHC.CString.unpackAppendCString# "files/"# ipv1
-                 } in
-                 case GHC.IO.Handle.FD.openFile1
-                        fname
-                        GHC.IO.IOMode.ReadMode
-                        ipv of ds2 { (#,#) ipv2 ipv3 ->
-                 case GHC.IO.Handle.Text.hGetContents1
-                        ipv3
-                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
-                 case (Text.Parsec.Prim.runPT
-                         @ GHC.Base.String
-                         @ Data.Functor.Identity.Identity
-                         @ GHC.Types.Char
-                         @ ()
-                         @ [AST.Character]
-                         (Text.Parsec.String.$s$fStream[]mtok @ GHC.Types.Char)
-                         Interface.cmdLoadChar2
-                           `cast`
-                         (Sym (Text.Parsec.Prim.N:ParsecT[0]
-                                   <[GHC.Types.Char]>_R
-                                   <()>_R
-                                   <Data.Functor.Identity.Identity>_R
-                                   <[AST.Character]>_R))
-                         GHC.Tuple.()
-                         fname
-                         ipv5)
-                        `cast`
-                      (Data.Functor.Identity.N:Identity[0]
-                           <Data.Either.Either
-                              Text.Parsec.Error.ParseError [AST.Character]>_R) of wild {
-                   Data.Either.Left er -> (# ipv4, GHC.Types.[] @ AST.Character #)
-                   Data.Either.Right a -> (# ipv4, a #) } } } }) -}
-6ae97935dcf99589b32a36d6fa7faa71
+                (<GHC.Base.String>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <[AST.Character]>_R)) -}
+62d7af63549c0d9db35e0da0b29af91a
   make_action :: AST.System -> [AST.Character] -> GHC.Types.IO ()
   {- Arity: 3, Strictness: <L,U><L,U><S,U>,
      Unfolding: InlineRule (0, True, True)
@@ -995,7 +979,7 @@ c5a1f6bfa24a21d760d5aba8b779a874
                 (<AST.System>_R
                  ->_R <[AST.Character]>_R
                  ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
-9a42b4bc31032ef73b4ed64e7521174c
+b2b8006d20cb657f9249de5d7ccb41e8
   menu ::
     AST.Game
     -> [(GHC.Base.String,
@@ -1009,7 +993,7 @@ c5a1f6bfa24a21d760d5aba8b779a874
                  ->_R <[(GHC.Base.String,
                          AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))]>_R
                  ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
-6a6e9736f99222ca599153a08475b0d9
+fce8b5c6158db8ad2dc2da6aaeef55c3
   menu1 ::
     AST.Game
     -> [(GHC.Base.String,
@@ -1017,12 +1001,12 @@ c5a1f6bfa24a21d760d5aba8b779a874
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 3, Strictness: <L,U><L,U><S,U> -}
-e671c0c3498c5ce78f2dcf590195ba49
+ac9d850acfd72db0be38ce2f96396b20
   menu_list ::
     [(GHC.Base.String, a)]
     -> GHC.Integer.Type.Integer -> GHC.Base.String
   {- Arity: 2, Strictness: <S,1*U><L,U> -}
-9b10ece44958d62902335010580ce247
+cef572a787920afa364594a629f1df2b
   menu_title ::
     [(GHC.Base.String,
       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))]
@@ -1032,7 +1016,7 @@ e671c0c3498c5ce78f2dcf590195ba49
                       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
                    Interface.menu_title30
                    Interface.menu_title1) -}
-e845c59aa170a2dd4132a26abbd96122
+91293b2a6d350e2599df47b6ea26acb8
   menu_title1 ::
     [(GHC.Base.String,
       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))]
@@ -1042,7 +1026,7 @@ e845c59aa170a2dd4132a26abbd96122
                       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
                    Interface.menu_title28
                    Interface.menu_title2) -}
-ed86f692153d6da772a2e65ebac58491
+24826eb28b4e7118e4e61ddb72d61cea
   menu_title10 ::
     [(GHC.Base.String,
       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))]
@@ -1054,7 +1038,7 @@ ed86f692153d6da772a2e65ebac58491
                    (GHC.Types.[]
                       @ (GHC.Base.String,
                          AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String)))) -}
-42b19dbddfeb339d93b476a2b72cec96
+e5c4bfd202bf56c71968555a9a026a4e
   menu_title11 ::
     ([GHC.Types.Char],
      AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
@@ -1064,7 +1048,7 @@ ed86f692153d6da772a2e65ebac58491
                     `cast`
                   (<AST.Game>_R
                    ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)))) -}
-db2aaa57a9a66e2be988a7f0ef9f9bee
+50cd35f9173c43f1a5f23252dd072a96
   menu_title12 ::
     ([GHC.Types.Char],
      AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
@@ -1074,10 +1058,10 @@ db2aaa57a9a66e2be988a7f0ef9f9bee
                     `cast`
                   (<AST.Game>_R
                    ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)))) -}
-bf298bd2b29b469f6cefd1ca9facd8bf
+827f75e96f21be540ca3c8acf612ebe3
   menu_title13 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "View Character"#) -}
-d36449f41185db9b9c3c9a376087d548
+0cad14571bafca7ff3630974a71c96ad
   menu_title14 ::
     ([GHC.Types.Char],
      AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
@@ -1087,10 +1071,10 @@ d36449f41185db9b9c3c9a376087d548
                     `cast`
                   (<AST.Game>_R
                    ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)))) -}
-68f644be0dc1a343219b3c4f349bb09d
+a33d351e637ffc9e6632c5b5ddb88621
   menu_title15 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Load Character"#) -}
-9d88649ba628c2b4ac6989e95e36bf5f
+8746f14809587ccc49008efe4215616e
   menu_title16 ::
     ([GHC.Types.Char],
      AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
@@ -1100,10 +1084,10 @@ d36449f41185db9b9c3c9a376087d548
                     `cast`
                   (<AST.Game>_R
                    ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)))) -}
-6b21c7839939f76c62d8908b7630e248
+cb4d83094215bbcc9dc4f9de22a60845
   menu_title17 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Delete Character"#) -}
-69ec9d9e64da8e1ea510c6d1f3b99682
+d96b345c78d45a4273259899739bbd22
   menu_title18 ::
     ([GHC.Types.Char],
      AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
@@ -1113,10 +1097,10 @@ d36449f41185db9b9c3c9a376087d548
                     `cast`
                   (<AST.Game>_R
                    ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)))) -}
-b550635214c9c8d1bf9953a262410095
+c7b444f2c09289624dff364e6e8c01cd
   menu_title19 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Modify character"#) -}
-db40883c583967c3e302951c04ea3706
+bce657baf1ce189cb4f49bfba3d9ed0f
   menu_title2 ::
     [(GHC.Base.String,
       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))]
@@ -1126,7 +1110,7 @@ db40883c583967c3e302951c04ea3706
                       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
                    Interface.menu_title26
                    Interface.menu_title3) -}
-05a20be34f321fc32d69fa84a618ed2f
+0ea44f28c068ee74f2721efc5c5665e9
   menu_title20 ::
     ([GHC.Types.Char],
      AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
@@ -1136,10 +1120,10 @@ db40883c583967c3e302951c04ea3706
                     `cast`
                   (<AST.Game>_R
                    ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)))) -}
-139f8774de92415a1c339ec1a918a0ec
+bb2eca01616d5afd14ead1ad80ce8434
   menu_title21 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Make an action"#) -}
-716fe0e20d6c53b390a8e7a5db23a450
+20a24e8edf6af233ee3c8ea1402d76b7
   menu_title22 ::
     ([GHC.Types.Char],
      AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
@@ -1149,10 +1133,10 @@ db40883c583967c3e302951c04ea3706
                     `cast`
                   (<AST.Game>_R
                    ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)))) -}
-60e15262662e8c2ce3709cab71ec5f8c
+51315f958588876aec7fd420a1b458fb
   menu_title23 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "List Action"#) -}
-ef557f70146706a5d326b3421267a11e
+1f133ec1bac4af6556f746b5e154b48e
   menu_title24 ::
     ([GHC.Types.Char],
      AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
@@ -1162,10 +1146,10 @@ ef557f70146706a5d326b3421267a11e
                     `cast`
                   (<AST.Game>_R
                    ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)))) -}
-09882320e52201719e134f788010cbc1
+b5a06c464c06d31f2e7c621c41fde84e
   menu_title25 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Save Character"#) -}
-08cdc7ee27f9d4509fbfcedcf3281b13
+a5f5bd2a91a36feeabc19e034628361f
   menu_title26 ::
     ([GHC.Types.Char],
      AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
@@ -1175,10 +1159,10 @@ ef557f70146706a5d326b3421267a11e
                     `cast`
                   (<AST.Game>_R
                    ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)))) -}
-2a36dc0af694e136ac90077d775be770
+534d50e389b7f04177ce96af241f5f51
   menu_title27 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "List Character"#) -}
-a4a471a0160b52b805a8d0d1f516ff07
+ce1585068f1a2edd4bd5953eb1c1fe9b
   menu_title28 ::
     ([GHC.Types.Char],
      AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
@@ -1188,11 +1172,11 @@ a4a471a0160b52b805a8d0d1f516ff07
                     `cast`
                   (<AST.Game>_R
                    ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)))) -}
-0c6273cf50704ec8a9db4b0638b6bb06
+dd0eaaa98bf8b5f956a5d1ec7312fd13
   menu_title29 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "Roll attributes/skills"#) -}
-bf4cb3264cefa8dbd21da5d1bac3f814
+d2823bc65b1099176cf5f315efe901d0
   menu_title3 ::
     [(GHC.Base.String,
       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))]
@@ -1202,7 +1186,7 @@ bf4cb3264cefa8dbd21da5d1bac3f814
                       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
                    Interface.menu_title24
                    Interface.menu_title4) -}
-9a55fa6c537138fa0a2355736adde0d6
+8969604fbf27a526bccb95adbe88c8ec
   menu_title30 ::
     ([GHC.Types.Char],
      AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
@@ -1212,11 +1196,11 @@ bf4cb3264cefa8dbd21da5d1bac3f814
                     `cast`
                   (<AST.Game>_R
                    ->_R Sym (GHC.Types.N:IO[0] <(AST.Game, GHC.Base.String)>_R)))) -}
-6822791a8fd144091953afc0989e80d3
+f790fd1a75f13679f4033e1c73ed7d9d
   menu_title31 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "Create new Character"#) -}
-45dd64a0f17cfc371bbdde58ef3e59b2
+0a16e55f76f57b7ee5a35b488119cc82
   menu_title4 ::
     [(GHC.Base.String,
       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))]
@@ -1226,7 +1210,7 @@ bf4cb3264cefa8dbd21da5d1bac3f814
                       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
                    Interface.menu_title22
                    Interface.menu_title5) -}
-222732b3b9ee9b935f5eef69bb66feea
+e11ba163d374d2d5d14c53266a1b9ae4
   menu_title5 ::
     [(GHC.Base.String,
       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))]
@@ -1236,7 +1220,7 @@ bf4cb3264cefa8dbd21da5d1bac3f814
                       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
                    Interface.menu_title20
                    Interface.menu_title6) -}
-f80c644af54964eae84ebad63693b551
+d208e70099739e9b8cf920698b54596f
   menu_title6 ::
     [(GHC.Base.String,
       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))]
@@ -1246,7 +1230,7 @@ f80c644af54964eae84ebad63693b551
                       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
                    Interface.menu_title18
                    Interface.menu_title7) -}
-5f15ea5490a357612cce1fa6643a0541
+f674737c9b3bb55660daabe0565c54b0
   menu_title7 ::
     [(GHC.Base.String,
       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))]
@@ -1256,7 +1240,7 @@ f80c644af54964eae84ebad63693b551
                       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
                    Interface.menu_title16
                    Interface.menu_title8) -}
-26f263df828a7a37993eadaeec110fb2
+5c1be52ebf2e645e1a654fb8929d089e
   menu_title8 ::
     [(GHC.Base.String,
       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))]
@@ -1266,7 +1250,7 @@ f80c644af54964eae84ebad63693b551
                       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
                    Interface.menu_title14
                    Interface.menu_title9) -}
-ce0ce824596d9c3840595aedc06d0cca
+78ff41ca193a08a8c02e75dacb8bdd5c
   menu_title9 ::
     [(GHC.Base.String,
       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))]
@@ -1276,7 +1260,7 @@ ce0ce824596d9c3840595aedc06d0cca
                       AST.Game -> GHC.Types.IO (AST.Game, GHC.Base.String))
                    Interface.menu_title12
                    Interface.menu_title10) -}
-58aec4292be4c11ea6a62d8a68079a5b
+954a276b724da795932618b2e839090a
   modifyCharacter ::
     AST.System -> [AST.Character] -> GHC.Types.IO [AST.Character]
   {- Arity: 3, Strictness: <L,1*U><L,U><S,U>,
@@ -1286,13 +1270,13 @@ ce0ce824596d9c3840595aedc06d0cca
                 (<AST.System>_R
                  ->_R <[AST.Character]>_R
                  ->_R Sym (GHC.Types.N:IO[0] <[AST.Character]>_R)) -}
-390d3e4c639a5526785454eda292f98c
+8f590ae0590e687ebefc6438e3785aa0
   name_skill :: AST.Skills -> AST.Name
   {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U,A)>,
      Unfolding: InlineRule (1, True, False)
                 (\ (ds :: AST.Skills) ->
                  case ds of wild { AST.Skill name ds1 -> name }) -}
-68ca0a6844f69e33aff25ba8023b28ee
+8ecdce119e29f82449bf92f8925e8c98
   printRoll ::
     ([GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
      GHC.Integer.Type.Integer)
@@ -1303,40 +1287,22 @@ ce0ce824596d9c3840595aedc06d0cca
                           GHC.Integer.Type.Integer)) ->
                  case w of ww { (,,) ww1 ww2 ww3 ->
                  Interface.$wprintRoll ww1 ww2 ww3 }) -}
-385ffce39bbe08eadaafba5d61e9c5a2
+03c2f517650e387c8d99960a1d88dca5
   printRoll1 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "\n"#) -}
-cb8a5f0347cfa6d2af3a65afca66cc2a
+1024ee1a28676045f62192734d86b6b8
   printSkillClass ::
     [AST.Skills] -> GHC.Integer.Type.Integer -> GHC.Base.String
   {- Arity: 2, Strictness: <S,1*U><L,U> -}
-cb351397de042421835e7d60dbbb080e
+b2b0099233f99d7ea3732d7b603ff56e
   putAndWait :: GHC.Base.String -> GHC.Types.IO GHC.Base.String
-  {- Arity: 2, Strictness: <L,1*U><S,U>,
+  {- Arity: 2, Strictness: <L,U><S,U>,
      Unfolding: InlineRule (0, True, True)
-                Interface.putAndWait1
+                Interface.cmdDelChar4
                   `cast`
                 (<GHC.Base.String>_R
                  ->_R Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R)) -}
-67379ae784340d3b13b321f5dfbb596d
-  putAndWait1 ::
-    GHC.Base.String
-    -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.String #)
-  {- Arity: 2, Strictness: <L,1*U><S,U>,
-     Unfolding: InlineRule (2, True, False)
-                (\ (s :: GHC.Base.String)
-                   (s1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 case System.Process.system1
-                        Interface.cmdDelChar4
-                        s1 of ds1 { (#,#) ipv ipv1 ->
-                 case GHC.IO.Handle.Text.hPutStr2
-                        GHC.IO.Handle.FD.stdout
-                        s
-                        GHC.Types.False
-                        ipv of ds2 { (#,#) ipv2 ipv3 ->
-                 System.IO.getLine1 ipv2 } }) -}
-52cbdd0c33f16dbc02b6e109043c95c7
+4c9895b3416dfee10f431f289a0957ee
   roll_skilatr :: AST.System -> [AST.Character] -> GHC.Types.IO ()
   {- Arity: 3, Strictness: <L,1*U><L,U><S,U>,
      Unfolding: InlineRule (0, True, True)
@@ -1345,21 +1311,21 @@ cb351397de042421835e7d60dbbb080e
                 (<AST.System>_R
                  ->_R <[AST.Character]>_R
                  ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
-af717b4801f233b69d3b733aac41be1d
+9c87254162a9133f4f4716b247d01dd9
   saveCharacther :: [AST.Character] -> GHC.Types.IO ()
   {- Arity: 2, Strictness: <L,U><S,U>,
      Unfolding: InlineRule (0, True, True)
                 Interface.cmdSaveChar2
                   `cast`
                 (<[AST.Character]>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
-37b6bf67246524616090e61f7a27262c
+70ad7e8c10d5a255feb7f54dbea1ec36
   showAtributes :: AST.Character -> GHC.Types.IO ()
   {- Arity: 2, Strictness: <S,1*U(1*U,1*U,1*U)><S,U>,
      Unfolding: InlineRule (0, True, True)
                 Interface.showAtributes1
                   `cast`
                 (<AST.Character>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
-44efb6b8079db9c13fb2f9ac47d4b716
+fd2feb8eb52771d69ff2bea84a3fbce8
   showAtributes1 ::
     AST.Character
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -1371,24 +1337,24 @@ af717b4801f233b69d3b733aac41be1d
                    (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                  case w of ww { AST.PC ww1 ww2 ww3 ->
                  Interface.$wshowAtributes ww1 ww2 ww3 w1 }) -}
-bf788b1d1ac738f6b59d7d40435937c1
+50ab871402b8985bb784bee87a5f74c4
   showCharacter :: [AST.Character] -> GHC.Types.IO ()
   {- Arity: 2, Strictness: <L,U><S,U>,
      Unfolding: InlineRule (0, True, True)
-                Interface.cmdShowChar2
+                Interface.cmdShowChar3
                   `cast`
                 (<[AST.Character]>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
-1919c61844ff818e9209a375063ff8a7
+602ca16ffc69b3ae420f4e8b25b3734d
   skilatr_list ::
     Mannager.Env -> GHC.Integer.Type.Integer -> GHC.Base.String
   {- Arity: 2, Strictness: <S,1*U><L,U> -}
-35f0669da83bcaab3df2729ca3da6f2a
+77e884f6cf2b12d43fafa07be6bac647
   skillTitle :: GHC.Base.String
   {- Unfolding: (GHC.CString.unpackCString#
                    "------------------------------------------------\n\
                    \Choose the skill class - enter 0 when you finish\n\
                    \------------------------------------------------\n"#) -}
-fcd5a8667fefa276f2f35aac7c41ede2
+7571afed5679137ad377a37b5d058428
   skill_picker ::
     [AST.Skills] -> [AST.Skills] -> GHC.Types.IO [AST.Skills]
   {- Arity: 3, Strictness: <L,U><L,U><S,U>,
@@ -1398,19 +1364,19 @@ fcd5a8667fefa276f2f35aac7c41ede2
                 (<[AST.Skills]>_R
                  ->_R <[AST.Skills]>_R
                  ->_R Sym (GHC.Types.N:IO[0] <[AST.Skills]>_R)) -}
-d4d52d3527eac4f0808460e92add5237
+6ac758599ca59e2ca0a205493fde3fdf
   start :: GHC.Types.IO ()
   {- Arity: 1,
      Unfolding: InlineRule (0, True, True)
                 Interface.start1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-3551e893492caa60c4e80444fadde326
+59b8675b42bf8d2aa12a3242c82a0a9b
   start1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1,
      Unfolding: (Interface.fileStarter1
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-f7583988c58cd7cd3847d7ed1afceca8
+96d9e4e4ce61ebe114a2537a3c208348
   welcome :: GHC.Base.String
   {- Unfolding: (GHC.CString.unpackCString#
                    "|------------------------------------------|\n\

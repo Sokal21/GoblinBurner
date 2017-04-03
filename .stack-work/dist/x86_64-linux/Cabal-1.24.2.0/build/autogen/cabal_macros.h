@@ -35,6 +35,13 @@
   (major1) == 1 && (major2) <  1 || \
   (major1) == 1 && (major2) == 1 && (minor) <= 0)
 
+/* package readline-1.0.3.0 */
+#define VERSION_readline "1.0.3.0"
+#define MIN_VERSION_readline(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  0 || \
+  (major1) == 1 && (major2) == 0 && (minor) <= 3)
+
 /* tool gcc-5.4.0 */
 #define TOOL_VERSION_gcc "5.4.0"
 #define MIN_TOOL_VERSION_gcc(major1,major2,minor) (\
@@ -84,7 +91,7 @@
   (major1) == 2 && (major2) <  26 || \
   (major1) == 2 && (major2) == 26 && (minor) <= 0)
 
-#define CURRENT_COMPONENT_ID "GoblinBurner-0.1.0.0-9BGpxHuB4WvZG8Ab7rdhV"
+#define CURRENT_COMPONENT_ID "GoblinBurner-0.1.0.0-I1JAjz4cEJL8vh9rdrHCnV"
 
-#define CURRENT_PACKAGE_KEY "GoblinBurner-0.1.0.0-9BGpxHuB4WvZG8Ab7rdhV"
+#define CURRENT_PACKAGE_KEY "GoblinBurner-0.1.0.0-I1JAjz4cEJL8vh9rdrHCnV"
 

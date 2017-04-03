@@ -1,12 +1,12 @@
 
 ==================== FINAL INTERFACE ====================
-2017-03-23 21:13:28.725247 UTC
+2017-04-03 14:01:45.390167 UTC
 
-interface GoblinBurner-0.1.0.0-9BGpxHuB4WvZG8Ab7rdhV:Parser 8002
-  interface hash: 3321fb4868238a3aa48f1c9d5dc58ef2
-  ABI hash: 7cb7fef757f4c5e09f18347e7b48aa02
-  export-list hash: 0fdd2aef74e118e1a69e0cbcff0e5c0c
-  orphan hash: df82f6f06cc96234f8f1028931969422
+interface GoblinBurner-0.1.0.0-I1JAjz4cEJL8vh9rdrHCnV:Parser 8002
+  interface hash: 0e9cb7dd695e520758f17e70373a746f
+  ABI hash: 4706971241401d9ad00f58b97bac0200
+  export-list hash: 0fc83fb0d80058520111fed80e996b22
+  orphan hash: 52356dde090b67dc61dd2bb771b11772
   flag hash: ab396f11155bd696ab63895436e6f1df
   sig of: Nothing
   used TH splices: False
@@ -72,59 +72,59 @@ family instance modules: base-4.9.1.0:Control.Applicative
                          containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
                          text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text
                          text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text.Lazy
-import  -/  AST 9c55e0321b218d3946d7f66413c3601c
-  exports: 790fa163781c6789615dccc145b86d73
-  Action 5c484ea8d976c99055ab31eb15645f87
-  All 156168d049291f3ddddeb85ca029b99f
-  And ab99323ae01cb07755d4abd5ab3f8509
-  Atr 8be751fc99052a89e9a9bd6b9163dc6f
-  Attribute b992aa907825e0cdc3adc36bff6e624c
-  BFalse b6e522890782d8f741324872f404878a
-  BTrue 8a63ed056a62978940fb3485dc05312c
-  BoolExp c14fce890aea625b4b05801b0a486a9d
-  Character 577b7d529bf2b50c23293b69a67d8c2f
-  Comm d27ac939e181399381b9d35148f4dafa
-  Coms 713862a478c2a64279d2e880e7318cba
-  ConMod 4722d9ee1b555d7a04bf7f86ea6bcd6b
-  Con_Modifiers de19faae4f856652c4683d3f6c166f49
-  Const 07ef0d6d599ba42ad7b15e8070a858fc
-  D10 3fffd0b3a96e2798755a29485a6bbb7f
-  D100 481c552c65cd91312483dae017f4aa8a
-  D12 7333c192ed411c5182755386dccafcb6
-  D20 87dd40233e7a2abb307b794ecec484e2
-  D3 5eae5f7a7eb622a17b4e5d44744658e3
-  D4 65b1b584cd9065d18d616dcf569f138d
-  D6 ecd11535a0a39e4c5bcb853c6acb1509
-  D8 bb186eacc4bb60b55f396baeed9fba22
-  DepAtr 163e434f0c61a4cb7780146bf9d9b6f8
-  DepAttribute 8eea6e7bab2837004654789c51b96e1b
-  Dice f77b034240a84c2f92599779e8d83414
-  Div 68e88f64e24ab219383c142878766ab6
-  Eq 8a8ae5108503f1e48148a92b89fda456
-  Gt 45dbbcbef4ff2d965759c42dbf2fa1f2
-  IntExp c14fce890aea625b4b05801b0a486a9d
-  Let 66cdefdc69c2b7da57362326cd40f21d
-  Lt 05142902f8f1b2c7b7b87695508252cf
-  Minus 01452219eeb76633958c52c26d093570
-  Name d833e2277e74c61d9822e98cc2f4a2a9
-  Not d12ea2ed650d5ce9f5473595e0c93325
-  Num 914bd196bf551151131b879216ddd352
-  Or f5968828c315688658803a090d04335e
-  PC 919c3b3bc72b363c6539fb82db45aebe
-  Plus d3f77c477deafb93ac91c10caf6369a6
-  Pool 3bfe43e864f32a57ad9cffd34f535393
-  Qmark 23456f8e3211ffe276075953a6b2891f
-  Skill 29a0cd68995f28c0cf0a524fb930feb4
-  Skills 720f0cae70fc84fbe12d3ad9dd9a3c07
-  Sys 91fb9905d283ea1d5c1ca54bb0a01720
-  System ed8187dd3058901d19e252d8b4f3681d
-  Throws 7a082a7d38d9e98575181bf127cdb410
-  ThrowsGen d59d5e638a2bfb45a11e5394743c01d0
-  Times 4fcd748a952b574e07c77d72d71df9bd
-  TrwGen bcde311e0c63f2e0feeeed0e00950db7
-  UAct 75461efabe39211a11043e4d95fea0b1
-  UMinus 0dcbd0e51b25b2c8027f193f20667ae0
-  Var 86c3f39ada3eaa7636ec461c0557dac7
+import  -/  AST d605159f34e87c9680775e51b7a2b049
+  exports: e579a6374870f831902124cda1fe098c
+  Action d3804f4a2fcfae2aa4978ea98a445fd1
+  All 23eb72ad362e0010d3ecdef4be6a49c3
+  And cbcb7ac8203da8cbad58d2146c963eef
+  Atr dbffd3fb3ea30821f9be1fbedae83281
+  Attribute db87cc20d5c9532bfd8689f9744d1de2
+  BFalse 24f6bc6ee87a9a10068e080420067715
+  BTrue 92741f232ecd3c53cf64f76b4959affa
+  BoolExp 5b3de983c89fb94b72cf26921044c293
+  Character 45f5edc128eb6aece66bf1e2a65dbb22
+  Comm 19030a3d3a16c9bb862ed578d66e7107
+  Coms 6062f63ef3c691190af3ea9a7d79b418
+  ConMod 59fc9875a4e56760f9faf95d6d626d32
+  Con_Modifiers 6881985b66d3784341483c6e88e555ae
+  Const b44452847abf94f62ce34c31abfd71a9
+  D10 35372e19831577fd6d8980e974ff8237
+  D100 b887710f34da0dfea50c4612db4b430f
+  D12 3f5a2db3446f02f977ebcc7e0b0f08c3
+  D20 7d957c7de08698d8766f230829866add
+  D3 59b6c5224acd76d78e0c1c103bbf4128
+  D4 c58bfaa70dbee2de74ff05d43413a29f
+  D6 ac8a90046b5ebe3472916b21e655f722
+  D8 452cb9258925356dede89b37585e314c
+  DepAtr fac92ff0fd87e3618c154eae3a15dbd8
+  DepAttribute b93f1fad9f12c17b4860bf994b987aae
+  Dice aaf6c224b76bf03d536cbaf4862c8403
+  Div eb4e99c9238cbfda7d780b4468038e76
+  Eq e1e37a88fe7dc1635ffb5c4d4fd5a158
+  Gt a3455e860dc1adb2572665acaec081f9
+  IntExp 5b3de983c89fb94b72cf26921044c293
+  Let 6f2c979a23b81573a518b4514518dc71
+  Lt ecdd404f6927ea5c97583af2d5757450
+  Minus 72e2e3d06a441d5d5e62d7e5c9104ca7
+  Name 412a0cbdf0d605951c9a4b7594e7e936
+  Not 026c85cde4d9d34a78de02f5c036c7e6
+  Num 70aca6b6739083a1ea9a8496fb73d803
+  Or df079d8f4e324322b7e41592e687cc44
+  PC 7c823e5d53c614cb20a1f5b8cfe6769d
+  Plus 70462ddbf00ea172927a98a184010bcf
+  Pool 12ee81aa36c1c5437ae15ce38f3cfe40
+  Qmark a8fcab73159a5c27d7dd05e986e76d12
+  Skill c820151ac35457ec3fa5c7ef0d288584
+  Skills 75d29fd57116e502fbd25cafdc59c879
+  Sys 84eb4a52c3f941407f76995bb883844c
+  System 7dadbf952eaaa51839dcd5b72dc1cd40
+  Throws 099105db1509e064115c4a95dd26cacc
+  ThrowsGen e93310021b2615a8d6cd509ac59e4852
+  Times aabca98711c25fa8f9da7f6fc15bb065
+  TrwGen 7764e6112322cc50b5c8377181d8a306
+  UAct 501bee6c487b4adbf175b39d37fd6a73
+  UMinus 95650ae36d761f5c1d51b93fc348e81d
+  Var 71dce7e91c5e0084574de69e4e2ef8ad
 import  -/  base-4.9.1.0:Data.Either 20b09ef8d0a5b74fdec011c40c1587f5
 import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
 import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
@@ -137,7 +137,7 @@ import  -/  parsec-3.1.11@parsec-3.1.11-113irVHGgd88sRnywByDNw:Text.Parsec.Strin
 import  -/  parsec-3.1.11@parsec-3.1.11-113irVHGgd88sRnywByDNw:Text.Parsec.Token 43a3c35cde41b2eb307e1fa0e52feb99
 import  -/  parsec-3.1.11@parsec-3.1.11-113irVHGgd88sRnywByDNw:Text.ParserCombinators.Parsec 09138eb929906f6c6f6f40463cb9c077
 import  -/  parsec-3.1.11@parsec-3.1.11-113irVHGgd88sRnywByDNw:Text.ParserCombinators.Parsec.Prim 36790067a17bf441b93287d5552b97d2
-9f5599652ff8908969c19b675c7cc384
+7789ec0857685807a3f24c7f459ff0c5
   $s$fStream[]mtok ::
     Text.Parsec.Prim.Stream [tok] Data.Functor.Identity.Identity tok
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -147,13 +147,13 @@ import  -/  parsec-3.1.11@parsec-3.1.11-113irVHGgd88sRnywByDNw:Text.ParserCombin
                   @ tok
                   (Parser.$s$fStream[]mtok_$s$fStream[]mtok_$cp1Stream @ tok)
                   (Parser.$s$fStream[]mtok_$s$fStream[]mtok_$cuncons @ tok) -}
-9c2e4ad5d5a9b1292215b23f438536b0
+c5f9197ae95bafd00562cc62398b2199
   $s$fStream[]mtok_$s$fStream[]mtok_$cp1Stream ::
     GHC.Base.Monad Data.Functor.Identity.Identity
   {- Strictness: m,
      Unfolding: InlineRule (0, True, True)
                 (\ @ tok -> Data.Functor.Identity.$fMonadIdentity) -}
-50e02b0f7692c0f7509b4d7d64297a86
+f0177dfa737b9ee293fc66907ef0c26a
   $s$fStream[]mtok_$s$fStream[]mtok_$cuncons ::
     [tok]
     -> Data.Functor.Identity.Identity (GHC.Base.Maybe (tok, [tok]))
@@ -178,22 +178,22 @@ import  -/  parsec-3.1.11@parsec-3.1.11-113irVHGgd88sRnywByDNw:Text.ParserCombin
                         (Data.Functor.Identity.$fApplicativeIdentity_$cpure
                            @ (GHC.Base.Maybe (tok, [tok])))
                         (GHC.Base.Just @ (tok, [tok]) (t, ts)) }) -}
-6978bfb282f75abbc5dbe316a2adc17a
+fef2ea749859d2b5e7effd5654cd50e0
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
      Unfolding: (GHC.Types.Module
                    Parser.$trModule2
                    Parser.$trModule1) -}
-3533c94903d4ecb089e2f796e7b49c24
+475e5ee8950f962cb4c4362432bcb532
   $trModule1 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "Parser"#) -}
-00942fdbf00e9293644397deb4b694b9
+3d3bb50d163390278eaf68a4a79a2c5e
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS
-                   "GoblinBurner-0.1.0.0-9BGpxHuB4WvZG8Ab7rdhV"#) -}
-35ba989f02d39f6c69f77bba622f36d6
+                   "GoblinBurner-0.1.0.0-I1JAjz4cEJL8vh9rdrHCnV"#) -}
+9f67fa77f05c0c866d5732863d21e27e
   $waddop ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> ((AST.IntExp -> AST.IntExp -> AST.IntExp)
@@ -210,7 +210,7 @@ import  -/  parsec-3.1.11@parsec-3.1.11-113irVHGgd88sRnywByDNw:Text.ParserCombin
   {- Arity: 4,
      Strictness: <L,U><L,C(C1(C1(U)))><L,C(C1(C1(U)))><L,C(U)>,
      Inline: [0] -}
-58946b72751c86267ccafbcfa9239bc1
+35719ad3ca5cc209e6e2815049704d57
   $wfactor ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> (AST.IntExp
@@ -226,7 +226,7 @@ import  -/  parsec-3.1.11@parsec-3.1.11-113irVHGgd88sRnywByDNw:Text.ParserCombin
     -> Data.Functor.Identity.Identity b
   {- Arity: 4, Strictness: <L,U><L,U><L,C(C1(C1(U)))><L,C(U)>,
      Inline: [0] -}
-9ad06c1615e4d19ae35956ee15f495db
+4fa7dd5d63223ae3c20c2fea6061985f
   $wmulop ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> ((AST.IntExp -> AST.IntExp -> AST.IntExp)
@@ -243,7 +243,7 @@ import  -/  parsec-3.1.11@parsec-3.1.11-113irVHGgd88sRnywByDNw:Text.ParserCombin
   {- Arity: 4,
      Strictness: <L,U><L,C(C1(C1(U)))><L,C(C1(C1(U)))><L,C(U)>,
      Inline: [0] -}
-fcf80f7582dafc2c1685d7cfc64d4145
+5a433d11178094d749c48f833eed7e8d
   $wsystem ::
     AST.System
     -> forall b.
@@ -262,7 +262,7 @@ fcf80f7582dafc2c1685d7cfc64d4145
   {- Arity: 5,
      Strictness: <S,1*U><L,U(U,U(U,U,U),U)><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))>,
      Inline: [0] -}
-5721997e6fc9b66e13baf3a2e899e938
+f40bd8e355ab0f235d545a7414879281
   action :: Text.Parsec.String.Parser AST.Action
   {- Arity: 5,
      Strictness: <L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,U>,
@@ -274,7 +274,7 @@ fcf80f7582dafc2c1685d7cfc64d4145
                           <()>_R
                           <Data.Functor.Identity.Identity>_R
                           <AST.Action>_R)) -}
-6168d870e823001b4a8a25b4f93ed696
+c201c2d3e00501a2248c49d92855d22e
   action1 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> (AST.Action
@@ -345,7 +345,7 @@ fcf80f7582dafc2c1685d7cfc64d4145
                       (\ (err' :: Text.Parsec.Error.ParseError) ->
                        eta4 (Text.Parsec.Error.mergeError err err')))
                    eta4) -}
-dc130232ac903819a66cd8b0b6b4d824
+a48262bb9cc27ef38061f799b2f90717
   action2 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> (AST.Action
@@ -412,7 +412,7 @@ dc130232ac903819a66cd8b0b6b4d824
                       (\ (err' :: Text.Parsec.Error.ParseError) ->
                        eerr (Text.Parsec.Error.mergeError err err')))
                    eerr) -}
-f3e31d39698654cb84d37f50c9cc73cd
+70c77712876b945c30562c08b6185283
   action3 ::
     AST.Dice
     -> forall b.
@@ -432,7 +432,7 @@ f3e31d39698654cb84d37f50c9cc73cd
        -> Data.Functor.Identity.Identity b
   {- Arity: 6,
      Strictness: <L,U><L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,U> -}
-cabb6b483cab9fe92ad045cb636c2883
+d5cdd2d676c4ec53009d13e9229dcd93
   action4 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> (AST.Dice
@@ -450,10 +450,10 @@ cabb6b483cab9fe92ad045cb636c2883
     -> Data.Functor.Identity.Identity b
   {- Arity: 5,
      Strictness: <L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,C(U)> -}
-380f795fb1b9800376baa0cb0693a2cf
+e4897a5510cc28cc21d59dd3a62bb392
   action5 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "UNIT_ACTION"#) -}
-9025ac682e4fa5eef58eff6bf5952e8b
+c2bbebe2625fe4388b86ef717f3b3384
   actionTrhow :: Text.Parsec.String.Parser (AST.Name, AST.Throws)
   {- Arity: 5,
      Strictness: <L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,C(U)>,
@@ -465,7 +465,7 @@ cabb6b483cab9fe92ad045cb636c2883
                           <()>_R
                           <Data.Functor.Identity.Identity>_R
                           <(GHC.Base.String, AST.Throws)>_R)) -}
-7032fee02c9ab9b2dc36a2861cabb877
+c554293b0ddbd63eb1b22ab8213bef77
   actionTrhow1 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> ((GHC.Base.String, AST.Throws)
@@ -483,14 +483,14 @@ cabb6b483cab9fe92ad045cb636c2883
     -> Data.Functor.Identity.Identity b
   {- Arity: 5,
      Strictness: <L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,C(U)> -}
-43a98a40dcac95eefd2f872b91d2c378
+d4274caacaaf855119aac874a4a95118
   action_m1 ::
     Text.Parsec.Prim.ParsecT
       [GHC.Types.Char] () Data.Functor.Identity.Identity ()
   {- Unfolding: (case Parser.lis
                         @ () of wild { Text.Parsec.Token.TokenParser ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ->
                  ds4 Parser.action5 }) -}
-ed35ec6e5b8983dc0c5b81177e6a716e
+c16388351ffd1284fa97c1802aedbe10
   addop ::
     Text.Parsec.String.Parser (AST.IntExp -> AST.IntExp -> AST.IntExp)
   {- Arity: 5,
@@ -503,7 +503,7 @@ ed35ec6e5b8983dc0c5b81177e6a716e
                           <()>_R
                           <Data.Functor.Identity.Identity>_R
                           <AST.IntExp -> AST.IntExp -> AST.IntExp>_R)) -}
-16af1510a87298be42d6bb24e125ecff
+80ca4d8039c5353016a94809cdf52d84
   addop1 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> ((AST.IntExp -> AST.IntExp -> AST.IntExp)
@@ -538,7 +538,7 @@ ed35ec6e5b8983dc0c5b81177e6a716e
                    (w4 :: Text.Parsec.Error.ParseError
                           -> Data.Functor.Identity.Identity b) ->
                  Parser.$waddop @ b w w1 w3 w4) -}
-bb57aea4c18da2f52f95587d0282cf7a
+570d6225383b6f576f72b43fa9946514
   andop ::
     Text.Parsec.String.Parser
       (AST.BoolExp -> AST.BoolExp -> AST.BoolExp)
@@ -552,7 +552,7 @@ bb57aea4c18da2f52f95587d0282cf7a
                           <()>_R
                           <Data.Functor.Identity.Identity>_R
                           <AST.BoolExp -> AST.BoolExp -> AST.BoolExp>_R)) -}
-59cf700e224d1720536e2ecc346fc45d
+69de80e1e894e63374b15888cfe3ccb0
   andop1 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> ((AST.BoolExp -> AST.BoolExp -> AST.BoolExp)
@@ -637,17 +637,17 @@ bb57aea4c18da2f52f95587d0282cf7a
                                  @ Text.Parsec.Error.Message) of ww14 { (#,#) ww15 ww16 ->
                        Text.Parsec.Error.ParseError ww15 ww16 } } } } }))
                    eta4) -}
-86c3a4bc543379265cf2bbfff2af834f
+1fe6a3131e9f14844ce94d53349bcbef
   andop2 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "&"#) -}
-5eb92033d7ad651e4f7ccd9abcefe91e
+6b6de0f88d43954572dd44ef07c39b13
   andop_m1 ::
     Text.Parsec.Prim.ParsecT
       [GHC.Types.Char] () Data.Functor.Identity.Identity ()
   {- Unfolding: (case Parser.lis
                         @ () of wild { Text.Parsec.Token.TokenParser ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ->
                  ds4 Parser.andop2 }) -}
-12e06344d78cee53a4ad736869efadd0
+38fd9e24727327e1525c6769fad20ac1
   attribute :: Text.Parsec.String.Parser AST.Attribute
   {- Arity: 5,
      Strictness: <L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,U>,
@@ -659,7 +659,7 @@ bb57aea4c18da2f52f95587d0282cf7a
                           <()>_R
                           <Data.Functor.Identity.Identity>_R
                           <AST.Attribute>_R)) -}
-3e1b10c15c6dedea36a7a86ae2064112
+4874f1afba55bc5068570b1f6caec4d4
   attribute1 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> (AST.Attribute
@@ -730,7 +730,7 @@ bb57aea4c18da2f52f95587d0282cf7a
                       (\ (err' :: Text.Parsec.Error.ParseError) ->
                        eta4 (Text.Parsec.Error.mergeError err err')))
                    eta4) -}
-bb98ef8433236beb51eea7c4298fda0e
+e66111d7b09543a2b9c297e331e28e0b
   attribute2 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> (AST.Attribute
@@ -805,7 +805,7 @@ bb98ef8433236beb51eea7c4298fda0e
                       (\ (err' :: Text.Parsec.Error.ParseError) ->
                        eerr (Text.Parsec.Error.mergeError err err')))
                    eerr }) -}
-0febbdf8723e44268a06c3efd92d7d62
+dd0b5d1a5ffc48cd2af5fccf4252a3ba
   attribute3 ::
     GHC.Base.String
     -> forall b.
@@ -825,14 +825,14 @@ bb98ef8433236beb51eea7c4298fda0e
        -> Data.Functor.Identity.Identity b
   {- Arity: 6,
      Strictness: <L,U><L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,U> -}
-98c7c618e0a8a86f3db80e4905c7dbd7
+ca2a20b228191ba7c0ed6e27438be440
   attribute_m1 ::
     Text.Parsec.Prim.ParsecT
       [GHC.Types.Char] () Data.Functor.Identity.Identity ()
   {- Unfolding: (case Parser.lis
                         @ () of wild { Text.Parsec.Token.TokenParser ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ->
                  ds4 Parser.lis60 }) -}
-7a3dc66db259addda6a78fae3055d200
+5efa4c5ba23d6383f49080392e6dba3c
   boolexp :: Text.Parsec.String.Parser AST.BoolExp
   {- Arity: 5,
      Strictness: <L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,U>,
@@ -844,7 +844,7 @@ bb98ef8433236beb51eea7c4298fda0e
                           <()>_R
                           <Data.Functor.Identity.Identity>_R
                           <AST.BoolExp>_R)) -}
-205bd28c78d45e63049f0828711db045
+fd85e3f4d31e00f35b84069bc3fbe8b4
   boolexp1 ::
     Text.Parsec.Prim.State GHC.Base.String ()
     -> (AST.BoolExp
@@ -903,7 +903,7 @@ bb98ef8433236beb51eea7c4298fda0e
                    w5
                    w6
                    w7) -}
-0ecbda67b8a3f6b3816634c214a191c1
+b1e3caa8293ae3649e36ba98dc4d3b46
   boolexp2 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> ((AST.BoolExp -> AST.BoolExp -> AST.BoolExp)
@@ -988,10 +988,10 @@ bb98ef8433236beb51eea7c4298fda0e
                                  @ Text.Parsec.Error.Message) of ww14 { (#,#) ww15 ww16 ->
                        Text.Parsec.Error.ParseError ww15 ww16 } } } } }))
                    eta4) -}
-da14bf71a3ab9997a0fc2c2f4bbebf0d
+17f7590251812045eb2d45c56cf2ca28
   boolexp3 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "|"#) -}
-176fd4841a94beb751d62fed9cd29b25
+efc4ffe2b2d34a603f7505c48977207e
   boolexp4 ::
     Text.Parsec.Prim.State GHC.Base.String ()
     -> (AST.BoolExp
@@ -1050,7 +1050,7 @@ da14bf71a3ab9997a0fc2c2f4bbebf0d
                    w5
                    w6
                    w7) -}
-4659d0611c5d2e433cd6d61247d31da5
+b83d652d3b37458cf1c42cb1c0db734b
   boolexp5 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> (AST.BoolExp
@@ -1067,14 +1067,14 @@ da14bf71a3ab9997a0fc2c2f4bbebf0d
         -> Data.Functor.Identity.Identity b)
     -> Data.Functor.Identity.Identity b
   {- Arity: 5, Strictness: <L,U><L,U><L,U><L,C(C1(C1(U)))><L,C(U)> -}
-f16d2436e50814047ccf06f3aff6b3cc
+566a6feefa65208a72b3f9c187f9f2d7
   boolexp_m1 ::
     Text.Parsec.Prim.ParsecT
       [GHC.Types.Char] () Data.Functor.Identity.Identity ()
   {- Unfolding: (case Parser.lis
                         @ () of wild { Text.Parsec.Token.TokenParser ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ->
                  ds4 Parser.boolexp3 }) -}
-f380f413214526dd4039ac6aa01eedd9
+d5aece2006db4f3941ea2847e5fce5ca
   boolfac :: Text.Parsec.String.Parser AST.BoolExp
   {- Arity: 5, Strictness: <L,U><L,U><L,U><L,C(C1(C1(U)))><L,C(U)>,
      Unfolding: InlineRule (0, True, True)
@@ -1085,7 +1085,7 @@ f380f413214526dd4039ac6aa01eedd9
                           <()>_R
                           <Data.Functor.Identity.Identity>_R
                           <AST.BoolExp>_R)) -}
-59d12010be7cbecb2152489af29cbe35
+bff38103b0c186ba29fb9867d54677c7
   characterParser :: Text.Parsec.String.Parser AST.Character
   {- Arity: 5,
      Strictness: <L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,U>,
@@ -1097,7 +1097,7 @@ f380f413214526dd4039ac6aa01eedd9
                           <()>_R
                           <Data.Functor.Identity.Identity>_R
                           <AST.Character>_R)) -}
-30efa412ebc0a27d8b57197a251b5be8
+bfca3bfda31932c291d2c5ef06bfe8a7
   characterParser1 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> (AST.Character
@@ -1172,7 +1172,7 @@ f380f413214526dd4039ac6aa01eedd9
                       (\ (err' :: Text.Parsec.Error.ParseError) ->
                        eerr (Text.Parsec.Error.mergeError err err')))
                    eerr }) -}
-3fb777f2c8f3e376bf1de46e37258c17
+4868af572b006cc3f621d9b974ee6d88
   characterParser2 ::
     GHC.Base.String
     -> forall b.
@@ -1192,7 +1192,7 @@ f380f413214526dd4039ac6aa01eedd9
        -> Data.Functor.Identity.Identity b
   {- Arity: 6,
      Strictness: <L,U><L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,U> -}
-91a1d205a8b657efe6f976f8c9794515
+f31e8299f7d26ffe8b2e48e72960a296
   comm :: Text.Parsec.String.Parser AST.Comm
   {- Arity: 5,
      Strictness: <L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,U>,
@@ -1204,7 +1204,7 @@ f380f413214526dd4039ac6aa01eedd9
                           <()>_R
                           <Data.Functor.Identity.Identity>_R
                           <AST.Comm>_R)) -}
-6cd063d0d0a6d920d772051dceaf067c
+41ff73860a4971e36a32cbbee9a42084
   comm1 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> (AST.Comm
@@ -1279,7 +1279,7 @@ f380f413214526dd4039ac6aa01eedd9
                       (\ (err' :: Text.Parsec.Error.ParseError) ->
                        eerr (Text.Parsec.Error.mergeError err err')))
                    eerr }) -}
-e6093ea91bce7f918f14b4d99ab2ebf3
+c2929419301a5ec44a8d389c6158b73b
   comm2 ::
     GHC.Base.String
     -> forall b.
@@ -1299,7 +1299,7 @@ e6093ea91bce7f918f14b4d99ab2ebf3
        -> Data.Functor.Identity.Identity b
   {- Arity: 6,
      Strictness: <L,U><L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,U> -}
-df1a36dbda0dae06c54818dc86a2844b
+e6d0a3c9684ec74a575693d35e4f7ed6
   conModifiers :: Text.Parsec.String.Parser AST.Con_Modifiers
   {- Arity: 5,
      Strictness: <L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,C(U)>,
@@ -1311,7 +1311,7 @@ df1a36dbda0dae06c54818dc86a2844b
                           <()>_R
                           <Data.Functor.Identity.Identity>_R
                           <AST.Con_Modifiers>_R)) -}
-590da9ca05cf1320998ceca75017d7c9
+29e274b2cac87e43ab44ac815de8ddb4
   conModifiers1 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> (AST.Con_Modifiers
@@ -1329,7 +1329,7 @@ df1a36dbda0dae06c54818dc86a2844b
     -> Data.Functor.Identity.Identity b
   {- Arity: 5,
      Strictness: <L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,C(U)> -}
-302d4b6aee35538f35c78d3b2fdb6f11
+235fb7c64d3c553eda534260d57f6b7e
   depattribute :: Text.Parsec.String.Parser AST.DepAttribute
   {- Arity: 5,
      Strictness: <L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,U>,
@@ -1341,7 +1341,7 @@ df1a36dbda0dae06c54818dc86a2844b
                           <()>_R
                           <Data.Functor.Identity.Identity>_R
                           <AST.DepAttribute>_R)) -}
-f2155f9be69df0f2da98954f9044292a
+63ee7c71baa5937b38cf6d550f254969
   depattribute1 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> (AST.DepAttribute
@@ -1412,7 +1412,7 @@ f2155f9be69df0f2da98954f9044292a
                       (\ (err' :: Text.Parsec.Error.ParseError) ->
                        eta4 (Text.Parsec.Error.mergeError err err')))
                    eta4) -}
-284b733028bcd5a2e38888c0c619242f
+0fc2b34557ef6ee7610b86d55aba6a29
   depattribute2 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> (AST.DepAttribute
@@ -1487,7 +1487,7 @@ f2155f9be69df0f2da98954f9044292a
                       (\ (err' :: Text.Parsec.Error.ParseError) ->
                        eerr (Text.Parsec.Error.mergeError err err')))
                    eerr }) -}
-3d514a44ecce1f3643717340a8de3ff7
+37effa0e7b3495f827791cfee2b4db0f
   depattribute3 ::
     GHC.Base.String
     -> forall b.
@@ -1507,14 +1507,14 @@ f2155f9be69df0f2da98954f9044292a
        -> Data.Functor.Identity.Identity b
   {- Arity: 6,
      Strictness: <L,U><L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,U> -}
-be927f3d615c512182e1e6adeb264e8d
+bc819b8e998dd0fedc6e9ea726dfd9e8
   depattribute_m1 ::
     Text.Parsec.Prim.ParsecT
       [GHC.Types.Char] () Data.Functor.Identity.Identity ()
   {- Unfolding: (case Parser.lis
                         @ () of wild { Text.Parsec.Token.TokenParser ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ->
                  ds4 Parser.lis58 }) -}
-94860fb0d730745d1e2ac1e15450693b
+13a29c4ececd136086a42c01804e1806
   dices :: Text.Parsec.String.Parser AST.Dice
   {- Arity: 5,
      Strictness: <L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,C(U)>,
@@ -1526,7 +1526,7 @@ be927f3d615c512182e1e6adeb264e8d
                           <()>_R
                           <Data.Functor.Identity.Identity>_R
                           <AST.Dice>_R)) -}
-4cef2cc462f5099c49b35ad2c09db1f8
+a0a989b724aade7c8282ebc38cbcd8a5
   estateParser ::
     Text.Parsec.String.Parser (AST.Name, GHC.Integer.Type.Integer)
   {- Arity: 5,
@@ -1539,7 +1539,7 @@ be927f3d615c512182e1e6adeb264e8d
                           <()>_R
                           <Data.Functor.Identity.Identity>_R
                           <(AST.Name, GHC.Integer.Type.Integer)>_R)) -}
-0d42182ec06584785166f95fdc3bbc01
+31120e991ff5b1ea8a69be4d59267a84
   estateParser1 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> ((AST.Name, GHC.Integer.Type.Integer)
@@ -1614,7 +1614,7 @@ be927f3d615c512182e1e6adeb264e8d
                       (\ (err' :: Text.Parsec.Error.ParseError) ->
                        eerr (Text.Parsec.Error.mergeError err err')))
                    eerr }) -}
-b3fa3d05a6531a7db89b1eb48b62b975
+70a4d478abb3a9ad676df593e0186506
   estateParser2 ::
     GHC.Base.String
     -> forall b.
@@ -1704,7 +1704,7 @@ b3fa3d05a6531a7db89b1eb48b62b975
                                  @ Text.Parsec.Error.Message) of ww14 { (#,#) ww15 ww16 ->
                        Text.Parsec.Error.ParseError ww15 ww16 } } } } }))
                    eta4 }) -}
-b5ee4d1a6b87c2f6fc87d6968c33c231
+556ea9ddef3ff55bc6e3f9d48d231a8f
   factor :: Text.Parsec.String.Parser AST.IntExp
   {- Arity: 5, Strictness: <L,U><L,U><L,A><L,C(C1(C1(U)))><L,C(U)>,
      Unfolding: InlineRule (0, True, True)
@@ -1715,7 +1715,7 @@ b5ee4d1a6b87c2f6fc87d6968c33c231
                           <()>_R
                           <Data.Functor.Identity.Identity>_R
                           <AST.IntExp>_R)) -}
-c71251e2f3a62b03cc7d921470ae41e2
+55c4ef0dcfc5a39324350ac101555aa5
   factor1 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> (AST.IntExp
@@ -1749,7 +1749,7 @@ c71251e2f3a62b03cc7d921470ae41e2
                    (w4 :: Text.Parsec.Error.ParseError
                           -> Data.Functor.Identity.Identity b) ->
                  Parser.$wfactor @ b w w1 w3 w4) -}
-839f96cb62ebc714b810d41be73be8cf
+f12dbad702f257c5147be53777d902eb
   generalTrhow :: Text.Parsec.String.Parser AST.ThrowsGen
   {- Arity: 5,
      Strictness: <L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,C(U)>,
@@ -1761,7 +1761,7 @@ c71251e2f3a62b03cc7d921470ae41e2
                           <()>_R
                           <Data.Functor.Identity.Identity>_R
                           <AST.ThrowsGen>_R)) -}
-4d1dc101c191637b73d2212082500f68
+2733e54fca745bbc11074c4a8891244e
   generalTrhow1 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> (AST.ThrowsGen
@@ -1779,7 +1779,7 @@ c71251e2f3a62b03cc7d921470ae41e2
     -> Data.Functor.Identity.Identity b
   {- Arity: 5,
      Strictness: <L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,C(U)> -}
-d4de43e0df3352ae9b1334e026657d04
+4973ce16f09da8db8b5b357bd4c85092
   intexp :: Text.Parsec.String.Parser AST.IntExp
   {- Arity: 5,
      Strictness: <L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,U>,
@@ -1791,7 +1791,7 @@ d4de43e0df3352ae9b1334e026657d04
                           <()>_R
                           <Data.Functor.Identity.Identity>_R
                           <AST.IntExp>_R)) -}
-c7d579eb7d957825516fc60ccd5d58a7
+cd466bdb950d273543b52aa53a2ebda9
   intexp1 ::
     Text.Parsec.Prim.State GHC.Base.String ()
     -> (AST.IntExp
@@ -1850,7 +1850,7 @@ c7d579eb7d957825516fc60ccd5d58a7
                    w5
                    w6
                    w7) -}
-98bf22fa73a06669d35d8452b609dddb
+d2d07e5b0955b86fc2242f47ba0a3e4f
   intexp2 ::
     Text.Parsec.Prim.State GHC.Base.String ()
     -> (AST.IntExp
@@ -1909,7 +1909,7 @@ c7d579eb7d957825516fc60ccd5d58a7
                    w5
                    w6
                    w7) -}
-5ef630f551eba49850a112eae0f17166
+06e20be3f3019315a5efbeb0b73ca79b
   intexp3 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> ((AST.IntExp -> AST.IntExp -> AST.IntExp)
@@ -1944,7 +1944,7 @@ c7d579eb7d957825516fc60ccd5d58a7
                    (w4 :: Text.Parsec.Error.ParseError
                           -> Data.Functor.Identity.Identity b) ->
                  Parser.$wmulop @ b w w1 w3 w4) -}
-4dacf72e48d142717459ea3bad318132
+a4c9b2611695cf5f8578dbbce5f1d394
   lis :: Text.Parsec.Token.TokenParser u
   {- Unfolding: (\ @ u ->
                  Text.Parsec.Token.makeTokenParser
@@ -1953,7 +1953,7 @@ c7d579eb7d957825516fc60ccd5d58a7
                    @ u
                    (Parser.$s$fStream[]mtok @ GHC.Types.Char)
                    (Parser.lis1 @ u)) -}
-8113bfa2d13ee07c79b35b726e307aaf
+d2370adf1b28239fe9aa63be7e736d75
   lis1 ::
     Text.Parsec.Token.GenLanguageDef
       GHC.Base.String u Data.Functor.Identity.Identity
@@ -1991,299 +1991,299 @@ c7d579eb7d957825516fc60ccd5d58a7
                    Parser.lis14
                    Parser.lis2
                    GHC.Types.True) -}
-e824067ce9877b6039e219fb590f6bad
+1985ff3e1dec5d74be50136664af50f8
   lis10 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "/"#) -}
-4fb42cec0b8b7221e4beb059605a6a23
+633c9c6a07d6962c88ac4fcdeb95ca51
   lis11 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "*"#) -}
-b57a47dd520ad81a699385edbacdb352
+ef32d84e082b56dfc94ae3fde7ae4d46
   lis12 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "-"#) -}
-22bd61e5130ebdbc5a9c55a2e932fea7
+d94bccfec58b139e49347ae9f62fe787
   lis13 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "+"#) -}
-988fb8aca0ed9281a42a3fbadb9765ae
+52fbc7c371190a9770f9b41ce23ba3ee
   lis14 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis68
                    Parser.lis15) -}
-95d8e26613b21c2ad6ae68d2915176ab
+e70d2488034f5dcbfa1fa835ad09d84e
   lis15 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis67
                    Parser.lis16) -}
-c19e0cc55eada552e876c73be6f5c345
+b450c3b2896f7db1d94d0fe8f9e55302
   lis16 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis66
                    Parser.lis17) -}
-e5dbb240e2824c7f2992474d860fcf69
+a1a71d18ad5a056a7cef234ab9a1b9ca
   lis17 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis65
                    Parser.lis18) -}
-31912a9a41ae3c6488a0ae303292eb6a
+0c8ebd6f072677b76b9267b07e4591ca
   lis18 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis64
                    Parser.lis19) -}
-45a50bd4bd359d82fe27b2ad5b1ace5d
+9eb72fca40de381053b8b9c197fd7dbc
   lis19 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis63
                    Parser.lis20) -}
-445dfb1d3d94e04c742b98b5a4c54ab7
+6272c4c09b8a99872b6078abaab29e4c
   lis2 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis13
                    Parser.lis3) -}
-01314005567c0a34ad86063e423b9547
+35b8cd1fd5603465ec2ddbbf55b8c4ed
   lis20 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis62
                    Parser.lis21) -}
-a303cc943866d1c74a848e7ce29b8987
+da3e918f1b290d90b4cdb8ebed9fe62d
   lis21 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis61
                    Parser.lis22) -}
-aac44040828317a9a23fcfb24f813b07
+370563d05c487ab39d0aebd83477cea3
   lis22 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis60
                    Parser.lis23) -}
-8f891601e666d19206e8a17a56983edb
+8c0a003ab29089b69de769e3a2b0e724
   lis23 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis59
                    Parser.lis24) -}
-12f29874ea41794685be38ab6699bac2
+d1dc2ae301949e4bc7122037974ab2d3
   lis24 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis58
                    Parser.lis25) -}
-45301ee151f7b0ac51e677acd0ee59a0
+cf697ae006182a63cb9514176ceb3127
   lis25 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis57
                    Parser.lis26) -}
-e2fc58640f6ca654a145c95a32ba0abb
+8bb2194a25c14115b9fbde19d0db7268
   lis26 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis56
                    Parser.lis27) -}
-817d422f0f290f2d0e77be957a4552e2
+64785204f4b88a44ace441f44d89ef65
   lis27 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis55
                    Parser.lis28) -}
-5437023d727781660812af66ffb597c8
+4242e415203fc5e83a9c2404be949f58
   lis28 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.action5
                    Parser.lis29) -}
-1e378820b33ef93a78b530e6d3d76f74
+1941042f205212103ffd01f8218349fd
   lis29 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis54
                    Parser.lis30) -}
-b5756cfc9908d0f5d0d42053ce1927e1
+b67fafd75e077a62cdbdffe7b3393a6e
   lis3 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis12
                    Parser.lis4) -}
-2536f6e960207f1df6f17914a903cb7b
+e62b950ee898cf013e6b05c0746ebda2
   lis30 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis53
                    Parser.lis31) -}
-21ed3a410eb83c28bb551800351e9f44
+cb1dfb724ef4309921891f40fc397013
   lis31 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis52
                    Parser.lis32) -}
-fa310d1f1bfb1cb789387c30a4b004b2
+050e8fb260c00260bb4eed51953ba772
   lis32 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis51
                    Parser.lis33) -}
-62a7e835a25ddbc0d89dc7327ba597f1
+52cb9dc81d9822993fe0e7ebf9b0714a
   lis33 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis50
                    Parser.lis34) -}
-10bb0f4fc20682ab106b62e7b8429eb6
+5f325d338defebed8adc256b3ba707bd
   lis34 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis49
                    Parser.lis35) -}
-64f8ac3fe2819b008c2f734a7f2cad30
+a9e8c7cddd79a7bb442d4a059c3fb92d
   lis35 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis48
                    Parser.lis36) -}
-c0304aab6a3a472118ad7620dcb04ed8
+537ea9b918d78901afd57545c47fbcef
   lis36 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis47
                    Parser.lis37) -}
-1b0708cd979577bcc7a327b7148aade1
+e304480d357a3b2a3e7a8e07c9f7c51b
   lis37 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis46
                    Parser.lis38) -}
-104c151d9d6fba63024c293e0a21bf93
+45ac827e2b37ad018ae10368753a3941
   lis38 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis45
                    Parser.lis39) -}
-5cc72c3f9a5cd62be9c49002853734a2
+044ee9f7f9babbe9aa6d68473ddbcc58
   lis39 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis44
                    Parser.lis40) -}
-14d58073a29b6a16c60501eac9b3002f
+e776f4c4ccd21e0fe5b2921ebcdbd1bb
   lis4 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis11
                    Parser.lis5) -}
-7ef13783352c981d53066c677e373986
+b10a9e8cd6f98ca6397b334351f0bce1
   lis40 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis43
                    Parser.lis41) -}
-5687544b2cba82d6673c85e922002a69
+41ed2d1f94e892aa6bf02fc68af66667
   lis41 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis42
                    (GHC.Types.[] @ GHC.Base.String)) -}
-70fead37feae35a5f18111538d411d82
+deeeb6466bbcf977315c0ba54fe19b2f
   lis42 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "THROW_ACTION"#) -}
-e51ee068ef5cdaa32333d5ee8a111be9
+9f582a9c5c20df50f759f6259ecfccef
   lis43 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "THROW_GENERAL"#) -}
-5094d4ba38c92afe4c68fc580ac9448e
+3daeba2baee9619cad66eb8d6209f4fc
   lis44 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "SKILLS"#) -}
-1add23518f8ad667c82563d655991070
+92be65c9005790a7aa219a44de42b80a
   lis45 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "D100"#) -}
-7c2c1ec6cd2d66fb4e0d2e7cdfe7c00c
+82ba7378d29a1be16f116947cc6bc303
   lis46 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "D20"#) -}
-9800e3faa55869b3e0a84bc0ca0aeadd
+f130e26a8a6429fb7ff3cb602b73af70
   lis47 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "D12"#) -}
-7b1a310e19b4b00897537420466e39d0
+70ac3b2d631c4b9bf7f8629dc7c237cf
   lis48 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "D10"#) -}
-73361d8fd10127f20e6200a463c7f2b8
+d0be3f8df59ee0517d26f051a4335f6e
   lis49 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "D8"#) -}
-e1a50e6280e932acd3f26347d68a02ab
+df195be612653ca859fc227a1531ad49
   lis5 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis10
                    Parser.lis6) -}
-b78c8e75ec659acdbb4917ba51a38d24
+208acd41aa62bb66f5c2ff2e46c46778
   lis50 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "D6"#) -}
-a8ff6c0ef56e8e508afbfd7e31d8cc05
+b541c7b8b0c65e2d0be5a528e0992d29
   lis51 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "D5"#) -}
-e38a27a7c593875f6e98e81f789fd5d9
+7fb021f2ce397d9dcba3b50eee626998
   lis52 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "D4"#) -}
-241f79d781ca06eb81beb1e21a4dfab6
+cde8e5efa63c0a238dd3b6db76151382
   lis53 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "D3"#) -}
-273795287d1d8aa8a8c64d989258a1e2
+0f44c46da891a0512bb3edffacaf5ef1
   lis54 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "DOUBLE_ACTION"#) -}
-fa28afc9e5617d1b9ace984e65d1fa0b
+47250c90500b74d904741615574292d9
   lis55 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "CONDITION_MODIFIER_ALL"#) -}
-4962c4afd8b956d45fb968368747ded7
+055af4c48bb8807fd4745b819152b0ca
   lis56 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "CONDITION_MODIFIER"#) -}
-5a09315f8ca1a01cbdcc05f551edda3a
+dc7971dbcd5846dd6bced2c8ca51494f
   lis57 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "NON"#) -}
-974e8cb63c3a4696e12739f9219ca823
+7cb72c4372184c77b6e12f9d3fba3a30
   lis58 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "DEP_ATTRIBUTE"#) -}
-8486ed895542bf72a28f62c2aef1e3b6
+9f84dfb1d8d821562446b9e420725497
   lis59 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "ALL"#) -}
-7a0e0bc394851882143dbb1db719147e
+e2526bdf6370ba3f2f6ce72bdd94480e
   lis6 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis9
                    Parser.lis7) -}
-aaa33c2633f92ebf562a805276708dec
+83a5d7a1c34199f98cb65de29d703752
   lis60 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "ATTRIBUTE"#) -}
-2f407ad81d837a681c74c7a1636c1c3f
+87d7db229fc94f1c5cfd87995a3f2d40
   lis61 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "do"#) -}
-b068e57efbcb35f4bbe5fda234fda1bb
+5d5fe76e450efd3a0f0ffdb924bd8702
   lis62 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "end"#) -}
-fb27d9d1d57474bd850221bc8750563d
+d21859d6699e39d7f974078989e92ce2
   lis63 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "else"#) -}
-7c77ca361ff45ef8dd44a0df38aa0496
+23478c236a245c6a710f4dcd312d113b
   lis64 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "then"#) -}
-382ca5f204d3ae5119c600ac55b62788
+7bd14f84180a6ee77ede7f8353ab3831
   lis65 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "if"#) -}
-37dd52e21b1d1072750070abb8248225
+5a668f3254050900ef93cffa3850ae24
   lis66 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "skip"#) -}
-3404cb4034491928a8c4e71a3a8efd1f
+347752bd08a61ff3c823c5cbd3f98764
   lis67 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "false"#) -}
-eb514a9ea83a68da049793390315c806
+ad6d175f1e8f7351829d5df1313fecde
   lis68 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "true"#) -}
-36e47cfc0f451e5a3ccf80a71db8c241
+fc5965e1477a9ae008baf44dc9a4c82d
   lis69 ::
     Text.Parsec.Prim.ParsecT
       GHC.Base.String u Data.Functor.Identity.Identity GHC.Types.Char
@@ -2294,31 +2294,31 @@ eb514a9ea83a68da049793390315c806
                    @ u
                    (Parser.$s$fStream[]mtok @ GHC.Types.Char)
                    Parser.lis70) -}
-19d48a1d12f1bb27b950a4c851d29838
+7989e152d676fb76b7d5faed462b2c0a
   lis7 :: [GHC.Base.String]
   {- Unfolding: (GHC.Types.:
                    @ GHC.Base.String
                    Parser.lis8
                    (GHC.Types.[] @ GHC.Base.String)) -}
-1151a648584f54fad4da19d2e3baa233
+2e7e7053b1713f33ff2011e206ad758f
   lis70 :: GHC.Types.Char
   {- HasNoCafRefs, Unfolding: (GHC.Types.C# '='#) -}
-97d7eb83c07f7efa0f254062546b87d9
+33a86931bd3d49fecc501dda5929853c
   lis71 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "//"#) -}
-20cdcb3eca5b35a267d77fb62d6f742a
+c75082490055c1bec3e48cbffbda2914
   lis72 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "*/"#) -}
-8568fceae60c4102ec0d70b21554c0a4
+ad0b9b9f376990633b0d6eae3d52b963
   lis73 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "/*"#) -}
-abae4e9fb2826b28012b51712514b499
+95202400d1f7bd976e711d8a4fb9437a
   lis8 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# ":"#) -}
-9969a44cc80bcbba193f2ba12480611e
+043e64a44673808d91d261acb9f60717
   lis9 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "?"#) -}
-910df099992be458463722ba862b4051
+4bf26677f40115c4fadc41e1187a92b4
   loadCharacter :: Text.Parsec.String.Parser [AST.Character]
   {- Arity: 5,
      Strictness: <L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,U>,
@@ -2330,7 +2330,7 @@ abae4e9fb2826b28012b51712514b499
                           <()>_R
                           <Data.Functor.Identity.Identity>_R
                           <[AST.Character]>_R)) -}
-f2c39f5710b26d4c52629ba7cbe51327
+883fd94d9c2db9573acc6682936ace2c
   loadCharacter1 ::
     Text.Parsec.Prim.State GHC.Base.String ()
     -> ([AST.Character]
@@ -2384,14 +2384,14 @@ f2c39f5710b26d4c52629ba7cbe51327
                    w5
                    w6
                    w7) -}
-4c4f991183efd227e34241130a2c57ef
+7d32db5e0c71348993353c1f4f1acbe5
   loadCharacter2 ::
     Text.Parsec.Prim.ParsecT
       GHC.Base.String () Data.Functor.Identity.Identity GHC.Base.String
   {- Unfolding: (case Parser.lis
                         @ () of wild { Text.Parsec.Token.TokenParser ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ->
                  ds14 Parser.lis13 }) -}
-e94b17b073fcc09f9f1358e2b1dd41ef
+7f23ae5e9e7d8dd31dca0a01c8263f12
   mulop ::
     Text.Parsec.String.Parser (AST.IntExp -> AST.IntExp -> AST.IntExp)
   {- Arity: 5,
@@ -2404,7 +2404,7 @@ e94b17b073fcc09f9f1358e2b1dd41ef
                           <()>_R
                           <Data.Functor.Identity.Identity>_R
                           <AST.IntExp -> AST.IntExp -> AST.IntExp>_R)) -}
-2a9ba199ce76b967718f778c6e0130b0
+a58e99846592eb6b088a0eb60e53b134
   num_parse :: GHC.Base.String -> GHC.Integer.Type.Integer
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (1, True, False)
@@ -2432,10 +2432,10 @@ e94b17b073fcc09f9f1358e2b1dd41ef
                               Text.Parsec.Error.ParseError GHC.Integer.Type.Integer>_R) of wild {
                    Data.Either.Left err -> Parser.num_parse1
                    Data.Either.Right a -> a }) -}
-f5468fc52079c12a6839eed9a0c06bc5
+7af7efd4a23fc83fa3c3e011ecf4dd8d
   num_parse1 :: GHC.Integer.Type.Integer
   {- HasNoCafRefs, Unfolding: (0) -}
-f2924f908a6a7f050023a875457651f0
+123d9ba5c80a0751f7cb3589b3a1e5e9
   num_parse2 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> (GHC.Integer.Type.Integer
@@ -2455,7 +2455,7 @@ f2924f908a6a7f050023a875457651f0
      Unfolding: (Parser.num_parse4
                    @ GHC.Integer.Type.Integer
                    Parser.num_parse3) -}
-b153527ffe1254a2555aa3babb528936
+2899b451bac580ad957424658914e866
   num_parse3 ::
     Text.Parsec.Prim.ParsecT
       GHC.Base.String
@@ -2465,7 +2465,7 @@ b153527ffe1254a2555aa3babb528936
   {- Unfolding: (case Parser.lis
                         @ () of wild { Text.Parsec.Token.TokenParser ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ->
                  ds7 }) -}
-6dc6c7b3b8731d1e13f809ac21d142d0
+078b7436603a1ffe5e80a709f4739120
   num_parse4 ::
     Text.Parsec.String.Parser a
     -> forall b.
@@ -2485,7 +2485,7 @@ b153527ffe1254a2555aa3babb528936
        -> Data.Functor.Identity.Identity b
   {- Arity: 6,
      Strictness: <L,C(C1(C1(C1(C1(U)))))><L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,U> -}
-ad1ef3849318a11fb9daad2404b41b28
+3fc0cac60aa9bfdd047d59c79c083a75
   orop ::
     Text.Parsec.String.Parser
       (AST.BoolExp -> AST.BoolExp -> AST.BoolExp)
@@ -2499,7 +2499,7 @@ ad1ef3849318a11fb9daad2404b41b28
                           <()>_R
                           <Data.Functor.Identity.Identity>_R
                           <AST.BoolExp -> AST.BoolExp -> AST.BoolExp>_R)) -}
-7361c5997303c200931ea96536d1dae4
+acde07e3342ec92719f2e24d43909d48
   orpar :: Text.Parsec.String.Parser AST.BoolExp
   {- Arity: 5,
      Strictness: <L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,U>,
@@ -2511,7 +2511,7 @@ ad1ef3849318a11fb9daad2404b41b28
                           <()>_R
                           <Data.Functor.Identity.Identity>_R
                           <AST.BoolExp>_R)) -}
-4324163ea8da0f67a78777cf44119855
+2634dba3880d10042eda7ac0fe120283
   parseSystem :: Text.Parsec.String.Parser AST.System
   {- Arity: 5,
      Unfolding: InlineRule (0, True, True)
@@ -2522,7 +2522,7 @@ ad1ef3849318a11fb9daad2404b41b28
                           <()>_R
                           <Data.Functor.Identity.Identity>_R
                           <AST.System>_R)) -}
-74837682e658f144c2e9fcd1242ebd8d
+d2a32c091b1e856d206b1837f372f89b
   parseSystem1 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> (AST.System
@@ -2548,7 +2548,7 @@ ad1ef3849318a11fb9daad2404b41b28
                              <()>_R
                              <Data.Functor.Identity.Identity>_R
                              <AST.System>_R))) -}
-b4ef8cdf533c1da5cdc80070e37cdb60
+da99882319ade06064db6b053c28cc20
   parseSystem2 ::
     Text.Parsec.Prim.State GHC.Base.String ()
     -> (AST.System
@@ -2580,7 +2580,7 @@ b4ef8cdf533c1da5cdc80070e37cdb60
                    (w4 :: Text.Parsec.Error.ParseError
                           -> Data.Functor.Identity.Identity b) ->
                  Parser.$wsystem Parser.parseSystem3 @ b w w1 w2 w3) -}
-a4a3674b42e3de66c7fc68550e25453c
+ba5d48caf9441b6e3d7e73f46d321404
   parseSystem3 :: AST.System
   {- Strictness: m1,
      Unfolding: (AST.Sys
@@ -2591,27 +2591,27 @@ a4a3674b42e3de66c7fc68550e25453c
                    Parser.parseSystem4
                    (GHC.Types.[] @ (AST.Name, AST.Throws))
                    (GHC.Types.[] @ AST.Con_Modifiers)) -}
-452898d724d49397efd3ae066c66fb48
+b1fd1254fc85989d34b9e3602f62ee21
   parseSystem4 :: AST.ThrowsGen
   {- HasNoCafRefs, Strictness: m,
      Unfolding: (AST.TrwGen Parser.parseSystem5 AST.D6) -}
-2e5974962ec452d9ed92bac317dc4e9d
+1d6aa6cb209ceb9620cc7ddd1c3506cf
   parseSystem5 :: AST.Throws
   {- HasNoCafRefs, Strictness: m2,
      Unfolding: (AST.Num Parser.parseSystem6) -}
-6a90a4fc115ee3185de80446b5292326
+72443162451baf71aabcc1504a598ba1
   parseSystem6 :: GHC.Integer.Type.Integer
   {- HasNoCafRefs, Unfolding: (1) -}
-1a0587de4ac7e1e7ba0daf75ab7b3711
+46cc13272c1d14385f8419c20bcafd87
   parseSystem7 :: AST.Attribute
   {- Strictness: m,
      Unfolding: (AST.Atr
                    Parser.parseSystem8
                    (GHC.Types.[] @ AST.Name)) -}
-f7fb99b73befaf7bfe0b169dc6c9e6a8
+96ed6d5c386fc03e1cae9c44de57a5a8
   parseSystem8 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Vacio"#) -}
-686ed640d09190b4de411ec633672308
+4df00bcfd25d0e19926c5f67107cbf04
   single_skill :: Text.Parsec.String.Parser AST.Skills
   {- Arity: 5,
      Strictness: <L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,C(U)>,
@@ -2623,7 +2623,7 @@ f7fb99b73befaf7bfe0b169dc6c9e6a8
                           <()>_R
                           <Data.Functor.Identity.Identity>_R
                           <AST.Skills>_R)) -}
-2f1e24c1308950615442f7d2432b4a1c
+76218d43e334b2858bc663202e4a256a
   single_skill1 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> (AST.Skills
@@ -2641,7 +2641,7 @@ f7fb99b73befaf7bfe0b169dc6c9e6a8
     -> Data.Functor.Identity.Identity b
   {- Arity: 5,
      Strictness: <L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,C(U)> -}
-e10dfbea20ecd4bd644e91fc62555643
+df16333d8fc1702fc30fd7318ebdca15
   skills :: Text.Parsec.String.Parser [AST.Skills]
   {- Arity: 5,
      Strictness: <L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,U>,
@@ -2653,7 +2653,7 @@ e10dfbea20ecd4bd644e91fc62555643
                           <()>_R
                           <Data.Functor.Identity.Identity>_R
                           <[AST.Skills]>_R)) -}
-6b00c52c661bafff62907b29a65d63bc
+f43c348b30b45991f7cdb4d441f07e0c
   skills1 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> ([AST.Skills]
@@ -2724,10 +2724,10 @@ e10dfbea20ecd4bd644e91fc62555643
                       (\ (err' :: Text.Parsec.Error.ParseError) ->
                        eta4 (Text.Parsec.Error.mergeError err err')))
                    eta4) -}
-1a97b451f6cebe25c21095acbb9d0e3e
+d5e43f46c6de2c71b51baa4243becba5
   skills10 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "{"#) -}
-b419fb7b994d614d2167a0b2ba81c828
+395c1071c59b4196a9f87b6b51e1ab4f
   skills2 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> ([AST.Skills]
@@ -2798,7 +2798,7 @@ b419fb7b994d614d2167a0b2ba81c828
                       (\ (err' :: Text.Parsec.Error.ParseError) ->
                        eta4 (Text.Parsec.Error.mergeError err err')))
                    eta4) -}
-687a35bbfd755a2042f11f7c101f8a59
+0003046b45942dc62e497fd125f7f7f7
   skills3 ::
     Text.Parsec.Prim.State [GHC.Types.Char] ()
     -> ([AST.Skills]
@@ -2879,7 +2879,7 @@ b419fb7b994d614d2167a0b2ba81c828
                       (\ (err' :: Text.Parsec.Error.ParseError) ->
                        eerr (Text.Parsec.Error.mergeError err err')))
                    eerr) -}
-cc6e1e5810cf5062c4b661463a2b301e
+d8a73516cdb0ecb27755bd4cee2599de
   skills4 ::
     [AST.Skills]
     -> forall b.
@@ -2967,41 +2967,41 @@ cc6e1e5810cf5062c4b661463a2b301e
                                  @ Text.Parsec.Error.Message) of ww14 { (#,#) ww15 ww16 ->
                        Text.Parsec.Error.ParseError ww15 ww16 } } } } }))
                    eta4) -}
-cc9aefa6fdbe0a80208a76e4cfef1185
+41a237e3b1aa6f998b13dda6fe9a37f1
   skills5 ::
     Text.Parsec.Prim.ParsecT
       GHC.Base.String () Data.Functor.Identity.Identity GHC.Base.String
   {- Unfolding: (case Parser.lis
                         @ () of wild { Text.Parsec.Token.TokenParser ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ->
                  ds14 Parser.skills6 }) -}
-a92740341125dd5a156fa3a4cd9bfa21
+c0cbdb5fb368c36cc0c7eb8869121f7a
   skills6 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "}"#) -}
-be4f4899070b4111a9cfd9fa187ccf71
+30f6c330dbfebadb2da7e3fcc3ee81e1
   skills7 ::
     Text.Parsec.Prim.ParsecT
       GHC.Base.String () Data.Functor.Identity.Identity GHC.Base.String
   {- Unfolding: (case Parser.lis
                         @ () of wild { Text.Parsec.Token.TokenParser ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ->
                  ds14 Parser.skills8 }) -}
-a21a4c4bc09ea1413617315b8264cc9b
+393de359dc961485d36d156cf5bf30ad
   skills8 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# ";"#) -}
-b7b35a8b617ead28b9cd99a84c01403f
+195e1756da3722b60320d7071e68d647
   skills9 ::
     Text.Parsec.Prim.ParsecT
       GHC.Base.String () Data.Functor.Identity.Identity GHC.Base.String
   {- Unfolding: (case Parser.lis
                         @ () of wild { Text.Parsec.Token.TokenParser ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ->
                  ds14 Parser.skills10 }) -}
-7e6c2e99caacaf902f914583fde5111b
+71d5be056a45e3958577f3cd67c7baff
   skills_m1 ::
     Text.Parsec.Prim.ParsecT
       [GHC.Types.Char] () Data.Functor.Identity.Identity ()
   {- Unfolding: (case Parser.lis
                         @ () of wild { Text.Parsec.Token.TokenParser ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ->
                  ds4 Parser.lis44 }) -}
-aef45480f9fd0ca7e9bfd1c1d1bfbe72
+cf64ea9618e43ea6ccc001fdba0254b8
   system :: AST.System -> Text.Parsec.String.Parser AST.System
   {- Arity: 6,
      Strictness: <S,1*U><L,U(U,U(U,U,U),U)><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,A>,
@@ -3014,7 +3014,7 @@ aef45480f9fd0ca7e9bfd1c1d1bfbe72
                                <()>_R
                                <Data.Functor.Identity.Identity>_R
                                <AST.System>_R)) -}
-47aaae389855f5f6da8e61d2b46de74e
+e1cc0ed7118696371b9fb34395d50ded
   system1 ::
     AST.System
     -> forall b.
@@ -3052,7 +3052,7 @@ aef45480f9fd0ca7e9bfd1c1d1bfbe72
                    (w5 :: Text.Parsec.Error.ParseError
                           -> Data.Functor.Identity.Identity b) ->
                  Parser.$wsystem w @ b w1 w2 w3 w4) -}
-dcbe765931cc1120c1d0a653cbd4c42d
+f0d26f92c3842f42f0d8963d2ae165a9
   term :: Text.Parsec.String.Parser AST.IntExp
   {- Arity: 5,
      Strictness: <L,U><L,C(C1(C1(U)))><L,U><L,C(C1(C1(U)))><L,U>,
@@ -3064,7 +3064,7 @@ dcbe765931cc1120c1d0a653cbd4c42d
                           <()>_R
                           <Data.Functor.Identity.Identity>_R
                           <AST.IntExp>_R)) -}
-4b5ff01700d73efe6284edf71bce3f29
+3d6edc32739c5d08b0bffbba62eefc22
   totParser ::
     Text.Parsec.String.Parser a -> Text.Parsec.String.Parser a
   {- Arity: 6,

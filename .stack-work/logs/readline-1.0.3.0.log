@@ -1,0 +1,51 @@
+[1 of 2] Compiling Main             ( /tmp/marlon/stack9279/readline-1.0.3.0/Setup.hs, /tmp/marlon/stack9279/readline-1.0.3.0/.stack-work/dist/x86_64-linux/Cabal-1.24.2.0/setup/Main.o )
+
+/tmp/marlon/stack9279/readline-1.0.3.0/Setup.hs:6:29: warning: [-Wdeprecations]
+    In the use of ‘defaultUserHooks’
+    (imported from Distribution.Simple):
+    Deprecated: "Use simpleUserHooks or autoconfUserHooks, unless you need Cabal-1.2
+             compatibility in which case you must stick with defaultUserHooks"
+[2 of 2] Compiling StackSetupShim   ( /home/marlon/.stack/setup-exe-src/setup-shim-mPHDZzAJ.hs, /tmp/marlon/stack9279/readline-1.0.3.0/.stack-work/dist/x86_64-linux/Cabal-1.24.2.0/setup/StackSetupShim.o )
+Linking /tmp/marlon/stack9279/readline-1.0.3.0/.stack-work/dist/x86_64-linux/Cabal-1.24.2.0/setup/setup ...
+Warning: defaultUserHooks in Setup script is deprecated.
+Configuring readline-1.0.3.0...
+checking for gcc... /usr/bin/gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether /usr/bin/gcc accepts -g... yes
+checking for /usr/bin/gcc option to accept ISO C89... none needed
+checking for GNUreadline.framework... checking for readline... no
+checking for tputs in -lncurses... yes
+checking for readline in -lreadline... yes
+checking for rl_readline_version... yes
+checking for rl_begin_undo_group... yes
+checking for rl_erase_empty_line... yes
+checking for rl_free_undo_list... yes
+checking for rl_completion_word_break_hook in -lreadline... yes
+configure: creating ./config.status
+config.status: creating config.mk
+config.status: creating readline.buildinfo
+config.status: creating include/HsReadlineConfig.h
+config.status: include/HsReadlineConfig.h is unchanged
+Building readline-1.0.3.0...
+Preprocessing library readline-1.0.3.0...
+[1 of 2] Compiling System.Console.SimpleLineEditor ( System/Console/SimpleLineEditor.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/System/Console/SimpleLineEditor.o )
+
+System/Console/SimpleLineEditor.hs:19:15: warning: [-Wtabs]
+    Tab character found here, and in 11 further locations.
+    Please use spaces instead.
+
+System/Console/SimpleLineEditor.hs:33:1: warning: [-Wdeprecations]
+    Module ‘System.Cmd’ is deprecated: Use "System.Process" instead
+[2 of 2] Compiling System.Console.Readline ( .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/System/Console/Readline.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/System/Console/Readline.o )
+
+System/Console/Readline.hsc:286:21: warning: [-Wtabs]
+    Tab character found here, and in 16 further locations.
+    Please use spaces instead.
+Installing library in
+/home/marlon/.stack/snapshots/x86_64-linux/lts-8.5/8.0.2/lib/x86_64-linux-ghc-8.0.2/readline-1.0.3.0-7WqJPjOS9HEE95ifi9FvTC
+Registering readline-1.0.3.0...

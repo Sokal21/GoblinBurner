@@ -5,6 +5,9 @@ import Mannager
 import AST
 import Text.Parsec.String
 import System.Process
+import System.Console.Readline
+import Control.Exception (catch,IOException)
+import Text.Parsec.Error
 
 skillTitle :: String
 skillTitle = "------------------------------------------------\nChoose the skill class - enter 0 when you finish\n------------------------------------------------\n"
@@ -17,10 +20,18 @@ start = do fileStarter ""
 
 fileStarter :: String -> IO ()
 fileStarter er = do file <- putAndWait (er++"\n"++welcome++"Please enter your config-file name \n")
-                    sys <- parseFromFile parseSystem ("files/"++file)
+                    sys <- catch (parseFromFile parseSystem ("files/"++file)) errorConFile
                     case sys of
-                      Right a -> menu (Gm (system_depurator a) []) menu_title
-                      Left er -> do fileStarter (show er)
+                      Right a -> case a of
+                                   Error e -> do fileStarter (e++" "++file)
+                                   _       -> menu (Gm (system_depurator a) []) menu_title
+                      Left er -> fileStarter (show er)
+
+errorConFile :: IOException -> IO (Either ParseError System)
+errorConFile e = do return (Right (Error "Couldn't find this config file"))
+
+errorCharFile :: IOException -> IO (Either ParseError [Character])
+errorCharFile e = do return (Right [])
 
 menu :: Game -> [(String, (Game -> IO (Game,String)))] -> IO ()
 menu game m   = do System.Process.system "clear"
@@ -42,12 +53,14 @@ modifyCharacter sys chars = do c <- putAndWait ((character_list chars 1)++"Which
                                n <- putAndWait ("Enter the new value\n")
                                return (characterListModify sys chars ((num_parse c)-1) (num_parse n) ((num_parse a)-1))
 
-loadCharaterInterface :: IO ([Character])
-loadCharaterInterface = do file <- putAndWait "Please enter your character file \n"
-                           char <- parseFromFile (totParser (loadCharacter)) ("files/"++file)
-                           case char of
-                              Right a -> return a
-                              Left er -> return ([])
+loadCharaterInterface :: String -> IO ([Character])
+loadCharaterInterface s = do file <- putAndWait (s++"\n"++"Please enter your character file \n")
+                             char <- catch (parseFromFile (totParser (loadCharacter)) ("files/"++file)) errorCharFile
+                             case char of
+                                Right a -> case a of
+                                             [] -> loadCharaterInterface "Couldn't load this character file"
+                                             _  -> do return a
+                                Left er -> return ([])
 
 delete_character :: [Character] -> IO ([Character])
 delete_character char = do m <- putAndWait ("Which character you want to delete?\n"++(character_list char 1))
@@ -117,10 +130,12 @@ skill_picker skill s  = do cmd <- putAndWait ((skillTitle)++(printSkillClass ski
                            if (num_parse cmd) == 0 then
                              return s
                            else do putStr "Enter the name of the skill\n"
-                                   name <- getLine
-                                   modifier <- putAndWait ("Enter the skill modifier for "++name++"\n")
-                                   case nth ((num_parse cmd)-1) skill of
-                                      (Skill _ intexp) -> skill_picker skill (((Skill name (Plus intexp (Const (num_parse modifier))))):s)
+                                   line <- readline "BG> "
+                                   case line of
+                                     Just name -> do modifier <- putAndWait ("Enter the skill modifier for "++name++"\n")
+                                                     case nth ((num_parse cmd)-1) skill of
+                                                          (Skill _ intexp) -> skill_picker skill (((Skill name (Plus intexp (Const (num_parse modifier))))):s)
+                                     Nothing -> skill_picker skill s
 
 printSkillClass :: [Skills] -> Integer -> String
 printSkillClass [] _ = "\n"
@@ -135,7 +150,10 @@ get_attributes (x:xs) env = do num <- putAndWait ("Enter the atribute modifier f
 putAndWait :: String -> IO (String)
 putAndWait s = do System.Process.system "clear"
                   putStr s
-                  getLine
+                  line <- readline "BG> "
+                  case line of
+                    Just a -> return a
+                    Nothing -> putAndWait s
 
 listEnv :: Env -> String
 listEnv [] = []
@@ -183,12 +201,15 @@ cmdDelChar g@(Gm system char) = do newChar <- delete_character char
                                    return ((Gm system newChar), "")
 
 cmdLoadChar :: Game -> IO (Game,String)
-cmdLoadChar g@(Gm system char) = do newChar <- loadCharaterInterface
+cmdLoadChar g@(Gm system char) = do newChar <- loadCharaterInterface ""
                                     return ((Gm system (newChar++char)), "")
 
 cmdShowChar :: Game -> IO (Game,String)
-cmdShowChar g@(Gm system char) = do showCharacter char
-                                    return (g, "")
+cmdShowChar g@(Gm system char) = if (length char) == 0
+                                 then do putAndWait "There is no characters\n"
+                                         return (g, "")
+                                 else do showCharacter char
+                                         return (g, "")
 
 cmdExit :: Game -> IO (Game,String)
 cmdExit g = do System.Process.system "clear"
