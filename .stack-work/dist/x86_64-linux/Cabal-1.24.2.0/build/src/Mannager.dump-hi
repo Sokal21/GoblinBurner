@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2017-04-03 14:01:43.999815 UTC
+2017-04-03 14:35:37.878077 UTC
 
 interface GoblinBurner-0.1.0.0-I1JAjz4cEJL8vh9rdrHCnV:Mannager 8002
-  interface hash: ed1e83216ff3052c6167ab138372784a
-  ABI hash: d95e2dd9e5a76e4680148d0f9ca6539b
+  interface hash: d9b903a4405dae85d50073fcefa0745a
+  ABI hash: 4d907149783aeeab118bd555a252d4ca
   export-list hash: f15d8a7727703f68e058c478376c3646
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: ab396f11155bd696ab63895436e6f1df
@@ -430,7 +430,7 @@ dff52a44b1a889c10d2764773c8663a8
                    @ 'GHC.Types.PtrRepLifted
                    @ (Mannager.StateError a)
                    s) -}
-507d2010feb5bd8f3b2dca9500b0795b
+b193f418f89f0153212876b78f426d8c
   $fMonadStateStateError :: Mannager.MonadState Mannager.StateError
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -453,7 +453,7 @@ dff52a44b1a889c10d2764773c8663a8
                  GHC.Base.Just
                    @ ((), [(AST.Variable, GHC.Integer.Type.Integer)])
                    (GHC.Tuple.(), Mannager.$fMonadStateStateError_update' v i s)) -}
-fd1c8726d8b35062a4a2ce8b34d31438
+030e9bac63995d82236bb6634a955a7b
   $fMonadStateStateError2 ::
     AST.Variable
     -> Mannager.Env
@@ -464,7 +464,7 @@ fd1c8726d8b35062a4a2ce8b34d31438
                  GHC.Base.Just
                    @ (GHC.Integer.Type.Integer, Mannager.Env)
                    (Mannager.$fMonadStateStateError_lookfor' v s, s)) -}
-a1816edb47a412bdba61a106a0c27ef9
+4f451c432fafe4f2e1b3edf7b2334697
   $fMonadStateStateError_$clookfor ::
     AST.Variable -> Mannager.StateError GHC.Integer.Type.Integer
   {- Arity: 2, Strictness: <L,U><L,U>m2,
@@ -484,12 +484,12 @@ a1816edb47a412bdba61a106a0c27ef9
                 (<AST.Variable>_R
                  ->_R <GHC.Integer.Type.Integer>_R
                  ->_R Sym (Mannager.N:StateError[0] <()>_R)) -}
-76601ac1444b1d7e2564c006657535e1
+22f6ad9e65c7999ad0165934802b8606
   $fMonadStateStateError_lookfor' ::
     AST.Variable
     -> [(AST.Variable, GHC.Integer.Type.Integer)]
     -> GHC.Integer.Type.Integer
-  {- Arity: 2, Strictness: <S,U><S,1*U> -}
+  {- Arity: 2, Strictness: <L,U><S,1*U> -}
 0677c3600867227d0e47de4f680e0de9
   $fMonadStateStateError_update' ::
     AST.Variable
@@ -687,7 +687,7 @@ a154f4e6089d41fa292909977f499df4
   class GHC.Base.Monad m => MonadError (m :: * -> *) where
     throw :: m a
     {-# MINIMAL throw #-}
-507d2010feb5bd8f3b2dca9500b0795b
+b193f418f89f0153212876b78f426d8c
   class GHC.Base.Monad m => MonadState (m :: * -> *) where
     lookfor :: AST.Variable -> m GHC.Integer.Type.Integer
     update :: AST.Variable -> GHC.Integer.Type.Integer -> m ()
@@ -890,7 +890,7 @@ b1362e62ff04d42dd4cde47a4708db0c
                    @ (AST.Variable, GHC.Integer.Type.Integer)
                    ww1
                    ww2 }) -}
-563295926a607fe7c1a412d1b4497ba5
+bf7d3e97c4196daace5b22530c71307f
   evalBoolExp ::
     (Mannager.MonadState m, Mannager.MonadError m) =>
     AST.BoolExp -> m GHC.Types.Bool
@@ -900,7 +900,7 @@ de91809c2509e825caa663aa4486f20f
   evalBoolExp_$sevalBoolExp ::
     AST.BoolExp -> Mannager.StateError GHC.Types.Bool
   {- Arity: 1, Strictness: <S,1*U> -}
-383bf540aa65138c235788b7dc26a803
+78db6474921e1e87fafa741dfd43b2a9
   evalComm ::
     (Mannager.MonadState m, Mannager.MonadError m) => AST.Comm -> m ()
   {- Arity: 3,
@@ -923,7 +923,7 @@ de91809c2509e825caa663aa4486f20f
 dfe5a5effe3cb45ea9fb31162abaf01a
   evalComm2 :: m ()
   {- Strictness: x -}
-62d4d10a7ab735a475a10540d34ce517
+e230d6674b786d9ccc18f8f76e906cd0
   evalIntExp ::
     (Mannager.MonadState m, Mannager.MonadError m) =>
     AST.IntExp -> m GHC.Integer.Type.Integer

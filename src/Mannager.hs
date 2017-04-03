@@ -200,7 +200,8 @@ instance Monad StateError where
 
 instance MonadState StateError where
     lookfor v = StateError (\s -> Just (lookfor' v s, s))
-                where lookfor' v ((u, j):ss) | v == u = j
+                where lookfor' v [] = 0
+                      lookfor' v ((u, j):ss) | v == u = j
                                              | v /= u = lookfor' v ss
     update v i = StateError (\s -> Just ((), update' v i s))
                  where update' v i [] = [(v, i)]
