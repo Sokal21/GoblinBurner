@@ -28,8 +28,6 @@ UNIT_ACTION D10 Usar_Fuerza { FOR + COMBATE }
 
 UNIT_ACTION D10 Conocimiento { INT + CULTURA }
 
-UNIT_ACTION D10 Gerardo { INT / COMBATE }
-
 CONDITION_MODIFIER_ALL Herido { PuntosDano < (Aguante * 2) ; All := All - 2 ; {PuntosDano}}
 
 CONDITION_MODIFIER_ALL Incapacitado { PuntosDano < Aguante ; All := All - 2 ; {PuntosDano}}
