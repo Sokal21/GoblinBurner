@@ -24,7 +24,7 @@ fileStarter er = do file <- putAndWait (er++"\n"++welcome++"Please enter your co
                     case sys of
                       Right a -> case a of
                                    Error e -> do fileStarter (e++" "++file)
-                                   _       -> menu (Gm (system_depurator a) []) menu_title
+                                   _       -> menu (Gm (system_depurator a) []) menu_title ""
                       Left er -> fileStarter (show er)
 
 errorConFile :: IOException -> IO (Either ParseError System)
@@ -33,12 +33,12 @@ errorConFile e = do return (Right (Error "Couldn't find this config file"))
 errorCharFile :: IOException -> IO (Either ParseError [Character])
 errorCharFile e = do return (Right [])
 
-menu :: Game -> [(String, (Game -> IO (Game,String)))] -> IO ()
-menu game m   = do System.Process.system "clear"
-                   cmd <- putAndWait (welcome++(menu_list m 1))
-                   case (nth ((num_parse cmd) - 1) m) of
-                       (_, f) -> do (game',err') <- f game
-                                    if err' == "Exit" then return () else (menu game' m)
+menu :: Game -> [(String, (Game -> IO (Game,String)))] -> String -> IO ()
+menu game m err  = do System.Process.system "clear"
+                      cmd <- putAndWait (err++"\n"++welcome++(menu_list m 1))
+                      case (nth ((num_parse cmd) - 1) m) of
+                          (_, f) -> do (game',err') <- f game
+                                       if err' == "Exit" then return () else (menu game' m err')
 
 showCharacter :: [Character] -> IO ()
 showCharacter chars = do c <- putAndWait ((character_list chars 1)++"Which character you want to see?\n")
@@ -93,8 +93,9 @@ generalTrhowFromSystem (DepSys _ _ _ _ _ throwsGen) = throwsGen
 make_action :: System -> [Character] -> IO ()
 make_action sys chars = do c <- putAndWait ("Which character do you want to use?\n"++(character_list chars 1))
                            a <- putAndWait ("Which action do you want to roll?\n"++(action_list (actionsFromSystem sys) 1))
-                           trw <- return (dices_thrower (nth ((num_parse a)-1) (actionsFromSystem sys)) (envFromCharacter (nth ((num_parse c)-1) chars)))
-                           putAndWait ((printRoll trw)++"Press any key to continue \n")
+                           case (dices_thrower (nth ((num_parse a)-1) (actionsFromSystem sys)) (envFromCharacter (nth ((num_parse c)-1) chars))) of
+                             Just a -> putAndWait ((printRoll a)++"Press any key to continue \n")
+                             Nothing -> putAndWait ("0 division, check your config file or your character attributes")
                            return ()
 
 printRoll :: ([Integer],[Integer],Integer) -> String
@@ -118,7 +119,7 @@ character_list :: [Character] -> Integer -> String
 character_list [] n = "\n"
 character_list ((PC name _ _):xs) n = ((show n)++" - "++name++"\n")++character_list xs (n+1)
 
-create_char :: System -> IO Character
+create_char :: System -> IO (Maybe Character)
 create_char (DepSys _ attr depAttr skl _ _) = do name <- putAndWait "Enter your character name!\n"
                                                  case attr of
                                                    Atr _ list -> do env <- get_attributes list []
@@ -170,7 +171,9 @@ name_skill (Skill name _ ) = name
 
 cmdNewChar :: Game -> IO (Game,String)
 cmdNewChar g@(Gm system char) = do c <- create_char system
-                                   return ((Gm system (c:char) ), "")
+                                   case c of
+                                    Just a -> return ((Gm system (a:char) ), "")
+                                    Nothing -> return ((Gm system char, "0 division, check your config file or your character attributes"))
 
 cmdRollAtr :: Game -> IO (Game,String)
 cmdRollAtr g@(Gm system char) = do roll_skilatr system char

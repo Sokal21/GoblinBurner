@@ -30,32 +30,31 @@ throw_replace :: Action -> Throws -> Action
 throw_replace (UAct name expr dice _) thr = (UAct name expr dice (Just thr))
 
 -- Funciones para la creacion de personajes
-character_creation :: Name -> Env -> [DepAttribute] -> [Skills] -> Character
-character_creation name xs depAttr skl
-                 = let ws = skillCalculator xs skl
-                       ys = depAttrCalculator ws depAttr
-                   in (PC name ys [])
+character_creation :: Name -> Env -> [DepAttribute] -> [Skills] -> Maybe Character
+character_creation name xs depAttr skl = do ws <- skillCalculator xs skl
+                                            ys <- depAttrCalculator ws depAttr
+                                            return (PC name ys [])
 
-depAttrCalculator :: Env -> [DepAttribute] -> Env
-depAttrCalculator xs [] = xs
+depAttrCalculator :: Env -> [DepAttribute] -> Maybe Env
+depAttrCalculator xs [] = Just xs
 depAttrCalculator xs (y:ys) = case y of
                                 DepAtr name expr -> case (runStateError (evalComm (Let name expr)) xs) of
-                                                       Nothing -> error "Division por cero"
+                                                       Nothing -> Nothing
                                                        Just a -> depAttrCalculator (snd a) ys
 
-skillCalculator :: Env -> [Skills] -> Env
-skillCalculator s [] = s
+skillCalculator :: Env -> [Skills] -> Maybe Env
+skillCalculator s [] = Just s
 skillCalculator s (y:ys) = case y of
                                Skill name expr  -> case (runStateError (evalComm (Let name expr)) s) of
-                                                       Nothing -> error "Division por cero"
+                                                       Nothing -> Nothing
                                                        Just a -> skillCalculator (snd a) ys
 
 
 -- Sistema de tirada de dados
-dices_thrower :: Action -> Env -> ([Integer],[Integer],Integer)
+dices_thrower :: Action -> Env -> Maybe ([Integer],[Integer],Integer)
 dices_thrower (UAct _ intExp dice (Just thr)) s = case (runStateError (evalIntExp intExp) s) of
-                                                      Nothing -> error "Division por cero"
-                                                      Just a -> roll (diceToNum dice) thr (fst a)
+                                                      Nothing -> Nothing
+                                                      Just a -> Just (roll (diceToNum dice) thr (fst a))
 
 skilatr_thrower :: Character -> Integer -> ThrowsGen -> ([Integer],[Integer],Integer)
 skilatr_thrower (PC _ xs _) index (TrwGen thr dice) = roll (diceToNum dice) thr (snd (nth index xs))
@@ -72,15 +71,15 @@ roll dice thr num = case thr of
 aleatory_dice :: Integer -> Integer
 aleatory_dice dice = unsafePerformIO (getStdRandom (randomR (1, dice)))
 
-conModCheck :: Character -> [Con_Modifiers] -> Character
-conModCheck p [] = p
+conModCheck :: Character -> [Con_Modifiers] -> Maybe Character
+conModCheck p [] = Just p
 conModCheck p@(PC name s st) ((ConMod n boolExp (All e ex)):ys) = case (runStateError (evalBoolExp boolExp) s) of
-                                                                     Nothing -> error "Division por cero"
+                                                                     Nothing -> Nothing
                                                                      Just a -> if fst a && (not (isIn n st)) then let s' = modifiersExecute s (commGenerator s ex e)
                                                                                                                  in conModCheck (PC name s' (n:st)) ys
                                                                                                             else conModCheck p ys
 conModCheck p@(PC name s st) ((ConMod n boolExp (Coms xs)):ys) = case (runStateError (evalBoolExp boolExp) s) of
-                                                                    Nothing -> error "Division por cero"
+                                                                    Nothing -> Nothing
                                                                     Just a -> if fst a && (not (isIn n st)) then let s' = modifiersExecute s xs
                                                                                                                 in conModCheck (PC name s' (n:st)) ys
                                                                                                            else conModCheck p ys
@@ -126,8 +125,10 @@ modifiers :: System -> [Con_Modifiers]
 modifiers (DepSys _ _ _ _ xs _) = xs
 
 characterListModify :: System -> [Character] -> Integer -> Integer -> Integer -> [Character]
-characterListModify sys (x:xs) 0 newNum n = let char = characterModify x newNum n
-                                            in (conModCheck char (modifiers sys)):xs
+characterListModify sys (x:xs) 0 newNum n = let char = characterModify x newNum n in
+                                            case (conModCheck char (modifiers sys)) of
+                                              Just a  -> a:xs
+                                              Nothing -> x:xs
 characterListModify sys (x:xs) i newNum n = x:(characterListModify sys xs (i-1) newNum n)
 
 characterModify :: Character -> Integer -> Integer -> Character

@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2017-04-03 14:35:37.878077 UTC
+2017-04-04 02:41:34.78962 UTC
 
 interface GoblinBurner-0.1.0.0-I1JAjz4cEJL8vh9rdrHCnV:Mannager 8002
-  interface hash: d9b903a4405dae85d50073fcefa0745a
-  ABI hash: 4d907149783aeeab118bd555a252d4ca
+  interface hash: 187e15bf86d1549d70ae62bf0bb576c6
+  ABI hash: c3f8f9e9309015d37e3fd36a8aac9e44
   export-list hash: f15d8a7727703f68e058c478376c3646
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: ab396f11155bd696ab63895436e6f1df
@@ -603,52 +603,43 @@ f0deafc46de292d36580d99561d070ff
     -> (# AST.Character, [AST.Character] #)
   {- Arity: 5, Strictness: <L,1*U><S,1*U><S,U><L,U><L,U>,
      Inline: [0] -}
-5fd966af8278399d0556ef23981c2d53
-  $wconModCheck ::
-    AST.Name
-    -> [(AST.Name, GHC.Integer.Type.Integer)]
-    -> [GHC.Base.String]
-    -> [AST.Con_Modifiers]
-    -> (# AST.Name, [(AST.Name, GHC.Integer.Type.Integer)],
-          [GHC.Base.String] #)
-  {- Arity: 4, Strictness: <L,U><L,U><L,U><S,1*U>, Inline: [0] -}
-006e8c1b312fa32521264aa2c896e78c
+30c6fe96f3ec9a2a1e3617124abca605
   $wdices_thrower ::
     AST.IntExp
     -> AST.Dice
     -> GHC.Base.Maybe AST.Throws
     -> Mannager.Env
-    -> (# [GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
-          GHC.Integer.Type.Integer #)
+    -> GHC.Base.Maybe
+         ([GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
+          GHC.Integer.Type.Integer)
   {- Arity: 4, Strictness: <S,1*U><L,1*U><S,1*U><L,U>, Inline: [0],
      Unfolding: (\ (ww :: AST.IntExp)
                    (ww1 :: AST.Dice)
                    (ww2 :: GHC.Base.Maybe AST.Throws)
                    (w :: Mannager.Env) ->
                  case ww2 of wild {
-                   GHC.Base.Nothing
-                   -> case Mannager.dices_thrower2
-                      ret_ty (# [GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
-                                GHC.Integer.Type.Integer #)
-                      of {}
+                   GHC.Base.Nothing -> Mannager.dices_thrower1
                    GHC.Base.Just thr
                    -> case (Mannager.dices_thrower_$sevalIntExp ww)
                              `cast`
                            (Mannager.N:StateError[0] <GHC.Integer.Type.Integer>_R)
                              w of wild1 {
                         GHC.Base.Nothing
-                        -> case Mannager.dices_thrower1
-                           ret_ty (# [GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
-                                     GHC.Integer.Type.Integer #)
-                           of {}
+                        -> GHC.Base.Nothing
+                             @ ([GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
+                                GHC.Integer.Type.Integer)
                         GHC.Base.Just a
-                        -> Mannager.$wroll
-                             (Mannager.diceToNum ww1)
-                             thr
-                             (Data.Tuple.fst
-                                @ GHC.Integer.Type.Integer
-                                @ Mannager.Env
-                                a) } }) -}
+                        -> GHC.Base.Just
+                             @ ([GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
+                                GHC.Integer.Type.Integer)
+                             (case Mannager.$wroll
+                                     (Mannager.diceToNum ww1)
+                                     thr
+                                     (Data.Tuple.fst
+                                        @ GHC.Integer.Type.Integer
+                                        @ Mannager.Env
+                                        a) of ww3 { (#,,#) ww4 ww5 ww6 ->
+                              (ww4, ww5, ww6) }) } }) -}
 3cf6f471978e1dc4f52571512a230aa0
   $wenvModify ::
     Mannager.Env
@@ -765,45 +756,39 @@ dff52a44b1a889c10d2764773c8663a8
                    (n :: GHC.Integer.Type.Integer) ->
                  case ds of wild { AST.PC name xs st ->
                  AST.PC name (Mannager.envModify xs newNum n) st }) -}
-37f442b8e8f3fbc891ce20b285dee511
+dad392edcf3d48348846b7077fe9408d
   character_creation ::
     AST.Name
     -> Mannager.Env
     -> [AST.DepAttribute]
     -> [AST.Skills]
-    -> AST.Character
-  {- Arity: 4, Strictness: <L,U><L,U><L,1*U><L,1*U>m,
-     Unfolding: InlineRule (4, True, False)
-                (\ (name :: AST.Name)
+    -> GHC.Base.Maybe AST.Character
+  {- Arity: 4, Strictness: <L,U><L,U><L,1*U><S,1*U>,
+     Unfolding: (\ (name :: AST.Name)
                    (xs :: Mannager.Env)
                    (depAttr :: [AST.DepAttribute])
                    (skl :: [AST.Skills]) ->
-                 AST.PC
-                   name
-                   (Mannager.depAttrCalculator
-                      (Mannager.skillCalculator xs skl)
-                      depAttr)
-                   (GHC.Types.[] @ GHC.Base.String)) -}
+                 case Mannager.skillCalculator xs skl of wild {
+                   GHC.Base.Nothing -> GHC.Base.Nothing @ AST.Character
+                   GHC.Base.Just x
+                   -> case Mannager.depAttrCalculator x depAttr of wild1 {
+                        GHC.Base.Nothing -> GHC.Base.Nothing @ AST.Character
+                        GHC.Base.Just x1
+                        -> GHC.Base.Just
+                             @ AST.Character
+                             (AST.PC name x1 (GHC.Types.[] @ GHC.Base.String)) } }) -}
 3bc22aa0f41e82b7b6a1aaa572b19934
   commGenerator ::
     Mannager.Env -> [GHC.Base.String] -> AST.Comm -> [AST.Comm]
   {- Arity: 3, Strictness: <S,1*U><L,U><L,U> -}
-15f82846759f051c1d863e16106fe44e
+0a06160d8bf4a88f0500604c5eaf22cc
   conModCheck ::
-    AST.Character -> [AST.Con_Modifiers] -> AST.Character
-  {- Arity: 2, Strictness: <S,1*U(U,U,U)><S,1*U>m, Inline: INLINE[0],
-     Unfolding: InlineRule (2, True, False)
-                (\ (w :: AST.Character) (w1 :: [AST.Con_Modifiers]) ->
-                 case w of ww { AST.PC ww1 ww2 ww3 ->
-                 case Mannager.$wconModCheck
-                        ww1
-                        ww2
-                        ww3
-                        w1 of ww4 { (#,,#) ww5 ww6 ww7 ->
-                 AST.PC ww5 ww6 ww7 } }) -}
-7a7a3bee4c4a71587ad1751df241ca72
+    AST.Character
+    -> [AST.Con_Modifiers] -> GHC.Base.Maybe AST.Character
+  {- Arity: 2, Strictness: <L,U(U,U,U)><S,1*U> -}
+92a8856dcfc6e941fee9988d81245b03
   depAttrCalculator ::
-    Mannager.Env -> [AST.DepAttribute] -> Mannager.Env
+    Mannager.Env -> [AST.DepAttribute] -> GHC.Base.Maybe Mannager.Env
   {- Arity: 2, Strictness: <L,U><S,1*U> -}
 c6c7697492cd55285de2a7c1a5408b59
   diceToNum :: AST.Dice -> GHC.Integer.Type.Integer
@@ -843,32 +828,24 @@ b1362e62ff04d42dd4cde47a4708db0c
 535da60ba008d77c5378272a2dce6e59
   diceToNum8 :: GHC.Integer.Type.Integer
   {- HasNoCafRefs, Unfolding: (100) -}
-1d12f81ae326d90b7b064e54d9ed4503
+70f759ac0c0307e3082963aaf5dc0df0
   dices_thrower ::
     AST.Action
     -> Mannager.Env
-    -> ([GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
-        GHC.Integer.Type.Integer)
-  {- Arity: 2, Strictness: <S(LSLS),1*U(A,1*U,1*U,1*U)><L,U>m,
+    -> GHC.Base.Maybe
+         ([GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
+          GHC.Integer.Type.Integer)
+  {- Arity: 2, Strictness: <S(LSLS),1*U(A,1*U,1*U,1*U)><L,U>,
      Inline: INLINE[0],
      Unfolding: InlineRule (2, True, False)
                 (\ (w :: AST.Action) (w1 :: Mannager.Env) ->
                  case w of ww { AST.UAct ww1 ww2 ww3 ww4 ->
-                 case Mannager.$wdices_thrower
-                        ww2
-                        ww3
-                        ww4
-                        w1 of ww5 { (#,,#) ww6 ww7 ww8 ->
-                 (ww6, ww7, ww8) } }) -}
-6b15ca78abbaf1628c2f97b75a232438
+                 Mannager.$wdices_thrower ww2 ww3 ww4 w1 }) -}
+12ed17b6790502b656df5cd498de1763
   dices_thrower1 ::
-    ([GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
-     GHC.Integer.Type.Integer)
-  {- Strictness: x -}
-75f9e0f7c5e4b888245af0726ea527e0
-  dices_thrower2 ::
-    ([GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
-     GHC.Integer.Type.Integer)
+    GHC.Base.Maybe
+      ([GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer],
+       GHC.Integer.Type.Integer)
   {- Strictness: x -}
 786ab8be8a7e68be3f13fc9a689789eb
   dices_thrower_$sevalIntExp ::
@@ -1048,8 +1025,9 @@ c390f3be2b03515172b34ca756c043c6
                                 ww2 of wild { (,) ds1 y ->
                          y }) of ww7 { (#,,#) ww8 ww9 ww10 ->
                  (ww8, ww9, ww10) } } }) -}
-a311b482fe491fc8d02bbfa1e36a7b32
-  skillCalculator :: Mannager.Env -> [AST.Skills] -> Mannager.Env
+676938b7a1796d300b23d28a082bfd22
+  skillCalculator ::
+    Mannager.Env -> [AST.Skills] -> GHC.Base.Maybe Mannager.Env
   {- Arity: 2, Strictness: <L,U><S,1*U> -}
 15df3aa675a9971a2b9cec796bad1f00
   system_depurator :: AST.System -> AST.System
